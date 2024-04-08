@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #183c94;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 19px;
+    margin-right: 20px; /* Ajusta el margen derecho si es necesario */
+    margin-left: 180px; /* Agrega margen izquierdo */
+}
+
+.right-icons {
+    margin-right: 180px; /* Ajusta el margen derecho si es necesario */
+    margin-left: 20px; /* Agrega margen izquierdo */
+}
+
+.right-icons img {
+    border-radius: 50%;
+    margin-left: 10px; /* Añade un margen entre las imágenes */
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 0;
+    width: 27%;
+}
+
+table td {
+    padding: 5px;
+    border: none;
+    text-align: left;
+}
+
+button,
+input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #306cdc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e2653;
+}
+
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.images-container img {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    transition: border-color 0.3s;
+    margin: 0 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.images-container img:hover {
+    border-color: #183c94;
+}
+
+.linetop,
+.linebottom,
+.lineizq,
+.lineder {
+    position: absolute;
+    background-color: #ccc;
+}
+
+.linetop,
+.linebottom {
+    width: 100%;
+    height: 0.5px;
+}
+
+.lineizq,
+.lineder {
+    width: 23%;
+    height: 1px;
+    top: 50%;
+}
+
+.lineizq {
+    left: 0;
+}
+
+.lineder {
+    right: 0;
+}
+
+.small-text {
+    font-size: 12px;
+    margin: 10px;
+
+}
+.center-text {
+    position: relative;
+    text-align: center;
+}
+.textochico{
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px;
+}

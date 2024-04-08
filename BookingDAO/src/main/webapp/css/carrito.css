@@ -1,0 +1,281 @@
+
+/* carrito.css */
+
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor para centrar */
+.container {
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100vh; /* Opcional: ajusta el tamaño del contenedor al alto de la ventana */
+    width: 1110px;
+    margin: 0 auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+.carrito {
+    display: grid;
+    grid-template-columns: 377px 754px; /* Definición de columnas */
+    gap: 8px; /* Espacio entre celdas */
+    margin-top: 0px; /* Espacio superior */
+
+}
+
+
+.hotel ,.fecha, .precio {
+    width: 353px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.hotel-name {
+    margin-top: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hotel-address {
+    font-size: 14px;
+}
+
+.hotel-rating {
+    font-size: 12px;
+    color: #008234;
+    margin-bottom: 0px;
+}
+
+.rating-box {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.rating-note {
+    background-color: #003b95;
+    color: white;
+    border-radius: 6px 6px 6px 0px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.rating-text {
+    color: black;
+    margin-right: 10px;
+}
+
+.rating-comments {
+    color: gray;
+}
+
+.amenities{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.amenities p{
+    margin-right: 8px;
+}
+
+.amenities img {
+    width: 12px;
+}
+
+
+
+
+.fecha {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.fecha .reserva-title {
+    font-weight: bold;
+}
+
+.fecha .inout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fecha .entrada, .fecha .salida {
+    width: 45%;
+}
+
+.fecha .entrada .entrada-title, .fecha .salida .salida-title {
+    font-weight: bold;
+}
+
+.fecha .entrada .entrada-date, .fecha .salida .salida-date {
+    font-weight: bold;
+}
+
+.fecha .duracion {
+    margin-top: 20px;
+}
+
+.fecha .separator {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.fecha .seleccionado {
+    margin-top: 20px;
+}
+
+.fecha .bold {
+    font-weight: bold;
+}
+
+.fecha .cambiar {
+    cursor: pointer;
+    color: blue;
+    margin-top: 10px;
+}
+
+.fecha .cambiar:hover {
+    text-decoration: underline;
+}
+
+
+.precio {
+    width: 373px;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 0 0;
+}
+.precio p{
+    padding: 0 10px;
+}
+.precio-title{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.precio .total{
+    display: flex;
+    justify-content: space-between;
+}
+
+.precio-max{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtext{
+    font-size: 14px;
+    color: gray;
+}
+
+.precio .right{
+    text-align: end;
+}
+.total{
+    background-color: #ebf3ff;
+    width: 100%;
+
+}
+
+.nameAp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nameAp div{
+    width: 90%;
+}
+
+.datos form input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+}
+
+.datos form label{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+select {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    margin-right: 8px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.datos {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+}
+.max{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+.submit {
+    background-color: #006ce4;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 4px 8px;
+    margin-top: 10px;
+    margin-right: none;
+    height: 36px;
+}
+
+
+.submit:hover{
+    background-color: #043170;
+}
