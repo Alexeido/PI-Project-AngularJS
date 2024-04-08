@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra tu próxima estancia</title>
-    <link rel="stylesheet" type="text/css" href="../css/paginaprincipal.css">
-    <link rel="stylesheet" type="text/css" href="../css/buscador.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/paginaprincipal.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/buscador.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
 
 
 </head>
@@ -20,21 +20,21 @@
             <button class="start_button" onclick="window.location.href='index.html'" >Booking.com</button>
             <div class="right-section">
                 <button>EUR</button>
-                <button class="image-button"><img src="../images/es.png" alt="Language"></button>
-                <button class="image-button"><img src="../images/questionmarkW.png" alt="Ayuda"></button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
                 <button>Registra tu alojamiento</button>
                 <button class="white-button">Hazte una cuenta</button>
-                <button class="white-button">Inicia sesión</button>
+                <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
         </nav>
 
         <nav class="secondary">
-            <button><img src="../images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
-            <button><img src="../images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
-            <button><img src="../images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
-            <button><img src="../images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de coches</span></button>
-            <button><img src="../images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones turísticas</span></button>
-            <button><img src="../images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de coches</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones turísticas</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
         </nav>
     </header>
     
@@ -48,17 +48,17 @@
             <form action="listaalojamientos.html">
                 <div class="buscador-container">
                     <div class="elemento-buscador-container">
-                        <img src="../images/bed-solid.svg" alt="ícono" width="16" height="16">
+                        <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="ícono" width="16" height="16">
                         <input type="text" placeholder="Lugar">
                     </div>
                     <div class="elemento-buscador-container">
-                        <img src="../images/calendar-days-solid.svg" alt="ícono" width="16" height="16">
+                        <img src="${pageContext.request.contextPath}/images/calendar-days-solid.svg" alt="ícono" width="16" height="16">
                         <input type="date" value="2024-02-26">
                         <input type="date" value="2024-02-27">
                     </div>
                     <div class="elemento-buscador-container">
                         <div class="elemento-buscador-container2">
-                            <img src="../images/user-solid.svg" alt="ícono" width="16" height="16">
+                            <img src="${pageContext.request.contextPath}/images/user-solid.svg" alt="ícono" width="16" height="16">
                             <p>Adultos</p>
                             <input type="number" min="0">
                             <p>Niños</p>
@@ -105,7 +105,7 @@
                         
                     </div>
                     <div class="oferta-imagen">
-                        <img src="../images/avion.png" alt="Año nuevo, aventuras nuevas">
+                        <img src="${pageContext.request.contextPath}/images/avion.png" alt="Año nuevo, aventuras nuevas">
                     </div>
                 </div>
             </div>
@@ -116,25 +116,25 @@
         <div class="alojamientos">
             <div class="tipos">
                 <a href="alojamiento.html">
-                    <img src="../images/playa.jpg" alt="Hotel 1">
+                    <img src="${pageContext.request.contextPath}/images/playa.jpg" alt="Hotel 1">
                 </a>
                 <p>Hotel en la playa</p>
             </div>
             <div class="tipos">
                 <a href="alojamiento.html">
-                    <img src="../images/casarural.jpg" alt="Casa 1">
+                    <img src="${pageContext.request.contextPath}/images/casarural.jpg" alt="Casa 1">
                 </a>
                 <p>Casa rural con encanto</p>
             </div>
             <div class="tipos">
                 <a href="alojamiento.html">
-                    <img src="../images/ciudad.jpg" alt="Apartamento 1">
+                    <img src="${pageContext.request.contextPath}/images/ciudad.jpg" alt="Apartamento 1">
                 </a>
                 <p>Apartamento en la ciudad</p>
             </div>
             <div class="tipos">
                 <a href="alojamiento.html">
-                    <img src="../images/villa.jpg" alt="Apartamento 1">
+                    <img src="${pageContext.request.contextPath}/images/villa.jpg" alt="Apartamento 1">
                 </a>
                 <p>Apartamento en la ciudad</p>
             </div>

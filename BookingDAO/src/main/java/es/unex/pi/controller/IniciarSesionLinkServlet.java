@@ -9,17 +9,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Servlet implementation class IndexLinkServlet
+ * Servlet implementation class IniciarSesionLinkServlet
  */
 
-@WebServlet("/IndexLinkServlet.do")
-public class IndexLinkServlet extends HttpServlet {
+@WebServlet("/IniciarSesionLinkServlet.do")
+public class IniciarSesionLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public IndexLinkServlet() {
+    public IniciarSesionLinkServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -27,7 +28,7 @@ public class IndexLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/Iniciosesion.jsp");
 		view.forward(request,response);
 	}
 
