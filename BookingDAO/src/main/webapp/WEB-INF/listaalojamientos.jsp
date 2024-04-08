@@ -139,7 +139,7 @@
             </div>
 
             <div class="container2">
-                <h1>${lugar} del sur 138 alojamientos encontrados</h1>
+                <h1>${lugar} 138 alojamientos encontrados</h1>
                 <div class="Ordenar_por">
                     <select id="Ordenar-por" name="Ordenar-por" required>
                         <option value="">Ordenar por:</option>
