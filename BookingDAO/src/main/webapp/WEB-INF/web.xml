@@ -4,4 +4,14 @@
   <welcome-file-list>
     <welcome-file>IndexLinkServlet.do</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>BusquedaLugar</display-name>
+    <servlet-name>BusquedaLugar</servlet-name>
+    <servlet-class>es.unex.pi.controller.BusquedaLugar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusquedaLugar</servlet-name>
+    <url-pattern>/BusquedaLugar.do</url-pattern>
+  </servlet-mapping>
 </web-app>

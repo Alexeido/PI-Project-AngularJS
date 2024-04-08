@@ -45,11 +45,11 @@
         <div class="header2">
             <h1>Encuentra tu próxima estancia</h1>
             <p>Busca ofertas en hoteles, casas y mucho más...</p>
-            <form action="listaalojamientos.html">
+            <form action="IndexLinkServlet.do" METHOD="post">
                 <div class="buscador-container">
                     <div class="elemento-buscador-container">
                         <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="ícono" width="16" height="16">
-                        <input type="text" placeholder="Lugar">
+                        <input name="Lugar" type="text" placeholder="Lugar">
                     </div>
                     <div class="elemento-buscador-container">
                         <img src="${pageContext.request.contextPath}/images/calendar-days-solid.svg" alt="ícono" width="16" height="16">

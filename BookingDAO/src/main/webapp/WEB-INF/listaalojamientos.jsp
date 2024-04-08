@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambassador Playa I, Benidorm | Booking.com</title>
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/buscador.css">
-    <link rel="stylesheet" href="../css/listaalojamientos.css">
+    <title>Busqueda de Alojamientos</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/buscador.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/listaalojamientos.css">
 </head>
 
 <body>
@@ -16,8 +18,8 @@
             <button class="start_button" onclick="window.location.href='index.html'">Booking.com</button>
             <div class="right-section">
                 <button>EUR</button>
-                <button class="image-button"><img src="../images/es.png" alt="Language"></button>
-                <button class="image-button"><img src="../images/questionmarkW.png" alt="Ayuda"></button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
                 <button>Registra tu alojamiento</button>
                 <button class="white-button">Hazte una cuenta</button>
                 <button class="white-button">Inicia sesión</button>
@@ -25,14 +27,14 @@
         </nav>
 
         <nav class="secondary">
-            <button><img src="../images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
-            <button><img src="../images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
-            <button><img src="../images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
-            <button><img src="../images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de
+            <button><img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de
                     coches</span></button>
-            <button><img src="../images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones
+            <button><img src="${pageContext.request.contextPath}/images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones
                     turísticas</span></button>
-            <button><img src="../images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
         </nav>
     </header>
 
@@ -40,17 +42,17 @@
     <div class="container">
         <div class="buscador-container">
             <div class="elemento-buscador-container">
-                <img src="../images/bed-solid.svg" alt="Ícono" width="16" height="16">
+                <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="Ícono" width="16" height="16">
                 <input type="text" placeholder="Lugar">
             </div>
             <div class="elemento-buscador-container">
-                <img src="../images/calendar-days-solid.svg" alt="Ícono" width="16" height="16">
+                <img src="${pageContext.request.contextPath}/images/calendar-days-solid.svg" alt="Ícono" width="16" height="16">
                 <input type="date" value="2024-02-26">
                 <input type="date" value="2024-02-27">
             </div>
             <div class="elemento-buscador-container">
                 <div class="elemento-buscador-container2">
-                    <img src="../images/user-solid.svg" alt="Ícono" width="16" height="16">
+                    <img src="${pageContext.request.contextPath}/images/user-solid.svg" alt="Ícono" width="16" height="16">
                     <p>Adultos</p>
                     <input type="number" min="0">
                     <p>Niños</p>
@@ -71,7 +73,7 @@
         <div class="gridAlojamiento">
             <div class="container1">
                 <div class="mapa">
-                    <img src="../images/mapa.png" alt="Google Maps">
+                    <img src="${pageContext.request.contextPath}/images/mapa.png" alt="Google Maps">
                 </div>
                 <div class="filtro">
                     <div class="titulofiltro">
@@ -81,7 +83,7 @@
                     <div class="elemnos-filtro">
                         <h1>Tu presupuesto(por noche)</h1>
                         <div class="grafico">
-                            <img src="../images/grafico.png" alt="grafico">
+                            <img src="${pageContext.request.contextPath}/images/grafico.png" alt="grafico">
                         </div>
                         <input type="range" id="precio" name="precio" min="0" max="1000" step="10">
                     </div>
@@ -137,7 +139,7 @@
             </div>
 
             <div class="container2">
-                <h1>Wakanda del sur 138 alojamientos encontrados</h1>
+                <h1>${lugar} del sur 138 alojamientos encontrados</h1>
                 <div class="Ordenar_por">
                     <select id="Ordenar-por" name="Ordenar-por" required>
                         <option value="">Ordenar por:</option>
@@ -151,15 +153,15 @@
                 <div class="c2_alojamiento">
                     <div class="Elemento-c2">
                         <div class="foto-c2">
-                            <img src="../images/alojamiento1.png" alt="Google Maps">
+                            <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
                         </div>
                         <div class="Texto-c2">
                             <h2>Hospedería del Valle Boutique Apartments </h2>
                             <div class="estrellas">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             </div>
                             <p>La Casita de Cabanillas. Cabanillas de la Sierra. Se encuentra en Cabanillas de la Sierra,
                                 a solo 48 km de Estación de Chamartín, y ofrece alojamiento con piscina de temporada al aire libre, jardín,...</p>
@@ -189,15 +191,15 @@
                     </div>
                     <div class="Elemento-c2">
                         <div class="foto-c2">
-                            <img src="../images/alojamiento2.png" alt="Google Maps">
+                            <img src="${pageContext.request.contextPath}/images/alojamiento2.png" alt="Google Maps">
                         </div>
                         <div class="Texto-c2">
                             <h2>Estrella rural casa rural en la Sierra de Madrid </h2>
                             <div class="estrellas">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             </div>
                             <p>El Burlao de Braojos - Casa Marta, que cuenta con vistas al jardín, se encuentra en
                                 Braojos de la Sierra, a unos 50 km de Monasterio de Santa María de El Paular.</p>
@@ -227,15 +229,15 @@
                     </div>
                     <div class="Elemento-c2">
                         <div class="foto-c2">
-                            <img src="../images/alojamiento3.png" alt="Google Maps">
+                            <img src="${pageContext.request.contextPath}/images/alojamiento3.png" alt="Google Maps">
                         </div>
                         <div class="Texto-c2">
                             <h2>Casa Rural Lago </h2>
                             <div class="estrellas">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
-                                <img src="../images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             </div>
                             <p>La casa cuenta con 4 dormitorios, TV de pantalla plana, cocina equipada con lavavajillas y
                                 microondas, lavadora y 3 baños con bidet. El establecimiento proporciona toallas y ropa de cama por un suplemento.</p>

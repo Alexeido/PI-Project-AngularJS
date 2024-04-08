@@ -6,24 +6,21 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
- * Servlet implementation class IndexLinkServlet
+ * Servlet implementation class ListaAlojamientosLinkServlet
  */
 
-@WebServlet("/IndexLinkServlet.do")
-public class IndexLinkServlet extends HttpServlet {
-	private static final Logger logger = Logger.getLogger(HttpServlet.class.getName());
+@WebServlet("/ListaAlojamientosLinkServlet.do")
+public class ListaAlojamientosLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public IndexLinkServlet() {
+    public ListaAlojamientosLinkServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -31,7 +28,7 @@ public class IndexLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/listaalojamientos.jsp");
 		view.forward(request,response);
 	}
 
@@ -39,11 +36,8 @@ public class IndexLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String lugar=request.getParameter("Lugar");
-		logger.info("Busqueda de estancia");
-		HttpSession session=request.getSession();
-		session.setAttribute("lugar", lugar);
-		response.sendRedirect("ListaAlojamientosLinkServlet.do");
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
