@@ -17,12 +17,12 @@
 <body>
     <header>
         <nav class="principal">
-            <button class="start_button" onclick="window.location.href='index.html'" >Booking.com</button>
+            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
-                <button>Registra tu alojamiento</button>
+                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
                 <button class="white-button">Hazte una cuenta</button>
                 <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
@@ -45,7 +45,7 @@
         <div class="header2">
             <h1>Encuentra tu próxima estancia</h1>
             <p>Busca ofertas en hoteles, casas y mucho más...</p>
-            <form action="IndexLinkServlet.do" METHOD="post">
+            <form action="BusquedaLugarServlet.do" METHOD="post">
                 <div class="buscador-container">
                     <div class="elemento-buscador-container">
                         <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="ícono" width="16" height="16">
@@ -89,9 +89,7 @@
                     <div class="oferta-texto">
                         <h2>Vuela al destino de tus sueños</h2>
                         <p>Inspírate, compara y reserva vuelos con más flexibilidad</p>
-                        <form action="trending.html">
-                            <button type="submit">Elige tu estancia</button>
-                        </form>
+                        <button type="submit"><a href="<c:url value='trendingLinkServlet.do'/>">Elige tu estancia</a></button>
                         
                     </div>
                 </div>
@@ -99,7 +97,7 @@
                     <div class="oferta-texto">
                         <h2>Año nuevo, aventuras nuevas</h2>
                         <p>Ahorra un 15% o más al reservar y alojarte hasta el 1 de abril de 2024</p>
-                        <form action="trending.html">
+                        <form action="<c:url value='trendingLinkServlet.do'/>">
                             <button type="submit">Encuentra una oferta</button>
                         </form>
                         
@@ -115,25 +113,25 @@
         </div>
         <div class="alojamientos">
             <div class="tipos">
-                <a href="alojamiento.html">
+                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/playa.jpg" alt="Hotel 1">
                 </a>
                 <p>Hotel en la playa</p>
             </div>
             <div class="tipos">
-                <a href="alojamiento.html">
+                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/casarural.jpg" alt="Casa 1">
                 </a>
                 <p>Casa rural con encanto</p>
             </div>
             <div class="tipos">
-                <a href="alojamiento.html">
+                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/ciudad.jpg" alt="Apartamento 1">
                 </a>
                 <p>Apartamento en la ciudad</p>
             </div>
             <div class="tipos">
-                <a href="alojamiento.html">
+                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/villa.jpg" alt="Apartamento 1">
                 </a>
                 <p>Apartamento en la ciudad</p>

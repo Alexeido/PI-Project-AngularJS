@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuentra tu próxima estancia</title>
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/trending.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/trending.css">
 
 
 
@@ -15,24 +17,24 @@
 <body>
     <header>
         <nav class="principal">
-            <button class="start_button" onclick="window.location.href='index.html'" >Booking.com</button>
+            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</button>
             <div class="right-section">
                 <button>EUR</button>
-                <button class="image-button"><img src="../images/es.png" alt="Language"></button>
-                <button class="image-button"><img src="../images/questionmarkW.png" alt="Ayuda"></button>
-                <button>Registra tu alojamiento</button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
+                <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
+                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
                 <button class="white-button">Hazte una cuenta</button>
-                <button class="white-button">Inicia sesión</button>
+                <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
         </nav>
 
         <nav class="secondary">
-            <button><img src="../images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
-            <button><img src="../images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
-            <button><img src="../images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
-            <button><img src="../images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de coches</span></button>
-            <button><img src="../images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones turísticas</span></button>
-            <button><img src="../images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de coches</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones turísticas</span></button>
+            <button><img src="${pageContext.request.contextPath}/images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
         </nav>
     </header>
     
@@ -48,25 +50,25 @@
             <div class="oferta1">
                 <div class="imagengrande">
                     <h1>Madrid </h1>
-                    <img src="../images/madrid.jpg" alt="madrid">
+                    <img src="${pageContext.request.contextPath}/images/madrid.jpg" alt="madrid">
                 </div>
                 <div class="imagengrande">
                     <h1>Sevilla</h1>
-                    <img src="../images/sevilla.jpg" alt="sevilla">
+                    <img src="${pageContext.request.contextPath}/images/sevilla.jpg" alt="sevilla">
                 </div>
             </div>
             <div class="oferta1">
                 <div class="imagenpequeña">
                     <h1>Barcelona</h1>
-                    <img src="../images/Barcelona.jpg" alt="Barcelona">
+                    <img src="${pageContext.request.contextPath}/images/Barcelona.jpg" alt="Barcelona">
                 </div>
                 <div class="imagenpequeña">
                     <h1>Granada</h1>
-                    <img src="../images/Granada.jpg" alt="Granada">
+                    <img src="${pageContext.request.contextPath}/images/Granada.jpg" alt="Granada">
                 </div>
                 <div class="imagenpequeña">
                     <h1>Valencia</h1>
-                    <img src="../images/Valencia.jpg" alt="Valencia">
+                    <img src="${pageContext.request.contextPath}/images/Valencia.jpg" alt="Valencia">
                 </div>
             </div>
         </div>
@@ -75,31 +77,31 @@
         </div>
         <div class="alojamientos">
             <div class="tipos_españa">
-                <img src="../images/cadiz.jpg" alt="Hotel 1">
+                <img src="${pageContext.request.contextPath}/images/cadiz.jpg" alt="Hotel 1">
                 <h2>Cádiz</h2>
                 <p>687 disponibles</p>
             </div>
             <div class="tipos_españa">
-                <img src="../images/jaen.jpg" alt="Casa 1">
+                <img src="${pageContext.request.contextPath}/images/jaen.jpg" alt="Casa 1">
                 <h2>Jaen</h2>                   
                 <p>234 disponibles</p>
             </div>
             <div class="tipos_españa">
-                <img src="../images/cordoba.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/cordoba.jpg" alt="Apartamento 1">
                 <h2>Cordoba</h2>
                 <p>145 disponibles</p>
             </div>
             <div class="tipos_españa">
-                <img src="../images/Huelva.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/Huelva.jpg" alt="Apartamento 1">
                 <h2>Huelva</h2>
                 <p>530 disponibles</p>
             </div>
             <div class="tipos_españa">
-                <img src="../images/malaga.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/malaga.jpg" alt="Apartamento 1">
                 <h2>Malaga</h2>
                 <p>530 disponibles</p>
             </div><div class="tipos_españa">
-                <img src="../images/granada2.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/granada2.jpg" alt="Apartamento 1">
                 <h2>Granada</h2>
                 <p>530 disponibles</p>
             </div>
@@ -109,26 +111,26 @@
         </div>
         <div class="alojamientos">
             <div class="tipos">
-                <img src="../images/playa.jpg" alt="Hotel 1">
+                <img src="${pageContext.request.contextPath}/images/playa.jpg" alt="Hotel 1">
                 <h2>Hotel en la playa</h2>
                 <p>6 Mar-15 Mar, 2 adultos</p>
                 <p>687 disponibles</p>
 
             </div>
             <div class="tipos">
-                <img src="../images/casarural.jpg" alt="Casa 1">
+                <img src="${pageContext.request.contextPath}/images/casarural.jpg" alt="Casa 1">
                 <h2>Casa rural con encanto</h2>
                 <p>6 Mar-15 Mar, 2 adultos</p>
                 <p>234 disponibles</p>
             </div>
             <div class="tipos">
-                <img src="../images/ciudad.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/ciudad.jpg" alt="Apartamento 1">
                 <h2>Apartamento en el campo</h2>
                 <p>6 Mar-15 Mar, 2 adultos</p>
                 <p>145 disponibles</p>
             </div>
             <div class="tipos">
-                <img src="../images/villa.jpg" alt="Apartamento 1">
+                <img src="${pageContext.request.contextPath}/images/villa.jpg" alt="Apartamento 1">
                 <h2>Apartamento en la ciudad</h2>
                 <p>6 Mar-15 Mar, 2 adultos</p>
                 <p>530 disponibles</p>

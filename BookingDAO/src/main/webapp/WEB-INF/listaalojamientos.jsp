@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busqueda de Alojamientos</title>
+    <title>Busqueda de Alojamientos en ${lugar}</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/buscador.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/listaalojamientos.css">
@@ -15,14 +15,14 @@
 <body>
     <header>
         <nav class="principal">
-            <button class="start_button" onclick="window.location.href='index.html'">Booking.com</button>
+            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
-                <button>Registra tu alojamiento</button>
+                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
                 <button class="white-button">Hazte una cuenta</button>
-                <button class="white-button">Inicia sesión</button>
+                <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
         </nav>
 
@@ -40,29 +40,31 @@
 
 
     <div class="container">
-        <div class="buscador-container">
-            <div class="elemento-buscador-container">
-                <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="Ícono" width="16" height="16">
-                <input type="text" placeholder="Lugar">
-            </div>
-            <div class="elemento-buscador-container">
-                <img src="${pageContext.request.contextPath}/images/calendar-days-solid.svg" alt="Ícono" width="16" height="16">
-                <input type="date" value="2024-02-26">
-                <input type="date" value="2024-02-27">
-            </div>
-            <div class="elemento-buscador-container">
-                <div class="elemento-buscador-container2">
-                    <img src="${pageContext.request.contextPath}/images/user-solid.svg" alt="Ícono" width="16" height="16">
-                    <p>Adultos</p>
-                    <input type="number" min="0">
-                    <p>Niños</p>
-                    <input type="number" min="0">
-                </div>
-            </div>
-            <div class="boton-buscador-container">
-                <button type="submit">Buscar</button>
-            </div>
-        </div>
+    	<form action="BusquedaLugarServlet.do" METHOD="post">
+	        <div class="buscador-container">
+	            <div class="elemento-buscador-container">
+	                <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="Ícono" width="16" height="16">
+	                <input name="Lugar" type="text" placeholder="Lugar">
+	            </div>
+	            <div class="elemento-buscador-container">
+	                <img src="${pageContext.request.contextPath}/images/calendar-days-solid.svg" alt="Ícono" width="16" height="16">
+	                <input type="date" value="2024-02-26">
+	                <input type="date" value="2024-02-27">
+	            </div>
+	            <div class="elemento-buscador-container">
+	                <div class="elemento-buscador-container2">
+	                    <img src="${pageContext.request.contextPath}/images/user-solid.svg" alt="Ícono" width="16" height="16">
+	                    <p>Adultos</p>
+	                    <input type="number" min="0">
+	                    <p>Niños</p>
+	                    <input type="number" min="0">
+	                </div>
+	            </div>
+	            <div class="boton-buscador-container">
+	                <button type="submit">Buscar</button>
+	            </div>
+	        </div>
+        </form>
 
 
         <div class="location-section">
