@@ -4,4 +4,24 @@
   <welcome-file-list>
     <welcome-file>IndexLinkServlet.do</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>InicioSesionContraLinkServlet</display-name>
+    <servlet-name>InicioSesionContraLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.InicioSesionContraLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InicioSesionContraLinkServlet</servlet-name>
+    <url-pattern>/InicioSesionContraLinkServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrarseLinkServlet</display-name>
+    <servlet-name>RegistrarseLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.RegistrarseLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrarseLinkServlet</servlet-name>
+    <url-pattern>/RegistrarseLinkServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

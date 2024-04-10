@@ -91,6 +91,9 @@ button:hover {
 .images-container img:hover {
     border-color: #183c94;
 }
+h2 {
+    text-align: center;
+}
 
 .linetop,
 .linebottom,
@@ -135,4 +138,36 @@ button:hover {
     text-align: center;
     font-size: 12px;
     padding-top: 10px;
+}
+label[for="password"] {
+    display: block; /* Hace que la etiqueta ocupe todo el ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 5px; /* Añade un pequeño espacio debajo de la etiqueta */
+}
+
+/* Ajusta el estilo de los campos de contraseña para que ocupen el 100% del ancho */
+input[type="password"] {
+    width: calc(100% - 40px); /* Calcula el ancho con margen */
+}
+
+/* Estilo para el contenedor de botones y campos de entrada */
+td {
+    position: relative; /* Establece la posición relativa */
+}
+input[type="text"],
+input[type="fullname"],
+input[type="password"] {
+    width: 100%; /* Calcula el ancho con margen */
+    padding: 10px; /* Añade relleno */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 5px; /* Borde redondeado */
+    border: 1px solid #ccc; /* Borde */
+    box-sizing: border-box; /* Tamaño de caja */
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: block; /* Hace que la etiqueta ocupe todo el ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 5px; /* Añade un pequeño espacio debajo de la etiqueta */
 }

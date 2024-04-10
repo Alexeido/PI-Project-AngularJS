@@ -23,7 +23,7 @@
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
                 <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
-                <button class="white-button">Hazte una cuenta</button>
+                <button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
                 <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
         </nav>
@@ -45,7 +45,7 @@
         <div class="header2">
             <h1>Encuentra tu próxima estancia</h1>
             <p>Busca ofertas en hoteles, casas y mucho más...</p>
-            <form action="BusquedaLugarServlet.do" METHOD="post">
+            <form action="BusquedaLugarServlet.do" method="post">
                 <div class="buscador-container">
                     <div class="elemento-buscador-container">
                         <img src="${pageContext.request.contextPath}/images/bed-solid.svg" alt="ícono" width="16" height="16">

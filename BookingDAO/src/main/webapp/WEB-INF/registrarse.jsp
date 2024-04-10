@@ -23,11 +23,17 @@
     </header>
 
     <main>
-    	<form action="IniciarSesionLinkServlet.do" method="post">
+    <form action="RegistrarseLinkServlet.do" method="post">
         <table>
             <tr>
                 <td>
                     <h2 class="less-margin">Inicia sesión</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fullname">Nombre completo</label>
+                    <input type="text" id="fullname" name="fullname" class="fullname-input" required placeholder="Introduce tu nombre completo">     
                 </td>
             </tr>
             <tr>

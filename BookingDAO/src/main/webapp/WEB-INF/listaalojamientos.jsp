@@ -185,9 +185,7 @@
                                 <p>2 noches, 2adultos</p>
                                 <h1>405€</h1>
                                 <p>incluye impuestos y cargos</p>
-                                <form action="alojamiento.html">
-                                    <button>Ver disponibilidad</button>
-                                </form>
+                                <button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
                             </div>
                         </div>
                     </div>
@@ -223,9 +221,7 @@
                                 <p>2 noches, 2adultos</p>
                                 <h1>205€</h1>
                                 <p>incluye impuestos y cargos</p>
-                                <form action="alojamiento.html">
-                                    <button>Ver disponibilidad</button>
-                                </form>
+								<button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
                             </div>
                         </div>
                     </div>
@@ -261,9 +257,7 @@
                                 <p>2 noches, 2adultos</p>
                                 <h1>345€</h1>
                                 <p>incluye impuestos y cargos</p>
-                                <form action="alojamiento.html">
-                                    <button>Ver disponibilidad</button>
-                                </form>
+								<button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
                             </div>
                         </div>
                     </div>
