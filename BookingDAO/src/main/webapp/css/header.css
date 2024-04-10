@@ -65,7 +65,7 @@ button a {
 	color: inherit; /* Hereda el color del texto del contenedor principal */
 	text-decoration: none; /* Quita el subrayado de los enlaces */
 }
-  
+  /* Dedicado a los botones para que funcionen con los servlets*/
 button a:visited {
     color: inherit; /* Hereda el color del texto del elemento padre */
 }
