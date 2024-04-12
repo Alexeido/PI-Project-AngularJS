@@ -94,4 +94,24 @@
     <servlet-name>HabitacionesUserServlet</servlet-name>
     <url-pattern>/HabitacionesUserServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ActualizarHabitacionServlet</display-name>
+    <servlet-name>ActualizarHabitacionServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.ActualizarHabitacionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActualizarHabitacionServlet</servlet-name>
+    <url-pattern>/ActualizarHabitacionServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarHabitacionServlet</display-name>
+    <servlet-name>EliminarHabitacionServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.EliminarHabitacionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarHabitacionServlet</servlet-name>
+    <url-pattern>/EliminarHabitacionServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

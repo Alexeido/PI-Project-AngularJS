@@ -38,15 +38,15 @@
  
                     <div class="Texto-c2">
                         <div class="location">
-                            <h1>${alojamientouser.name}</h1>
+                            <h1>${habitacion.name}</h1>
                             </div>
-                        <h2>${alojamientouser.price} </h2>
-                        <h2>${alojamientouser.description} </h2>
+                        <h2>${habitacion.price} </h2>
+                        <h2>${habitacion.description} </h2>
                         
                     </div>
                     <div class="datos">
-                        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Habitacion</button></a>
-                        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Habitacion</button></a>
+                        <a href="<c:url value='ActualizarHabitacionServlet.do?idhabitacion=${habitacion.id}'/>"><button >Editar Habitacion</button></a>
+                        <a href="<c:url value='EliminarHabitacionServlet.do?idhabitacion=${habitacion.id}'/>"><button class="eliminar">Eliminar Habitacion</button></a>
                         
                     </div>
                 </div>

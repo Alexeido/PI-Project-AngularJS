@@ -86,7 +86,7 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE search==idp");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE idp ="+ search);
 
 			while (rs.next()) {
 				Accommodation accommodation = new Accommodation();

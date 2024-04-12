@@ -91,3 +91,29 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Estilo para la sección de la ubicación */
+.location {
+    color: black; /* Cambia el color del texto a negro */
+    margin-bottom: 10px; /* Agrega un margen inferior para separar de los otros elementos */
+}
+
+/* Estilo para el nombre de la habitación */
+.location h1 {
+    font-size: 20px; /* Reduce el tamaño de la fuente del nombre de la habitación */
+    margin: 0; /* Elimina el margen superior e inferior para que esté más cerca del precio y la descripción */
+}
+
+/* Estilo para el precio */
+.Texto-c2 h2 {
+    font-size: 18px; /* Reduce el tamaño de la fuente del precio */
+    color: #333; /* Cambia el color del precio a un tono más oscuro */
+    margin-top: 5px; /* Agrega un pequeño margen superior para separarlo del nombre de la habitación */
+}
+
+/* Estilo para la descripción */
+.Texto-c2 h2 {
+    font-size: 16px; /* Reduce el tamaño de la fuente de la descripción */
+    color: #333; /* Cambia el color de la descripción a un tono más oscuro */
+    margin-top: 5px; /* Agrega un pequeño margen superior para separarlo del precio */
+}
