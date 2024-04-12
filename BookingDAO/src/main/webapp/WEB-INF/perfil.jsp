@@ -38,6 +38,8 @@
         <button class="view-reservations-btn">Ver Reservas</button>
         <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesion</button></a>
         <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>
+        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
+        
     </div>
 </body>
 </html>

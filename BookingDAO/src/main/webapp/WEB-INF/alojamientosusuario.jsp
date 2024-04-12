@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis alojamientos</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/reservas.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamientosuser.css">
 </head>
 <body>
 
@@ -28,19 +28,19 @@
             <p>¿No encuentra un alojamiento?</p>
         </div>
         <div class="Elemento-contatiner">
-        <c:forEach var="alojamientouser" items="${listaalojamiento}">
+        <c:forEach var="alojamientouser" items="${alojamientosuser}">
         
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
                     <div class="foto-c2">
                         <img src="recursos/alojamiento1.png" alt="Google Maps">
                     </div>
-
+ 
                     <div class="Texto-c2">
                         <div class="location">
-                            <h1>Madrid</h1>
+                            <h1>${alojamientouser.city}</h1>
                             </div>
-                        <h2>Hospedería del Valle Boutique Apartments </h2>
+                        <h2>${alojamientouser.name} </h2>
                     </div>
                     <div class="datos">
                         <button>Ver habitaciones</button>

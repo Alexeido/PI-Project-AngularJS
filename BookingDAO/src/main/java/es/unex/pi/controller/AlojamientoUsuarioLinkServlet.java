@@ -42,9 +42,11 @@ public class AlojamientoUsuarioLinkServlet extends HttpServlet {
 		User user=(User) session.getAttribute("user");
 		List<Property> listaAlojamientos = propertyDao.getAllByUser(user.getId());
 
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/alojamientousuario.jsp");
 		request.setAttribute("alojamientosuser", listaAlojamientos);
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/alojamientosusuario.jsp");
 		view.forward(request,response);
+
+
 	}
 
 	/**

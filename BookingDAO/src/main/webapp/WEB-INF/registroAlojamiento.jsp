@@ -44,7 +44,7 @@
             </div>
             <div class="edit-form">
                 <h2>Editar Alojamiento</h2>
-                <form>
+                <form action="registroAlojamientoLinkServlet.do" method="post">
                     <label for="name">Nombre Alojamiento:</label>
                     <input type="text" id="name" name="name"><br><br>
 
@@ -82,7 +82,7 @@
                     <input type="radio" id="no-mascotas" name="mascotas" value="no">
                     <label for="no-mascotas">No</label><br><br>
 
-                    <input type="submit" value="Guardar">
+                    <button type="submit">Continuar</button>
                 </form>
             </div>
         </section>

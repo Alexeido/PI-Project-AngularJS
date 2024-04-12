@@ -74,7 +74,8 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 		alojamiento.setAvailable(available);
 		alojamiento.setIdu((int) user.getId());
 		propertyDao.add(alojamiento);
-		
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
+		view.forward(request,response);
 	}
 
 }
