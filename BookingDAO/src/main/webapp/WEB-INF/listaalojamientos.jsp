@@ -20,7 +20,7 @@
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
-                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
+                <button><a href="<c:url value='registroAlojamientoLinkServlet.do.do'/>">Registra tu alojamiento</a></button>
                 <button class="white-button">Hazte una cuenta</button>
                 <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
             </div>
@@ -153,6 +153,7 @@
                     </select>
                 </div>
                 <div class="c2_alojamiento">
+                <c:forEach var="alojamiento" items="${listaalojamiento}">
                     <div class="Elemento-c2">
                         <div class="foto-c2">
                             <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
@@ -185,85 +186,12 @@
                                 <p>2 noches, 2adultos</p>
                                 <h1>405€</h1>
                                 <p>incluye impuestos y cargos</p>
-                                <button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
+                                <button><a href="<c:url value='AlojamientoLinkServlet.do'/>">Ver disponibilidad</a></button>
                             </div>
                         </div>
                     </div>
-                    <div class="Elemento-c2">
-                        <div class="foto-c2">
-                            <img src="${pageContext.request.contextPath}/images/alojamiento2.png" alt="Google Maps">
-                        </div>
-                        <div class="Texto-c2">
-                            <h2>Estrella rural casa rural en la Sierra de Madrid </h2>
-                            <div class="estrellas">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            </div>
-                            <p>El Burlao de Braojos - Casa Marta, que cuenta con vistas al jardín, se encuentra en
-                                Braojos de la Sierra, a unos 50 km de Monasterio de Santa María de El Paular.</p>
-                        </div>
-
-                        <div>
-                            <div class="valoraciones">
-                                <div class="valoCol1">
-                                    <h1>Fabuloso</h1>
-                                    <p>311 comentario</p>
-                                </div>
-                                
-                                <div class="Puntuacion">
-                                    8.2
-                                </div>
-                            </div>
-
-                            <div class="datos">
-                                <p>2 noches, 2adultos</p>
-                                <h1>205€</h1>
-                                <p>incluye impuestos y cargos</p>
-								<button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="Elemento-c2">
-                        <div class="foto-c2">
-                            <img src="${pageContext.request.contextPath}/images/alojamiento3.png" alt="Google Maps">
-                        </div>
-                        <div class="Texto-c2">
-                            <h2>Casa Rural Lago </h2>
-                            <div class="estrellas">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            </div>
-                            <p>La casa cuenta con 4 dormitorios, TV de pantalla plana, cocina equipada con lavavajillas y
-                                microondas, lavadora y 3 baños con bidet. El establecimiento proporciona toallas y ropa de cama por un suplemento.</p>
-                        </div>
-
-                        <div>
-                            <div class="valoraciones">
-                                <div class="valoCol1">
-                                    <h1>Excepcional</h1>
-                                    <p>62 comentario</p>
-                                </div>
-                                
-                                <div class="Puntuacion">
-                                    9.8
-                                </div>
-                            </div>
-
-                            <div class="datos">
-                                <p>2 noches, 2adultos</p>
-                                <h1>345€</h1>
-                                <p>incluye impuestos y cargos</p>
-								<button><a href="<c:url value='AlojamientoLinkServlet'/>">Ver disponibilidad</a></button>
-                            </div>
-                        </div>
-                    </div>
-
+                   </c:forEach>
                 </div>
-
             </div>
         </div>
     </div>

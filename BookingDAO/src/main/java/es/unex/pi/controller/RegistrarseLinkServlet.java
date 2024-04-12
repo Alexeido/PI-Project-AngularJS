@@ -10,6 +10,8 @@ import jakarta.servlet.http.HttpSession;
 import es.unex.pi.dao.UserDAO;
 import java.io.IOException;
 import java.sql.Connection;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import es.unex.pi.model.User;
 /**
@@ -40,7 +42,6 @@ public class RegistrarseLinkServlet extends HttpServlet {
 		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 		UserDAO userDao = new es.unex.pi.dao.JDBCUserDAOImpl();		
 		userDao.setConnection(conn);
-		
 		String username = request.getParameter("name");
 		String apellido = request.getParameter("apellido");
 		String email = request.getParameter("email");

@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//habitaiones reservadas
 public class BookingsAccommodations {
 
 	private long idb;

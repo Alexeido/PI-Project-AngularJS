@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//habitaciones de cada alojamiento
 public class Accommodation {
 	
 	private long id;

@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//categorias
 public class Category {
 
 	private long id;

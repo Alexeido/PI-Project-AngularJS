@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//categoria alojamiento
 public class PropertiesCategories {
 
 	private long idp;

@@ -45,24 +45,27 @@
             <div class="edit-form">
                 <h2>Editar Alojamiento</h2>
                 <form>
-                    <label for="nombre-alojamiento">Nombre Alojamiento:</label>
-                    <input type="text" id="nombre-alojamiento" name="nombre-alojamiento"><br><br>
+                    <label for="name">Nombre Alojamiento:</label>
+                    <input type="text" id="name" name="name"><br><br>
 
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion"><br><br>
+                    <label for="address">Dirección:</label>
+                    <input type="text" id="address" name="address"><br><br>
 
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono"><br><br>
+                    <label for="telephone">Teléfono:</label>
+                    <input type="tel" id="telephone" name="telephone"><br><br>
 
-                    <label for="distancia-centro">Distancia al centro:</label>
-                    <input type="number" id="distancia-centro" name="distancia-centro"><br><br>
+                    <label for="city">Ciudad:</label>
+                    <input type="text" id="city" name="city"><br><br>
 
-                    <label for="valoracion-media">Valoración media:</label>
-                    <input type="number" id="valoracion-media" name="valoracion-media" step="0.1"><br><br>
+                    <label for="centerDistance">Distancia al centro:</label>
+                    <input type="number" id="centerDistance" name="centerDistance"><br><br>
 
                     <label for="descripcion">Descripción:</label><br>
-                    <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea><br><br>
-
+                    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+                    
+                    <label for="available">Disponibles:</label>
+                    <input type="number" id=available name="available" step="0.1"><br><br>
+                    
                     <label>Servicios o instalaciones ofrecidos:</label><br>
                     <input type="checkbox" id="wifi" name="wifi">
                     <label for="wifi">Wifi</label><br>

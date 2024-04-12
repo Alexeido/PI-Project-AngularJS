@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//alojamiento
 public class Property {
 
 	private long id;

@@ -1,5 +1,5 @@
 package es.unex.pi.model;
-
+//reservas
 public class Booking {
 
 	private long id;
