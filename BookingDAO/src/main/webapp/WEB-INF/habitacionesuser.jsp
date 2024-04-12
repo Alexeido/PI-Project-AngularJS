@@ -28,7 +28,7 @@
             <p>¿No encuentra una habitacion?</p>
         </div>
         <div class="Elemento-contatiner">
-        <c:forEach var="alojamientouser" items="${alojamientosuser}">
+        <c:forEach var="habitacion" items="${habitacionesuser}">
         
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
@@ -38,14 +38,15 @@
  
                     <div class="Texto-c2">
                         <div class="location">
-                            <h1>${alojamientouser.city}</h1>
+                            <h1>${alojamientouser.name}</h1>
                             </div>
-                        <h2>${alojamientouser.name} </h2>
+                        <h2>${alojamientouser.price} </h2>
+                        <h2>${alojamientouser.description} </h2>
+                        
                     </div>
                     <div class="datos">
-                        <button>Ver habitaciones</button>
-                        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Alojamiento</button></a>
-                        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Alojamiento</button></a>
+                        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Habitacion</button></a>
+                        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Habitacion</button></a>
                         
                     </div>
                 </div>

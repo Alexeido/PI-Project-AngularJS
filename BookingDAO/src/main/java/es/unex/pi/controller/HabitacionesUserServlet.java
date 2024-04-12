@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
+import es.unex.pi.model.Accommodation;
 import es.unex.pi.model.Property;
 import es.unex.pi.dao.AccommodationDAO;
 import es.unex.pi.model.User;
@@ -37,13 +38,11 @@ public class HabitacionesUserServlet extends HttpServlet {
 		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
 		accomodationDao.setConnection(conn);
-		HttpSession session=request.getSession();
-		
-		User user=(User) session.getAttribute("user");
-		List<Property> listaAlojamientos = propertyDao.getAllByUser(user.getId());
+		long id=Long.parseLong(request.getParameter("idalojamiento"));
+		List<Accommodation> listahabitaciones = accomodationDao.getAllBySearchName(id);
 
-		request.setAttribute("alojamientosuser", listaAlojamientos);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/alojamientosusuario.jsp");
+		request.setAttribute("habitacionesuser", listahabitaciones);
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/habitacionesuser.jsp");
 		view.forward(request,response);
 	}
 

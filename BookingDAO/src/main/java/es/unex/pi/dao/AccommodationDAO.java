@@ -52,7 +52,7 @@ public interface AccommodationDAO {
 	 * 
 	 * @return List of all the accommodations from the database that contain a text in the name.
 	 */	
-	public List<Accommodation> getAllBySearchName(String search);
+	public List<Accommodation> getAllBySearchName(long search);
 
 
 	/**

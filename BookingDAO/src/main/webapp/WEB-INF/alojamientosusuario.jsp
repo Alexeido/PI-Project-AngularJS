@@ -43,7 +43,6 @@
                         <h2>${alojamientouser.name} </h2>
                     </div>
                     <div class="datos">
-                        <button>Ver habitaciones</button>
                         <a href="<c:url value='HabitacionesUserServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Ver Habitaciones</button></a>
                         <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Alojamiento</button></a>
                         <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Alojamiento</button></a>

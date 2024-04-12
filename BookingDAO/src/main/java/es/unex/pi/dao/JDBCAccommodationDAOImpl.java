@@ -79,15 +79,14 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		return accommodations;
 	}
 	
-	public List<Accommodation> getAllBySearchName(String search) {
-		search = search.toUpperCase();
+	public List<Accommodation> getAllBySearchName(long search) {
 		if (conn == null)
 			return null;
 
 		ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE UPPER(name) LIKE '%" + search + "%'");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE search==idp");
 
 			while (rs.next()) {
 				Accommodation accommodation = new Accommodation();
