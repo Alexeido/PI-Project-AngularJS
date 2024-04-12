@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis alojamientos</title>
+    <title>Habitaciones alojamientos</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamientosuser.css">
 </head>
 <body>
@@ -23,9 +23,9 @@
     </header>
 
     <div class="container">
-        <h1>Alojamientos subidos</h1>
+        <h1>Habitaciones subidos</h1>
         <div class="help-message">
-            <p>¿No encuentra un alojamiento?</p>
+            <p>¿No encuentra una habitacion?</p>
         </div>
         <div class="Elemento-contatiner">
         <c:forEach var="alojamientouser" items="${alojamientosuser}">
@@ -44,7 +44,6 @@
                     </div>
                     <div class="datos">
                         <button>Ver habitaciones</button>
-                        <a href="<c:url value='HabitacionesUserServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Ver Habitaciones</button></a>
                         <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Alojamiento</button></a>
                         <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Alojamiento</button></a>
                         

@@ -64,4 +64,34 @@
     <servlet-name>AlojamientoUsuarioLinkServlet</servlet-name>
     <url-pattern>/AlojamientoUsuarioLinkServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarAlojamientoServlet</display-name>
+    <servlet-name>EliminarAlojamientoServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.EliminarAlojamientoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarAlojamientoServlet</servlet-name>
+    <url-pattern>/EliminarAlojamientoServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ActualizarAlojamientoServlet</display-name>
+    <servlet-name>ActualizarAlojamientoServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.ActualizarAlojamientoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActualizarAlojamientoServlet</servlet-name>
+    <url-pattern>/ActualizarAlojamientoServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HabitacionesUserServlet</display-name>
+    <servlet-name>HabitacionesUserServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.HabitacionesUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HabitacionesUserServlet</servlet-name>
+    <url-pattern>/HabitacionesUserServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>
