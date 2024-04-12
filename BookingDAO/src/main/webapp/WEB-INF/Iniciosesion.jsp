@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,7 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión - Booking.com</title>
-    <link rel="stylesheet" type="text/css" href="iniciosesion.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/iniciosesion.css">
+    
+    
 
 </head>
 
@@ -32,8 +36,8 @@
             </tr>
             <tr>
                 <td>
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" name="email" class="email-input" required placeholder="Introduce tu correo electrónico">     
+                    <label for="nombre">Usuario</label>
+                    <input type="text" id="nombre" name="nombre" class="email-input" required placeholder="Introduce tu correo electrónico">     
                 </td>
             </tr>
             <tr>

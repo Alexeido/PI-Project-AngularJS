@@ -24,4 +24,34 @@
     <servlet-name>RegistrarseLinkServlet</servlet-name>
     <url-pattern>/RegistrarseLinkServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UsuarioLinkServlet</display-name>
+    <servlet-name>UsuarioLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.UsuarioLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UsuarioLinkServlet</servlet-name>
+    <url-pattern>/UsuarioLinkServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CerrarSesionServlet</display-name>
+    <servlet-name>CerrarSesionServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.CerrarSesionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CerrarSesionServlet</servlet-name>
+    <url-pattern>/CerrarSesionServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarUsuarioServlet</display-name>
+    <servlet-name>EliminarUsuarioServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.EliminarUsuarioServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarUsuarioServlet</servlet-name>
+    <url-pattern>/EliminarUsuarioServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>
