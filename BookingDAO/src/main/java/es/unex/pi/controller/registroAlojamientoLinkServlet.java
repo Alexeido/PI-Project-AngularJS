@@ -58,6 +58,7 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 		int available = Integer.parseInt(availableStr);
 		int petFriendly = request.getParameter("mascotas").equals("si") ? 1 : 0; // 1 si permite mascotas, 0 si no
 		String[] servicios = request.getParameterValues("servicios"); // Obtener todos los servicios seleccionados
+		
 		User user = new User();
 		user=(User) session.getAttribute("user");
 		

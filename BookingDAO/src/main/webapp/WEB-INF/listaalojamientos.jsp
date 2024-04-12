@@ -141,7 +141,7 @@
             </div>
 
             <div class="container2">
-                <h1>${lugar} 138 alojamientos encontrados</h1>
+                <h1>${lugar} ${listaalojamiento.size()} alojamientos encontrados</h1>
                 <div class="Ordenar_por">
                     <select id="Ordenar-por" name="Ordenar-por" required>
                         <option value="">Ordenar por:</option>
@@ -159,15 +159,14 @@
                             <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
                         </div>
                         <div class="Texto-c2">
-                            <h2>Hospedería del Valle Boutique Apartments </h2>
+                            <h2>${alojamiento.name}</h2>
                             <div class="estrellas">
                                 <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                                 <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                                 <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                                 <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             </div>
-                            <p>La Casita de Cabanillas. Cabanillas de la Sierra. Se encuentra en Cabanillas de la Sierra,
-                                a solo 48 km de Estación de Chamartín, y ofrece alojamiento con piscina de temporada al aire libre, jardín,...</p>
+                            <p>${alojamiento.description}</p>
                         </div>
 
                         <div>

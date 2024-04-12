@@ -54,4 +54,14 @@
     <servlet-name>EliminarUsuarioServlet</servlet-name>
     <url-pattern>/EliminarUsuarioServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlojamientoUsuarioLinkServlet</display-name>
+    <servlet-name>AlojamientoUsuarioLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.AlojamientoUsuarioLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlojamientoUsuarioLinkServlet</servlet-name>
+    <url-pattern>/AlojamientoUsuarioLinkServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

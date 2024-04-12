@@ -69,7 +69,7 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 		ArrayList<Property> properties = new ArrayList<Property>();
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM properties WHERE UPPER(name) LIKE '%" + search + "%'");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM properties WHERE UPPER(name) LIKE '%" + search + "%' or  UPPER(city) LIKE '%" + search + "%' or  UPPER(description) LIKE '%" + search + "%'");
 
 			while (rs.next()) {
 				Property property = new Property();
