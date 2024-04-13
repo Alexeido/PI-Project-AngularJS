@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitaciones alojamientos</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamientosuser.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/habitacionesuser.css">
 </head>
 <body>
 
     <header>
         <div class="left-content">
-            <h1>Booking.com</h1>
+            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
         </div>
         <div class="right-content">
             <div class="right-icons">
@@ -23,9 +23,12 @@
     </header>
 
     <div class="container">
-        <h1>Habitaciones subidos</h1>
+		<div class="title-button-container">
+		    <h1>Habitaciones subidos</h1>
+		    <a href="<c:url value='registroHabitacionLinkServlet.do?idAlojamiento=${Habitacionidalojamiento}'/>"><button>Añadir Habitacion</button></a>
+		</div>
         <div class="help-message">
-            <p>¿No encuentra una habitacion? ${Habitacionidalojamiento}</p>            
+            <p>¿No encuentra una habitacion?</p>            
         </div>
         <div class="Elemento-contatiner">
         <c:forEach var="habitacion" items="${habitacionesuser}">
@@ -42,7 +45,6 @@
                             </div>
                         <h2>${habitacion.price} </h2>
                         <h2>${habitacion.description} </h2>
-                        
                     </div>
                     <div class="datos">
                         <a href="<c:url value='ActualizarHabitacionServlet.do?idhabitacion=${habitacion.id}'/>"><button >Editar Habitacion</button></a>
@@ -52,7 +54,6 @@
                 </div>
             </div>
         </c:forEach>
-        <a href="<c:url value='registroHabitacionLinkServlet.do?idAlojamiento=${Habitacionidalojamiento}'/>"><button >Añadir Habitacion</button></a>
         
         </div>
     </div>

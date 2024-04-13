@@ -42,12 +42,25 @@
                             </div>
                         <h2>${alojamientouser.name} </h2>
                     </div>
-                    <div class="datos">
-                        <a href="<c:url value='AlojamientoSesionLinkServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Ver Habitaciones</button></a>
-                        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button >Editar Alojamiento</button></a>
-                        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>"><button class="eliminar">Eliminar Alojamiento</button></a>
-                        
-                    </div>
+						<div class="datos">
+						    <div class="button-row">
+						        <a href="<c:url value='AlojamientoSesionLinkServlet.do?idalojamiento=${alojamientouser.id}'/>">
+						            <button>Ver Habitaciones</button>
+						        </a>
+						        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
+						            <button>Editar Alojamiento</button>
+						        </a>
+						    </div>
+						    <div class="button-row">
+						        <a href="<c:url value='CambiarDisponibilidadServlet.do?idalojamiento=${alojamientouser.id}'/>">
+						            <button>Cambiar Disponibilidad</button>
+						        </a>
+						        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
+						            <button class="eliminar">Eliminar Alojamiento</button>
+						        </a>
+						    </div>
+						</div>
+
                 </div>
             </div>
         </c:forEach>

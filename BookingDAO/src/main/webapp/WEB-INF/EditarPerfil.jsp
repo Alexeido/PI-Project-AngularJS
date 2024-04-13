@@ -35,10 +35,10 @@
         <div class="profile-info">
             <label for="apellido">Apellido:</label>
             <input type="text" id="apellido"  name="apellido" value=${user.surname} >
-        </div>`	
-        <button type="submit">Actualizar Perfil</button>
+        </div>
+        <button type="submit" class="view-reservations-btn">Actualizar Perfil</button>
+        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>                
         </form>
-        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>        
     </div>
 </body>
 </html>

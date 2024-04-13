@@ -1,24 +1,3 @@
-/* CSS for button rows */
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-/* Adjust button width and margin for better layout */
-.button-row a {
-    flex: 1;
-    margin-right: 5px;
-}
-
-/* Ensure buttons stay on the same line in smaller screens */
-@media screen and (max-width: 600px) {
-    .button-row a {
-        flex-basis: 48%;
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -79,12 +58,10 @@ h1 {
     flex: 1;
     padding: 0 20px;
     color: #666;
-    margin-top:10px;
 }
 
 .datos {
     text-align: end;
-    margin-top: 18px;
 }
 
 .datos p {
@@ -108,16 +85,19 @@ button.eliminar:hover {
     background-color: #8d0101; /* Cambiamos el color de fondo al pasar el cursor */
 }
 
+
 .title-button-container {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     margin-right: 20px;
+    
 }
 
 .c2_alojamiento {
     margin-bottom: 15px; /* Ajusta el margen inferior según tus necesidades */
 }
+
 
 /* Estilo para la sección de la ubicación */
 .location {
@@ -130,7 +110,6 @@ button.eliminar:hover {
     font-size: 20px; /* Reduce el tamaño de la fuente del nombre de la habitación */
     margin: 0; /* Elimina el margen superior e inferior para que esté más cerca del precio y la descripción */
 }
-
 
 /* Estilo para el precio */
 .Texto-c2 h2 {
@@ -145,8 +124,6 @@ button.eliminar:hover {
     color: #333; /* Cambia el color de la descripción a un tono más oscuro */
     margin-top: 5px; /* Agrega un pequeño margen superior para separarlo del precio */
 }
-
-/* Estilos para botones generales */
 button {
     background-color: #003b95; /* Cambiamos el color de fondo */
     color: white; /* Cambiamos el color del texto a blanco */
@@ -161,9 +138,9 @@ button:hover {
     background-color: #204b8c; /* Cambiamos el color de fondo al pasar el cursor */
 }
 
-/* Estilos específicos para el botón de inicio */
+
 .start_button {
-    font-weight: bold; /* Texto en negrita */
+	font-weight: bold; /* Texto en negrita */
     font-size: 25px;
     font-family: 'Domestos';
     color: white; /* Color de texto blanco */

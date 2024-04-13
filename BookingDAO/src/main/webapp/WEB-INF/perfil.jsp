@@ -22,10 +22,10 @@
     </header>
 
     <div class="profile-container">
-    <form action="ActualizarPerfilServlet.do" method="post">
-        <h2>Perfil de Usuario</h2>
-        <button type="submit">Actualizar Perfil</button>
-        
+		<div class="profile-header">
+		    <h2>Perfil de Usuario</h2>
+		    <a href="<c:url value='ActualizarPerfilServlet.do'/>"><button class="view-reservations-btn">Ajustes del perfil</button></a>
+		</div>
         <div class="profile-info">
             <label for="email">Correo:</label>
             <input type="text" id="email"  name="email" value=${user.email} readonly >
@@ -37,13 +37,14 @@
         <div class="profile-info">
             <label for="apellido">Apellido:</label>
             <input type="text" id="apellido"  name="apellido" value=${user.surname } readonly>
-        </div>`	
-        </form>
-        <button class="view-reservations-btn">Ver Reservas</button>
-        <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesion</button></a>
-        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>
-        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
-        
+        </div>	
+		<div class="botonesvarios">
+		    <div>
+		        <button class="view-reservations-btn">Ver Reservas</button>
+		        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
+		    </div>
+		    <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesión</button></a>
+		</div>
     </div>
 </body>
 </html>

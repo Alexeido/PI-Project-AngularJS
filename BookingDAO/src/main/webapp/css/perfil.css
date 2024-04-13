@@ -105,3 +105,18 @@ button:hover {
 .start_button a:visited {
     color: white; /* Color de los enlaces visitados blanco */
 }
+
+
+.botonesvarios {
+    display: flex; /* Utilizar flexbox */
+    justify-content: space-between; /* Distribuir los elementos equitativamente */
+    margin-top: 20px; /* Agregar espacio superior */
+}
+
+
+.profile-header {
+    display: flex; /* Utilizar flexbox */
+    justify-content: space-between; /* Distribuir los elementos equitativamente */
+}
+
+
