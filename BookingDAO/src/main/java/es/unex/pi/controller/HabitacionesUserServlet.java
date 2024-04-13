@@ -39,7 +39,7 @@ public class HabitacionesUserServlet extends HttpServlet {
 		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
 		accomodationDao.setConnection(conn);
 		long id=Long.parseLong(request.getParameter("idalojamiento"));
-		List<Accommodation> listahabitaciones = accomodationDao.getAllBySearchName(id);
+		List<Accommodation> listahabitaciones = accomodationDao.getAllByProperties(id);
 
 		request.setAttribute("habitacionesuser", listahabitaciones);
 		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/habitacionesuser.jsp");

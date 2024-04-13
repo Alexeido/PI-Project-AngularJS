@@ -39,8 +39,8 @@ public class EliminarAlojamientoServlet extends HttpServlet {
 		long id=Long.parseLong(request.getParameter("idalojamiento"));
 		propertyDao.delete(id);
 		
-		response.sendRedirect("AlojamientoUsuarioLinkServlet.do");
-
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/alojamientosusuario.jsp");
+		view.forward(request, response);
 	}
 
 	/**

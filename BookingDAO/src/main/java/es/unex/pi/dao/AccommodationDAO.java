@@ -52,7 +52,17 @@ public interface AccommodationDAO {
 	 * 
 	 * @return List of all the accommodations from the database that contain a text in the name.
 	 */	
-	public List<Accommodation> getAllBySearchName(long search);
+	public List<Accommodation> getAllBySearchName(String search);
+	
+	/**
+	 * Gets all the accommodations from the database that have the same idp.
+	 * 
+	 * @param search
+	 *            Search long .
+	 * 
+	 * @return List of all the accommodations from the database that have the same idp.
+	 */	
+	public List<Accommodation> getAllByProperties(long idp);
 
 
 	/**

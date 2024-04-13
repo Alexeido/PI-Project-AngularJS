@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambassador Playa I, Benidorm | Booking.com</title>
+    <title>${alojamiento.name} | Booking.com</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamiento.css">
 </head>
@@ -17,18 +17,15 @@
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
-                <c:choose>
-            		<c:when test="${not empty user.id}">
-            			<button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
-            		    <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
-            		
-            		</c:when>
-            	<c:otherwise>
-            		
-                	<button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
-                	<button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
-               	</c:otherwise>
-               	</c:choose>
+                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
+                <form action="Iniciosesion.html">
+                    <button class="white-button">Hazte una cuenta</button>
+                </form>
+                <form action="Iniciosesion.html">
+                    <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
+                </form>
+                
+
             </div>
         </nav>
 
@@ -43,7 +40,7 @@
     </header>
     <div class="container">
         <div class="location-section">
-            <span><a href="#">Inicio</a> > <a href="#">Hoteles</a> > <a href="#">España</a> > <a href="#">Comunidad Valenciana</a> > <a href="#">Benidorm</a> > Ofertas en Ambassador Playa I (Hotel), Benidorm (España)</span>
+            <span><a href="<c:url value='IndexLinkServlet.do'/>">Inicio</a> > <a href="<c:url value='trendingLinkServlet.do'/>">Hoteles</a> > <a href="<c:url value='trendingLinkServlet.do'/>">España</a> > <a href="<c:url value='ListaAlojamientosLinkServlet.do'/>">${alojamiento.city}</a> > ${alojamiento.name}</span>
         </div>
         <div id="vista-general" class= "gridAlojamiento">
             <div class="g1">
@@ -92,10 +89,33 @@
                 <div class="g2-2">
                     <div class="g2-2F1">
                         <div class="estrellas">
+                        <c:choose>
+					    <c:when test="${alojamiento.gradesAverage == 5}">
                             <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
                             <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+					    </c:when>
+					    <c:when test="${alojamiento.gradesAverage >= 4}">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+					    </c:when>
+					    <c:when test="${alojamiento.gradesAverage >= 3}">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+					    </c:when>
+					    <c:when test="${alojamiento.gradesAverage >= 2}">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+					    </c:when>
+					    <c:otherwise>
+                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+					    </c:otherwise>
+					</c:choose>
                         </div>
                         <div class="right-section">
                             <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
@@ -106,13 +126,26 @@
                         </div>
                     </div>
                     <div class="g2-2F2">
-                        Ambassador Playa I
+                        ${alojamiento.name}
                     </div>
                     <div class="g2-2F3">
                         <img src="${pageContext.request.contextPath}/images/gps.svg" alt="GPS" class="gps-icon">
                         <p>
-                            <a href="#">Gerona, 41, 03503 Benidorm, España</a> – 
-                            <a href="#">Ubicación excelente</a> - 
+                            <a href="#">${alojamiento.city}, ${alojamiento.address}</a> – 
+                            <c:choose>
+							    <c:when test="${alojamiento.centerDistance < 0.2}">
+							        <a href="#">Ubicación excelente</a>
+							    </c:when>
+							    <c:when test="${alojamiento.centerDistance < 1}">
+							        <a href="#">Ubicación buena</a>
+							    </c:when>
+							    <c:when test="${alojamiento.centerDistance < 5.0}">
+							        <a href="#">Ubicación promedio</a>
+							    </c:when>
+							    <c:otherwise>
+							        <a href="#">Ubicación normal</a>
+							    </c:otherwise>
+							</c:choose>
                             <a href="#">Ver mapa</a>
                         </p>
                     </div>
@@ -152,37 +185,28 @@
         </div>
         <div id="descripcion" class="descripcion">
             <div class="d1">
-                <p>El Ambassador Playa I está situado en el centro de Benidorm, a 350 metros de la playa de Levante. Ofrece piscina y restaurante. Este hotel cuenta con sauna y centro de fitness.</p>
-                <p>Las habitaciones presentan una decoración sencilla y disponen de balcón pequeño. El baño privado incluye ducha de agua fría y caliente, secador de pelo y artículos de aseo gratuitos. Hay TV de pantalla plana vía satélite y wifi gratuita.</p>
-                <p>Se organizan numerosas actividades de ocio, entre ellas conciertos y espectáculos en directo cada semana. El personal de la recepción 24 horas presta un servicio de información turística. </p>
-                <p>El Ambassador Playa I se encuentra a 10 minutos en coche del parque temático Tierra Mítica y a 2,6 km del parque acuático Aqualandia. El aeropuerto de Alicante está a 59 km.</p>
+            	<h3>Descripción</h3>
+                <p>El ${alojamiento.name} es un ${alojamiento.description} que se encuentra a ${alojamiento.centerDistance} km del centro de ${alojamiento.city}.</p>
                 <p id="servicios" class="minitext">Las distancias en la descripción del alojamiento se calculan con OpenStreetMap©</p>
-                <h3>Servicios más populares</h3>
-                <ul>
-                    <li><img src="${pageContext.request.contextPath}/images/swim.svg" alt="Icono de piscina">2 piscinas</li>
-                    <li><img src="${pageContext.request.contextPath}/images/parking.svg" alt="Icono de parking">Parking privado</li>
-                    <li><img src="${pageContext.request.contextPath}/images/wifi.svg" alt="Icono de WiFi">WiFi gratis</li>
-                    <li><img src="${pageContext.request.contextPath}/images/spa.svg" alt="Icono de spa">Spa y centro de bienestar</li>
-                    <li><img src="${pageContext.request.contextPath}/images/restaurant.svg" alt="Icono de restaurante">Restaurante</li>
-                    <li><img src="${pageContext.request.contextPath}/images/gym.svg" alt="Icono de gimnasio">Gimnasio</li>
-                    <li><img src="${pageContext.request.contextPath}/images/smoke.svg" alt="Icono de prohibido fumar">Habitaciones sin humo</li>
-                    <li><img src="${pageContext.request.contextPath}/images/reception.svg" alt="Icono de recepción">Recepción 24 horas</li>
-                    <li><img src="${pageContext.request.contextPath}/images/bar.svg" alt="Icono de bar">Bar</li>
-                    <li><img src="${pageContext.request.contextPath}/images/dog.svg" alt="Icono de perro">Permite mascotas</li>
-                </ul>
             </div>
             <div class="d2">
                 <h3>Puntos fuertes del alojamiento</h3>
-                <p><img src="${pageContext.request.contextPath}/images/gps_B.svg" alt="Icono">Situado en la zona mejor valorada de Benidorm, este hotel tiene una excelente puntuación en ubicación (9,2).</p>
-                <p><img src="${pageContext.request.contextPath}/images/parking_B.svg" alt="Icono">Hay parking privado en el hotel.</p>
+                <c:if test="${alojamiento.petFriendly == 1}">
+		       		<p><img src="${pageContext.request.contextPath}/images/dog.svg" alt="Icono de perro">Permite mascotas</p>
+				</c:if>
+                <c:if test="${alojamiento.centerDistance < 1}">
+				    <p><img src="${pageContext.request.contextPath}/images/gps_B.svg" alt="Icono">Situado a menos de 1km del centro de ${alojamiento.city}.</p>
+				</c:if>
+                <c:if test="${alojamiento.gradesAverage > 4}">
+					<h3>Clientes fieles</h3>
+	                <p><img src="${pageContext.request.contextPath}/images/check.svg" alt="Icono">Los clientes repiten más aquí que en otros alojamientos.</p>
+				</c:if>
             
-                <h3>Clientes fieles</h3>
-                <p><img src="${pageContext.request.contextPath}/images/check.svg" alt="Icono">Los clientes repiten más aquí que en otros alojamientos.</p>
-            
+                
                 <form action="carrito.html">
                     <button class="reserva">Reserva ahora</button>
                 </form>
-                <button class="reserva"><img src="${pageContext.request.contextPath}/images/tlf.svg" alt="icono de telefono"> 123 456 789</button>
+                <button class="reserva"><img src="${pageContext.request.contextPath}/images/tlf.svg" alt="icono de telefono"> ${alojamiento.telephone}</button>
             </div>
             
         </div>
@@ -227,115 +251,83 @@
                     <thead>
                         <tr>
                             <th>Tipo de habitación</th>
-                            <th>Número de personas</th>
-                            <th></th>
+                            <th>Disponibles</th>
+                            <th>Reservas</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                Habitación Doble con vistas a la piscina
-                                <br>
-                                <p>2 camas individuales<img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Icono de cama"><img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Icono de cama"></p>
-                                </td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                            </td>
-                            <td>
-                                <form action="carrito.html">
-                                    <button class="reserva">Reserva ahora</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Habitación Doble con vistas a la ciudad
-                                <br>
-                                <p>2 camas individuales<img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Icono de cama"><img src="${pageContext.request.contextPath}/images/Bed.svg" alt="Icono de cama"></p>
-                                </td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                            </td>
-                            <td><form action="carrito.html">
-                                <button class="reserva">Reserva ahora</button>
-                            </form></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Habitación Individual
-                                <br>
-                                <p>1 cama individual<img src="${pageContext.request.contextPath}/images/Bed_B.svg" alt="Icono de cama"></p>
-                                </td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                            </td>
-                            <td><form action="carrito.html">
-                                <button class="reserva">Reserva ahora</button>
-                            </form></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Habitación Individual con vistas a la piscina
-                                <br>
-                                <p>1 cama individual<img src="${pageContext.request.contextPath}/images/Bed_B.svg" alt="Icono de cama"></p>
-                                </td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}/images/person.svg" alt="Person">
-                            </td>
-                            <td><form action="carrito.html">
-                                <button class="reserva">Reserva ahora</button>
-                            </form></td>
-                        </tr>
+                    
+                    <c:forEach var="accommodation" items="${listaAccommodations}">
+			            <tr>
+			                <td>
+			                    ${accommodation.name}
+			                    <br>
+			                    <p>${accommodation.description}</p>
+			                </td>
+			                <td>
+			                    <p>${accommodation.numAccommodations} Unidades</p>
+			                </td>
+			                <td>
+			                    <c:choose>
+			                        <c:when test="${accommodation.numAccommodations > 0}">
+			                            <form action="CarritoLinkServlet.do" method="post">
+			                                <button class="reserva">Reserva ahora por ${accommodation.price}€</button>
+			                            </form>
+			                        </c:when>
+			                        <c:otherwise>
+			                            <button class="reservaSoldOut">Agotado</button>
+			                        </c:otherwise>
+			                    </c:choose>
+			                </td>
+			            </tr>
+			        </c:forEach>
+              
                     </tbody>
                 </table>
             </div>
         </div>
-        <div id="comentarios" class="comentarios">
-            <h2 style="font-weight: bold; font-size: 24px;">Comentarios de los clientes</h2>
-            <div class="media-valoracion">
-                <div class="media-valoracion-texto">9,1</div>
-                <div class="media-valoracion-texto-derecha">Fantástico</div>
-            </div>
-            <div class="comentario-container">
-                <div class="comentario">
-                    <div class="nombre-pais"> 
-                        <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="España"> España
-                    </div>
-                    <div class="coment-persona">
-                        <img src="${pageContext.request.contextPath}/images/person.svg" alt="persona">Magdalena
-                    </div>
-                    <div class="comentario-texto">
-                        “Me gustó mucho el hotel, estaba super limpio la comida bien, era variada el personal muy amable, lo que me gustó menos era la música del bar era toda en inglés en español nada de nada pero bien, volvería sin dudarlo”
-                    </div>
-                </div>
-                <div class="comentario">
-                    <div class="nombre-pais"> 
-                        <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="España"> España
-                    </div>
-                    <div class="coment-persona">
-                        <img src="${pageContext.request.contextPath}/images/person.svg" alt="persona">Natera
-                    </div>
-                    <div class="comentario-texto">
-                        “Limpio, céntrico, buena cocina y excelente servicio.”
-                    </div>
-                </div>
-                <div class="comentario">
-                    <div class="nombre-pais"> 
-                        <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="España"> España
-                    </div>
-                    <div class="coment-persona">
-                        <img src="${pageContext.request.contextPath}/images/person.svg" alt="persona">Alexeido
-                    </div>
-                    <div class="comentario-texto">
-                        “Todo muy bien, instalaciones, limpieza, buffet variado y personal muy amable”
-                    </div>
-                </div>
-            </div>
-            <button class="reserva">Leer todos los comentarios</button>
-        </div>
-        
+		<c:if test="${not empty listaReviews}">
+		    <div id="comentarios" class="comentarios">
+		        <h2 style="font-weight: bold; font-size: 24px;">Comentarios de los clientes</h2>
+		        <div class="media-valoracion">
+		            <div class="media-valoracion-texto">${alojamiento.gradesAverage}</div>
+		            <div class="media-valoracion-texto-derecha">
+		                <c:choose>
+		                    <c:when test="${alojamiento.gradesAverage == 5}">
+		                        Excepcional
+		                    </c:when>
+		                    <c:when test="${alojamiento.gradesAverage > 4.5}">
+		                        Fantástico
+		                    </c:when>
+		                    <c:when test="${alojamiento.gradesAverage > 4}">
+		                        Fabuloso
+		                    </c:when>
+		                    <c:when test="${alojamiento.gradesAverage > 3.5}">
+		                        Muy bien
+		                    </c:when>
+		                    <c:otherwise>
+		                        Puntuación
+		                    </c:otherwise>
+		                </c:choose>
+		            </div>
+		        </div>
+		        <div class="comentario-container">
+		            <c:forEach var="review" items="${listaReviews}" varStatus="loop">
+	                    <div class="comentario">
+	                        <div class="mini-valoracion-texto">${review.grade}  ${nombresUsuarios[loop.index]}</div>
+	                        <div class="nombre-pais"> 
+	                            <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="España"> España
+	                        </div>
+	                        <div class="comentario-texto">
+	                            "${review.review}"
+	                        </div>
+	                    </div>
+		            </c:forEach>
+		        </div>
+		    </div>
+		</c:if>
+
+ 
 </div>
 </body>
 </html>

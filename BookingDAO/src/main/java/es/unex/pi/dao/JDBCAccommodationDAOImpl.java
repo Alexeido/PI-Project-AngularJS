@@ -79,20 +79,42 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		return accommodations;
 	}
 	
-	public List<Accommodation> getAllBySearchName(long search) {
+	public List<Accommodation> getAllBySearchName(String search) {
+		search = search.toUpperCase();
 		if (conn == null)
 			return null;
 
 		ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
 		try {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE idp ="+ search);
+			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE UPPER(name) LIKE '%" + search + "%'");
 
 			while (rs.next()) {
 				Accommodation accommodation = new Accommodation();
 				fromRsToAccommodationObject(rs,accommodation);
 				accommodations.add(accommodation);
 				logger.info("fetching accommodations by text in the name: "+search+": "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return accommodations;
+	}
+	
+	public List<Accommodation> getAllByProperties(long idp) {
+		if (conn == null)
+			return null;
+
+		ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE idp = '"+idp+"'");	
+
+			while (rs.next()) {
+				Accommodation accommodation = new Accommodation();
+				fromRsToAccommodationObject(rs,accommodation);
+				accommodations.add(accommodation);
+				logger.info("fetching accommodations by idp : "+idp+": "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
