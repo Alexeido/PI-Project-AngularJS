@@ -596,6 +596,29 @@ body {
     border-bottom-left-radius: 0px;
 }
 
+.mini-valoracion-texto {
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #006ce4; /* Azul oscuro */
+    color: #ffffff; /* Blanco */
+    padding: 8px;
+    border-radius: 6px;
+    height: 20px;
+    border-bottom-left-radius: 0px;
+}
+.comentario-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Para distribuir los comentarios uniformemente */
+}
+
+.comentario {
+    width: calc(33.33% - 10px); /* Para tres comentarios por fila sin espacio adicional */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Asegura que el margen no afecte el ancho total */
+    /* Otras propiedades de estilo */
+}
+
 .media-valoracion-texto-derecha {
     margin-left: 10px;
     font-size: 24px;

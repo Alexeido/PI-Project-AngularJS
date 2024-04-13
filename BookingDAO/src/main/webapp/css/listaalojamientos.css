@@ -34,6 +34,21 @@ button {
     cursor: pointer; /* Cambiamos el cursor */
 }
 
+/* Estilos para el formulario */
+.form-button {
+    display: inline-block; /* Para que el formulario se comporte como un elemento en línea */
+    margin-bottom: 0; /* Eliminamos el margen inferior */
+}
+
+/* Estilos para el botón dentro del formulario */
+.form-button input[type="submit"] {
+    background-color: #003b95; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+    border: none; /* Quitamos el borde */
+    padding: 10px 20px; /* Ajustamos el espaciado interno */
+    border-radius: 5px; /* Redondeamos los bordes */
+    cursor: pointer; /* Cambiamos el cursor */
+}
 
 .buscador-container {
     margin-top: -20px;

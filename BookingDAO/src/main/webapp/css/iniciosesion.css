@@ -156,6 +156,7 @@ td {
 }
 input[type="text"],
 input[type="fullname"],
+input[type="email"],
 input[type="password"] {
     width: 100%; /* Calcula el ancho con margen */
     padding: 10px; /* Añade relleno */
