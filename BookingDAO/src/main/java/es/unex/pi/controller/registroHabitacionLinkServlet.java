@@ -53,7 +53,7 @@ public class registroHabitacionLinkServlet extends HttpServlet {
 		double price = Double.parseDouble(pricestr);
 		int priceInt = (int) price;
 
-
+ 
 		String numAccommodationsstr = request.getParameter("available");
 		double numAccommodations = Double.parseDouble(numAccommodationsstr);
 		int numAccommodationsint = (int) numAccommodations;
