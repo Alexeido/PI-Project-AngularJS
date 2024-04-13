@@ -18,7 +18,7 @@ public class UsuarioLinkServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public UsuarioLinkServlet() {
-        super();
+        super(); 
         // TODO Auto-generated constructor stub
     }
 
