@@ -158,7 +158,7 @@
                     </select>
                 </div>
                 <div class="c2_alojamiento">
-                <c:forEach var="alojamiento" items="${listaalojamiento}">
+                <c:forEach var="alojamiento" items="${listaalojamiento}" varStatus="loop">
                     <div class="Elemento-c2">
                         <div class="foto-c2">
                             <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
@@ -166,29 +166,53 @@
                         <div class="Texto-c2">
                             <h2>${alojamiento.name}</h2>
                             <div class="estrellas">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            </div>
-                            <p>${alojamiento.description}</p>
+							    <c:set var="numEstrellas" value="${alojamiento.gradesAverage / 1}" />
+							    <c:forEach begin="1" end="5" var="i">
+							        <c:choose>
+							            <c:when test="${i <= numEstrellas}">
+							                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+							            </c:when>
+							            <c:otherwise>
+							                <img src="${pageContext.request.contextPath}/images/star-empty.svg" alt="Estrella vacía">
+							            </c:otherwise>
+							        </c:choose>
+							    </c:forEach>
+							</div>
+                            <p>El ${alojamiento.name} es un ${alojamiento.description} que se encuentra a ${alojamiento.centerDistance} km del centro de ${alojamiento.city}.</p>
                         </div>
 
                         <div>
                             <div class="valoraciones">
                                 <div class="valoCol1">
-                                    <h1>Fantastico</h1>
-                                    <p>132 comentario</p>
+                                    <h1>
+	                                    <c:choose>
+						                    <c:when test="${alojamiento.gradesAverage == 5}">
+						                        Excepcional
+						                    </c:when>
+						                    <c:when test="${alojamiento.gradesAverage > 4.5}">
+						                        Fantástico
+						                    </c:when>
+						                    <c:when test="${alojamiento.gradesAverage > 4}">
+						                        Fabuloso
+						                    </c:when>
+						                    <c:when test="${alojamiento.gradesAverage > 3.5}">
+						                        Muy bien
+						                    </c:when>
+						                    <c:otherwise>
+						                        Puntuación
+						                    </c:otherwise>
+						                </c:choose>
+		               			 	</h1>
                                 </div>
                                 
                                 <div class="Puntuacion">
-                                    9.2
+                                    ${alojamiento.gradesAverage}
                                 </div>
                             </div>
 
                             <div class="datos">
-                                <p>2 noches, 2adultos</p>
-                                <h1>405€</h1>
+                                <p>${alojamiento.address}, ${alojamiento.city}</p>
+                                <h1>Desde ${preciosBajos[loop.index]}€</h1>
                                 <p>incluye impuestos y cargos</p>
                                 <form class="form-button" action="<c:url value='AlojamientoLinkServlet.do'/>" method="POST">
 								    <input type="hidden" name="idp" value="${alojamiento.id}">

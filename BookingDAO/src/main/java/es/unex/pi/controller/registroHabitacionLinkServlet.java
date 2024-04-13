@@ -13,6 +13,7 @@ import java.sql.Connection;
 
 import es.unex.pi.dao.AccommodationDAO;
 import es.unex.pi.model.Accommodation;
+import es.unex.pi.model.User;
 
 /**
  * Servlet implementation class registroHabitacionLinkServlet
@@ -48,10 +49,10 @@ public class registroHabitacionLinkServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		String name = request.getParameter("name");
-		//long idAlojamiento=Long.parseLong(request.getParameter("idAlojamiento"));
 		String pricestr = request.getParameter("price");
 		double price = Double.parseDouble(pricestr);
 		int priceInt = (int) price;
+		long idAlojamiento=(long) session.getAttribute("IdAlojamiento");
 
  
 		String numAccommodationsstr = request.getParameter("available");
@@ -61,13 +62,13 @@ public class registroHabitacionLinkServlet extends HttpServlet {
 		String description = request.getParameter("description");
 
 		Accommodation habitacion= new Accommodation();
-		//habitacion.setIdp(idAlojamiento);
+		habitacion.setIdp(idAlojamiento);
 		habitacion.setName(name);
 		habitacion.setNumAccommodations(numAccommodationsint);
 		habitacion.setDescription(description);
 		habitacion.setPrice(priceInt);
 		accomodationDao.add(habitacion);
-		response.sendRedirect("AlojamientoUsuarioLinkServlet.do");
+		response.sendRedirect("HabitacionesUserServlet.do");
 
 	}
 

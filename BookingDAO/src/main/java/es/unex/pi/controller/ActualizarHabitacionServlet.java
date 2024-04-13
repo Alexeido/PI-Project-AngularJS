@@ -1,11 +1,19 @@
 package es.unex.pi.controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
+import java.sql.Connection;
+
+import es.unex.pi.dao.AccommodationDAO;
+import es.unex.pi.model.Accommodation;
+import es.unex.pi.model.Property;
 
 /**
  * Servlet implementation class ActualizarHabitacionServlet
@@ -25,16 +33,55 @@ public class ActualizarHabitacionServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
+		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
+		accomodationDao.setConnection(conn);
+		long id=Long.parseLong(request.getParameter("idhabitacion"));
+		
+		Accommodation habitacion=accomodationDao.get(id);
+		request.setAttribute("habitacion", habitacion);
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/editarhabitacion.jsp");
+		view.forward(request,response);
+
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
+		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
+		accomodationDao.setConnection(conn);
+		HttpSession session = request.getSession();
+
+		String name = request.getParameter("name");
+		String pricestr = request.getParameter("price");
+		double price = Double.parseDouble(pricestr);
+		int priceInt = (int) price;
+		long idAlojamiento=(long) session.getAttribute("IdAlojamiento");
+
+ 
+		String numAccommodationsstr = request.getParameter("available");
+		double numAccommodations = Double.parseDouble(numAccommodationsstr);
+		int numAccommodationsint = (int) numAccommodations;
+		
+		
+		String idhabitacionstr = request.getParameter("idhabitacion");
+		long idhabitacion = Long.parseLong(idhabitacionstr);
+				
+
+		
+		String description = request.getParameter("description");
+
+		Accommodation habitacion= new Accommodation();
+		habitacion.setId(idhabitacion);
+		habitacion.setIdp(idAlojamiento);
+		habitacion.setName(name);
+		habitacion.setNumAccommodations(numAccommodationsint);
+		habitacion.setDescription(description);
+		habitacion.setPrice(priceInt);
+		accomodationDao.update(habitacion);
+		response.sendRedirect("HabitacionesUserServlet.do");
 	}
 
 }

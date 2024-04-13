@@ -38,7 +38,8 @@ public class HabitacionesUserServlet extends HttpServlet {
 		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
 		accomodationDao.setConnection(conn);
-		long id=Long.parseLong(request.getParameter("idalojamiento"));
+		HttpSession session = request.getSession();
+		long id=(long) session.getAttribute("IdAlojamiento");
 
 		List<Accommodation> listahabitaciones = accomodationDao.getAllByProperties(id);
 

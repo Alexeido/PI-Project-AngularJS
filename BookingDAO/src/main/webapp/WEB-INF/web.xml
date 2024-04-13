@@ -124,4 +124,14 @@
     <servlet-name>registroHabitacionLinkServlet</servlet-name>
     <url-pattern>/registroHabitacionLinkServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AlojamientoSesionLinkServlet</display-name>
+    <servlet-name>AlojamientoSesionLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.AlojamientoSesionLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlojamientoSesionLinkServlet</servlet-name>
+    <url-pattern>/AlojamientoSesionLinkServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>
