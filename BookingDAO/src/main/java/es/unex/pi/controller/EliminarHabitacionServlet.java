@@ -34,7 +34,7 @@ public class EliminarHabitacionServlet extends HttpServlet {
 		accomodationDao.setConnection(conn);
 		long id=Long.parseLong(request.getParameter("idhabitacion"));
 		accomodationDao.delete(id);
-		response.sendRedirect("HabitacionUserServlet.do?idhabitacion=Idp");
+		response.sendRedirect("AlojamientoUsuarioLinkServlet.do");
 
 	}
 

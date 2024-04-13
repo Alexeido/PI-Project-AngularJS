@@ -114,4 +114,14 @@
     <servlet-name>EliminarHabitacionServlet</servlet-name>
     <url-pattern>/EliminarHabitacionServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>registroHabitacionLinkServlet</display-name>
+    <servlet-name>registroHabitacionLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.registroHabitacionLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>registroHabitacionLinkServlet</servlet-name>
+    <url-pattern>/registroHabitacionLinkServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

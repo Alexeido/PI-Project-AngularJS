@@ -41,48 +41,23 @@
             <button><img src="${pageContext.request.contextPath}/images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
         </nav>
     </header>
-
     <div class="container">
         <section class="edit-alojamiento">
             <div class="edit-form">
-                <h2>Editar Alojamiento</h2>
-                <form action="editaralojamientoLinkServlet.do" method="post">
-                    <label for="name">Nombre Alojamiento:</label>
-                    <input type="text" id="name" name="name" placeholder="${alojamiento.name}"><br><br>
+                <h2>Editar Alojamiento ${idAlojamiento} adios</h2>
+                <form action="registroHabitacionLinkServlet.do" method="post">
+                    <label for="name">Nombre Habitacion:</label>
+                    <input type="text" id="name" name="name"><br><br>
 
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address" name="address" placeholder="${alojamiento.address}"><br><br>
-
-                    <label for="telephone">Teléfono:</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="${alojamiento.name}"><br><br>
-
-                    <label for="city">Ciudad:</label>
-                    <input type="text" id="city" name="city" placeholder="${alojamiento.city}"><br><br>
-
-                    <label for="centerDistance">Distancia al centro:</label>
-                    <input type="number" id="centerDistance" name="centerDistance" placeholder="${alojamiento.centerDistance}"><br><br>
+                    <label for="address">Precio:</label>
+                    <input type="number" id="price" name="price"><br><br>
 
                     <label for="descripcion">Descripción:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="50" placeholder="${alojamiento.description}"></textarea><br><br>
+                    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
                     
-                    <label for="available">Disponibles:</label>
-                    <input type="number" id="available" name="available" step="0.1" placeholder="${alojamiento.available}"><br><br>
+                    <label for="available">Numero:</label>
+                    <input type="number" id=available name="available" step="0.1"><br><br>
                     
-                    <label>Servicios o instalaciones ofrecidos:</label><br>
-                    <input type="checkbox" id="wifi" name="wifi">
-                    <label for="wifi">Wifi</label><br>
-                    <input type="checkbox" id="piscina" name="piscina">
-                    <label for="piscina">Piscina</label><br>
-                    <input type="checkbox" id="gym" name="gym">
-                    <label for="gym">Gimnasio</label><br><br>
-                    <label for="serviciosad">Añada servicios adicionales:</label>
-                    <textarea id="serviciosad" name="serviciosad" rows="4" cols="50" placeholder="Servicios adicionales ofrecidos"></textarea><br><br>
-
-                    <label>Permite mascotas:</label><br>
-                    <input type="radio" id="si-mascotas" name="mascotas" value="si">
-                    <label for="si-mascotas">Sí</label>
-                    <input type="radio" id="no-mascotas" name="mascotas" value="no">
-                    <label for="no-mascotas">No</label><br><br>
 
                     <button type="submit">Continuar</button>
                 </form>

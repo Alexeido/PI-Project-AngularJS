@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Habitaciones subidos</h1>
         <div class="help-message">
-            <p>¿No encuentra una habitacion?</p>
+            <p>¿No encuentra una habitacion? ${Habitacionidalojamiento}</p>            
         </div>
         <div class="Elemento-contatiner">
         <c:forEach var="habitacion" items="${habitacionesuser}">
@@ -52,6 +52,8 @@
                 </div>
             </div>
         </c:forEach>
+        <a href="<c:url value='registroHabitacionLinkServlet.do?idAlojamiento=${Habitacionidalojamiento}'/>"><button >Añadir Habitacion</button></a>
+        
         </div>
     </div>
 </body>

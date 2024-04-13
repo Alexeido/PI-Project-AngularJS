@@ -10,15 +10,25 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/carrito.css">
 </head>
 <body>
-    <header>
+   <header>
         <nav class="principal">
             <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
-                <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
-                <button class="white-button">Mi cuenta</button>
+                <c:choose>
+            		<c:when test="${not empty user.id}">
+            			<button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
+            		    <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
+            		
+            		</c:when>
+            	<c:otherwise>
+            		
+                	<button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
+                	<button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
+               	</c:otherwise>
+               	</c:choose>
             </div>
         </nav>
 

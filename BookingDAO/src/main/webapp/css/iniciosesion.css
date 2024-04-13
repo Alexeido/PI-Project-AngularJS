@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #183c94;
+    background-color: #003b95;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -48,6 +48,8 @@ table td {
     text-align: left;
 }
 
+
+
 button,
 input[type="email"] {
     width: 100%;
@@ -56,17 +58,6 @@ input[type="email"] {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 5px;
-}
-
-button {
-    background-color: #306cdc;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0e2653;
 }
 
 
@@ -171,4 +162,31 @@ label {
     display: block; /* Hace que la etiqueta ocupe todo el ancho */
     text-align: left; /* Alinea el texto a la izquierda */
     margin-bottom: 5px; /* Añade un pequeño espacio debajo de la etiqueta */
+}
+
+
+button {
+    background-color: #003b95;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e2653;
+}
+
+.start_button {
+	font-weight: bold; /* Texto en negrita */
+    font-size: 25px;
+    font-family: 'Domestos';
+    color: white; /* Color de texto blanco */
+}
+
+.start_button a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.start_button a:visited {
+    color: white; /* Color de los enlaces visitados blanco */
 }

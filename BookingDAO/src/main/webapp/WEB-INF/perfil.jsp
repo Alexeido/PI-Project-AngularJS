@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="left-content">
-            <h1>Booking.com</h1>
+            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
         </div>
         <div class="right-content">
             <div class="right-icons">

@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-color: #183c94;
+    background-color: #003b95;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -74,4 +74,34 @@ header h1 {
 
 .view-reservations-btn:hover {
     background-color: #0056b3;
+}
+
+button {
+    background-color: #003b95; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+    border: none; /* Quitamos el borde */
+    padding: 10px 20px; /* Ajustamos el espaciado interno */
+    border-radius: 5px; /* Redondeamos los bordes */
+    cursor: pointer; /* Cambiamos el cursor */
+}
+
+/* Estilos para cuando se pase el cursor sobre los botones */
+button:hover {
+    background-color: #204b8c; /* Cambiamos el color de fondo al pasar el cursor */
+}
+
+
+.start_button {
+	font-weight: bold; /* Texto en negrita */
+    font-size: 25px;
+    font-family: 'Domestos';
+    color: white; /* Color de texto blanco */
+}
+
+.start_button a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.start_button a:visited {
+    color: white; /* Color de los enlaces visitados blanco */
 }
