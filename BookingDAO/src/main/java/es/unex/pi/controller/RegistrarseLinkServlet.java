@@ -10,9 +10,11 @@ import jakarta.servlet.http.HttpSession;
 import es.unex.pi.dao.UserDAO;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import es.unex.pi.model.BookingsAccommodations;
 import es.unex.pi.model.User;
 /**
  * Servlet implementation class RegistrarseLinkServlet
@@ -55,6 +57,8 @@ public class RegistrarseLinkServlet extends HttpServlet {
 
 		userDao.add(user);
 		HttpSession session = request.getSession();
+		ArrayList<BookingsAccommodations> carrito = new ArrayList<>();
+        session.setAttribute("carrito", carrito);
 		session.setAttribute("user", user);
 	
 		response.sendRedirect("IndexLinkServlet.do");

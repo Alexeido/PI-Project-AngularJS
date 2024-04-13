@@ -21,7 +21,6 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		if (conn == null) return null;
 		
 		Accommodation accommodation = null;		
-		
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE id ="+id);			 
@@ -29,6 +28,10 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 			accommodation  = new Accommodation();	 
 			fromRsToAccommodationObject(rs,accommodation);
 			logger.info("fetching Accommodation by id: "+id+" -> "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
+			
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);
+			accommodation.setProp(propertyDao.get(accommodation.getIdp()));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -49,6 +52,9 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 			accommodation  = new Accommodation();	 
 			fromRsToAccommodationObject(rs,accommodation);
 			logger.info("fetching Accommodation by name: "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);
+			accommodation.setProp(propertyDao.get(accommodation.getIdp()));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -65,11 +71,14 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		try {
 			Statement stmt;
 			ResultSet rs;
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);	
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT * FROM accommodations");
 			while ( rs.next() ) {
 				Accommodation accommodation = new Accommodation();
-				fromRsToAccommodationObject(rs,accommodation);				
+				fromRsToAccommodationObject(rs,accommodation);		
+				accommodation.setProp(propertyDao.get(accommodation.getIdp()));	
 				accommodations.add(accommodation);
 				logger.info("fetching Accommodations: "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
 			}
@@ -86,12 +95,15 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 
 		ArrayList<Accommodation> accommodations = new ArrayList<Accommodation>();
 		try {
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE UPPER(name) LIKE '%" + search + "%'");
 
 			while (rs.next()) {
 				Accommodation accommodation = new Accommodation();
 				fromRsToAccommodationObject(rs,accommodation);
+				accommodation.setProp(propertyDao.get(accommodation.getIdp()));
 				accommodations.add(accommodation);
 				logger.info("fetching accommodations by text in the name: "+search+": "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
 			}
@@ -109,10 +121,13 @@ public class JDBCAccommodationDAOImpl implements AccommodationDAO {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM accommodations WHERE idp = '"+idp+"'");	
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);
 
 			while (rs.next()) {
 				Accommodation accommodation = new Accommodation();
 				fromRsToAccommodationObject(rs,accommodation);
+				accommodation.setProp(propertyDao.get(accommodation.getIdp()));
 				accommodations.add(accommodation);
 				logger.info("fetching accommodations by idp : "+idp+": "+accommodation.getId()+" "+accommodation.getName()+" "+accommodation.getDescription());
 			}

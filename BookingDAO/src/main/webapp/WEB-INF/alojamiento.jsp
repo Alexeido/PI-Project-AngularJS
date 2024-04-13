@@ -92,39 +92,24 @@
                 <div class="g2-2">
                     <div class="g2-2F1">
                         <div class="estrellas">
-                        <c:choose>
-					    <c:when test="${alojamiento.gradesAverage == 5}">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-					    </c:when>
-					    <c:when test="${alojamiento.gradesAverage >= 4}">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-					    </c:when>
-					    <c:when test="${alojamiento.gradesAverage >= 3}">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-					    </c:when>
-					    <c:when test="${alojamiento.gradesAverage >= 2}">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-					    </c:when>
-					    <c:otherwise>
-                            <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
-					    </c:otherwise>
-					</c:choose>
-                        </div>
+						    <c:set var="numEstrellas" value="${alojamiento.gradesAverage / 1}" />
+						    <c:forEach begin="1" end="5" var="i">
+						        <c:choose>
+						            <c:when test="${i <= numEstrellas}">
+						                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+						            </c:when>
+						            <c:otherwise>
+						                <img src="${pageContext.request.contextPath}/images/star-empty.svg" alt="Estrella vacía">
+						            </c:otherwise>
+						        </c:choose>
+						    </c:forEach>
+						</div>
                         <div class="right-section">
                             <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
-                            <form action="carrito.html">
-                                <button class="reserva">Reserva ahora</button>
-                            </form>
+                            <form action="#disponibilidad" method="get">
+							    <button type="submit" class="reserva">Reserva ahora</button>
+							</form>
+
                               
                         </div>
                     </div>
@@ -206,9 +191,9 @@
 				</c:if>
             
                 
-                <form action="carrito.html">
-                    <button class="reserva">Reserva ahora</button>
-                </form>
+                <form action="#disponibilidad" method="get">
+				    <button type="submit" class="reserva">Reserva ahora</button>
+				</form>
                 <button class="reserva"><img src="${pageContext.request.contextPath}/images/tlf.svg" alt="icono de telefono"> ${alojamiento.telephone}</button>
             </div>
             
@@ -273,8 +258,9 @@
 			                <td>
 			                    <c:choose>
 			                        <c:when test="${accommodation.numAccommodations > 0}">
-			                            <form action="CarritoLinkServlet.do" method="post">
-			                                <button class="reserva">Reserva ahora por ${accommodation.price}€</button>
+			                            <form action="CarritoSessionAddServlet.do" method="post">
+								    		<input type="hidden" name="ida" value="${accommodation.id}">
+			                                <button class="reserva">Añade al carrito por ${accommodation.price}€</button>
 			                            </form>
 			                        </c:when>
 			                        <c:otherwise>

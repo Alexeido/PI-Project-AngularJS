@@ -45,21 +45,68 @@
 
         <div class="carrito">
             <div class="reserva">
-                <div class="hotel">
-                    <p class="hotel-name">Ambassador Playa I</p>
-                    <p class="hotel-address">Gerona, 41, 03503 Benidorm, España</p>
-                    <p class="hotel-rating">Excelente ubicación - 9.2</p>
-                    <div class="rating-box">
-                        <p class="rating-note">9.1</p>
-                        <p class="rating-text">Fantástico</p>
-                        <p class="rating-comments">3823 Comentarios</p>
-                    </div>
-                    <div class="amenities">
-                        <p><img src="${pageContext.request.contextPath}/images/wifi.svg" alt="Icono de WiFi">WiFi gratis</p>
-                        <p><img src="${pageContext.request.contextPath}/images/spa.svg" alt="Icono de spa">Spa y centro de bienestar</p>
-                        <p><img src="${pageContext.request.contextPath}/images/dog.svg" alt="Icono de perro">Permite mascotas</p>
+                
+                <div class="precio">
+                    <p class="precio-title">Desglose del precio</p>
+                    <div class="total">
+                        <p class="precio-max">Total</p>
+                        <div class="right">
+                            <p class="precio-max">€ ${sumaPrecios}</p>
+                            <p class="subtext">Incluye impuestos y cargos</p>
+                        </div>
                     </div>
                 </div>
+            
+	            <c:forEach var="habitacion" items="${habitaciones}" varStatus="loop">
+                <div class="hotel">
+                    <p class="hotel-name">Habitación ${habitacion.name} en ${habitacion.prop.name}</p>
+                    <p class="hotel-name">Precio: ${habitacion.price}€</p>
+                    <p class="hotel-address">${habitacion.prop.address}, ${habitacion.prop.city}</p>
+                    <p class="hotel-rating">
+						<c:choose>
+						    <c:when test="${habitacion.prop.centerDistance < 0.2}">
+						        <p class="hotel-rating">Ubicación excelente</p>
+						    </c:when>
+						    <c:when test="${habitacion.prop.centerDistance < 1}">
+						        <p class="hotel-rating">Ubicación buena</p>
+						    </c:when>
+						    <c:when test="${habitacion.prop.centerDistance < 5.0}">
+						        <p class="hotel-rating">Ubicación promedio</p>
+						    </c:when>
+						    <c:otherwise>
+						        <p class="hotel-rating">Ubicación normal</p>
+						    </c:otherwise>
+						</c:choose>
+                    </p>
+                    <div class="rating-box">
+                        <p class="rating-note">${habitacion.prop.gradesAverage}</p>
+                        <p class="rating-text">
+	                        <c:choose>
+			                    <c:when test="${habitacion.prop.gradesAverage == 5}">
+			                        Excepcional
+			                    </c:when>
+			                    <c:when test="${habitacion.prop.gradesAverage > 4.5}">
+			                        Fantástico
+			                    </c:when>
+			                    <c:when test="${habitacion.prop.gradesAverage > 4}">
+			                        Fabuloso
+			                    </c:when>
+			                    <c:when test="${habitacion.prop.gradesAverage > 3.5}">
+			                        Muy bien
+			                    </c:when>
+			                    <c:otherwise>
+			                        Puntuación
+			                    </c:otherwise>
+			                </c:choose>
+						</p>
+                    </div>
+                    <div class="amenities">
+		                <c:if test="${habitacion.prop.petFriendly == 1}">
+				       		<p><img src="${pageContext.request.contextPath}/images/dog.svg" alt="Icono de perro">Permite mascotas</p>
+						</c:if>
+                    </div>
+                </div>
+	            </c:forEach>
             
                 <div class="fecha">
                     <p class="reserva-title">Los datos de tu reserva</p>
@@ -77,39 +124,28 @@
                     </div>
                     <p class="duracion">Duración total de la estancia: 1 noche</p>
                     <hr class="separator">
-                    <p class="seleccionado">Has seleccionado: <span class="bold">1 Habitación para 2 adultos</span></p>
+                    <p class="seleccionado">Has seleccionado: <span class="bold">${accommodation.name}</span></p>
                     <p class="cambiar">Cambia tu selección</p>
-                </div>
-                
-                <div class="precio">
-                    <p class="precio-title">Desglose del precio</p>
-                    <div class="total">
-                        <p class="precio-max">Total</p>
-                        <div class="right">
-                            <p class="precio-max">€ 59,06</p>
-                            <p class="subtext">Incluye impuestos y cargos</p>
-                        </div>
-                    </div>
-                    <p class="precio-title">Información sobre el precio</p>
-                    <p class="subtext">Incluye € 5,37 de impuestos y cargos</p>
                 </div>
             </div>
             <div class="datos">
                 <p class="max">Introduce tus datos</p>
-                <form class="persona">
+                <form action="ReservarHabitacionesServlet.do" method="post">
+    				<input type="hidden" name="precioTotal" value="${sumaPrecios}">
                     <div class="nameAp">
                         <div>
                             <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="name">
+							<input type="text" id="nombre" name="name" value="${user.name}">
+
                         </div>
                         <div>
                             <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" name="subname">
+                            <input type="text" id="apellidos" name="subname" value="${user.surname}">
                         </div>
                     </div>
                     
                     <label for="email">Correo eléctronico:</label>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="email" name="email" value="${user.email}">
                     <label for="phone">Teléfono (móvil si es posible):</label>
                     <input type="text" id="phone" name="phone">
                     

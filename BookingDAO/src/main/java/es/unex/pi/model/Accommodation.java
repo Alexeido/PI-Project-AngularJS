@@ -1,4 +1,5 @@
 package es.unex.pi.model;
+
 //habitaciones de cada alojamiento
 public class Accommodation {
 	
@@ -8,6 +9,7 @@ public class Accommodation {
 	private String description;
 	private long idp;
 	private int numAccommodations;
+	private Property prop;
 	
 	public long getIdp() {
 		return idp;
@@ -45,6 +47,12 @@ public class Accommodation {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Property getProp() {
+		return prop;
+	}
+	public void setProp(Property prop) {
+		this.prop = prop;
 	}
 
 }

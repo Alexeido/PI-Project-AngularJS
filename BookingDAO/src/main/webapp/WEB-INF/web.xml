@@ -144,4 +144,24 @@
     <servlet-name>ActualizarPerfilServlet</servlet-name>
     <url-pattern>/ActualizarPerfilServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CarritoSessionAddServlet</display-name>
+    <servlet-name>CarritoSessionAddServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.CarritoSessionAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarritoSessionAddServlet</servlet-name>
+    <url-pattern>/CarritoSessionAddServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReservarHabitacionesServlet</display-name>
+    <servlet-name>ReservarHabitacionesServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.ReservarHabitacionesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReservarHabitacionesServlet</servlet-name>
+    <url-pattern>/ReservarHabitacionesServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

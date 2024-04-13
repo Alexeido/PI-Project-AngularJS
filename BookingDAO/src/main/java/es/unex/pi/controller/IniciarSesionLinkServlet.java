@@ -10,9 +10,11 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import es.unex.pi.model.User;
+import es.unex.pi.model.BookingsAccommodations;
 import es.unex.pi.dao.UserDAO;
 /**
  * Servlet implementation class IniciarSesionLinkServlet
@@ -54,6 +56,8 @@ public class IniciarSesionLinkServlet extends HttpServlet {
 			logger.info("User " + user.getId());
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
+			ArrayList<BookingsAccommodations> carrito = new ArrayList<>();
+            session.setAttribute("carrito", carrito);
 			response.sendRedirect("IndexLinkServlet.do");
 		}
 		else {
