@@ -24,26 +24,21 @@
     <div class="profile-container">
     <form action="ActualizarPerfilServlet.do" method="post">
         <h2>Perfil de Usuario</h2>
-        <button type="submit">Actualizar Perfil</button>
-        
         <div class="profile-info">
             <label for="email">Correo:</label>
-            <input type="text" id="email"  name="email" value=${user.email} readonly >
+            <input type="text" id="email"  name="email" value=${user.email} >
         </div>
         <div class="profile-info">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" value=${user.name} readonly>
+            <input type="text" id="nombre" name="nombre" value=${user.name} >
         </div>
         <div class="profile-info">
             <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido"  name="apellido" value=${user.surname } readonly>
+            <input type="text" id="apellido"  name="apellido" value=${user.surname} >
         </div>`	
+        <button type="submit">Actualizar Perfil</button>
         </form>
-        <button class="view-reservations-btn">Ver Reservas</button>
-        <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesion</button></a>
-        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>
-        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
-        
+        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>        
     </div>
 </body>
 </html>

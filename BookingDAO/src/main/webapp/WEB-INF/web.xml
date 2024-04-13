@@ -134,4 +134,14 @@
     <servlet-name>AlojamientoSesionLinkServlet</servlet-name>
     <url-pattern>/AlojamientoSesionLinkServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ActualizarPerfilServlet</display-name>
+    <servlet-name>ActualizarPerfilServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.ActualizarPerfilServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ActualizarPerfilServlet</servlet-name>
+    <url-pattern>/ActualizarPerfilServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>
