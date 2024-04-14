@@ -41,7 +41,6 @@
     </header>
 
     <div class="container">
-        <section class="edit-alojamiento">
             <div class="edit-form">
                 <h2>Editar Alojamiento</h2>
                 <form action="ActualizarAlojamientoServlet.do" method="post">
@@ -141,11 +140,11 @@
                             
                         </c:otherwise>
                     </c:choose>
-
-                    <button type="submit">Continuar</button>
+					<div class="button-container">
+					   <button type="submit">Continuar</button>
+					</div>
                 </form>
             </div>
-        </section>
     </div>
 </body>
 </html>

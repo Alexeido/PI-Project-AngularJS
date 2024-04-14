@@ -42,14 +42,6 @@
         </nav>
     </header>
     <div class="container">
-        <section class="edit-alojamiento">
-            <div class="upload-photos">
-                <h2>Subir Fotos</h2>
-                <form>
-                    <input type="file" id="photo" name="photo" accept="image/*" multiple>
-                    <input type="submit" value="Subir">
-                </form>
-            </div>
             <div class="edit-form">
                 <h2>Registrar Alojamiento</h2>
                 <form action="registroAlojamientoLinkServlet.do" method="post">
@@ -92,11 +84,11 @@
                     <label for="si-mascotas">Sí</label>
                     <input type="radio" id="no-mascotas" name="mascotas" value="no">
                     <label for="no-mascotas">No</label><br><br>
-
-                    <button type="submit">Continuar</button>
+					<div class="button-container">
+					   <button type="submit">Continuar</button>
+					</div>
                 </form>
             </div>
-        </section>
     </div>
 </body>
 </html>
