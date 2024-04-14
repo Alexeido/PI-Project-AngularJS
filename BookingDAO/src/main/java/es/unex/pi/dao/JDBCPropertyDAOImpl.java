@@ -136,10 +136,10 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 			
 			try {
 				stmt = conn.createStatement();
-				stmt.executeUpdate("INSERT INTO properties (name,address,telephone,idu,gradesAverage,city,centerDistance,description,petFriendly,available) VALUES('"
-									+property.getName()+"','"+property.getAddress()+"','" + property.getTelephone() + "'," 
-									+ property.getIdu() + "," + property.getGradesAverage()+",'"+ property.getCity() +"',"+ property.getCenterDistance() +",'" + property.getDescription() + "'," 
-									+ property.getPetFriendly() +"," + property.getAvailable() + ")");
+				stmt.executeUpdate("INSERT INTO properties (name, address, telephone, idu, gradesAverage, city, centerDistance, description, petFriendly, available, Restaurtante, Desayuno, Wifi, Gym, Piscina, Spa) VALUES('"
+	                    + property.getName() + "','" + property.getAddress() + "','" + property.getTelephone() + "',"
+	                    + property.getIdu() + "," + property.getGradesAverage() + ",'" + property.getCity() + "'," + property.getCenterDistance() + ",'" + property.getDescription() + "',"
+	                    + property.getPetFriendly() + "," + property.getAvailable() + "," + property.getRestaurante() + "," + property.getDesayuno() + "," + property.getWifi() + "," + property.getGym() + "," + property.getPiscina() + "," + property.getSpa() + ")");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

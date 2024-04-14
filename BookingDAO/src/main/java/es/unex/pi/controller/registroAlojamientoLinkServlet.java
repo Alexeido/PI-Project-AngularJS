@@ -55,12 +55,13 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 	    double centerDistance = Double.parseDouble(centerDistanceStr);
 	    String description = request.getParameter("description");
 	    int petFriendly = request.getParameter("mascotas").equals("si") ? 1 : 0; // 1 si permite mascotas, 0 si no
-	    int restaurante = request.getParameter("Restaurante") != null ? 1 : 0;
-	    int desayuno = request.getParameter("Desayuno") != null ? 1 : 0;
+	    int restaurante = request.getParameter("restaurante") != null ? 1 : 0;
+	    int desayuno = request.getParameter("desayuno") != null ? 1 : 0;
 	    int wifi = request.getParameter("wifi") != null ? 1 : 0;
 	    int gym = request.getParameter("gym") != null ? 1 : 0;
 	    int piscina = request.getParameter("piscina") != null ? 1 : 0;
-	    int spa = request.getParameter("Spa") != null ? 1 : 0;
+	    int spa = request.getParameter("spa") != null ? 1 : 0;
+
 
 	    User user = (User) session.getAttribute("user");
 

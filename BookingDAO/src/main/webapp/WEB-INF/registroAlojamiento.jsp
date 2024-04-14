@@ -51,7 +51,7 @@
                 </form>
             </div>
             <div class="edit-form">
-                <h2>Editar Alojamiento</h2>
+                <h2>Registrar Alojamiento</h2>
                 <form action="registroAlojamientoLinkServlet.do" method="post">
                     <label for="name">Nombre Alojamiento:</label>
                     <input type="text" id="name" name="name"><br><br>
@@ -73,18 +73,19 @@
                     
                     
                     <label>Servicios o instalaciones ofrecidos:</label><br>
-                    <input type="checkbox" id="wifi" name="wifi">
-                    <label for="wifi">Wifi</label><br>
-                    <input type="checkbox" id="piscina" name="piscina">
-                    <label for="piscina">Piscina</label><br>
-                    <input type="checkbox" id="gym" name="gym">
-                    <label for="gym">Gimnasio</label><br>
-                    <input type="checkbox" id="Spa" name="Spa">
-                    <label for="Spa">Spa</label><br>
-                    <input type="checkbox" id="Desayuno" name="Desayuno">
-                    <label for="Desayuno">Desayuno</label><br>
-                    <input type="checkbox" id="Restaurante" name="Restaurante">
-                    <label for="Restaurante">Restaurante</label><br><br>
+					<input type="checkbox" id="wifi" name="wifi" value="1">
+					<label for="wifi">Wifi</label><br>
+					<input type="checkbox" id="piscina" name="piscina" value="1">
+					<label for="piscina">Piscina</label><br>
+					<input type="checkbox" id="gym" name="gym" value="1">
+					<label for="gym">Gimnasio</label><br>
+					<input type="checkbox" id="spa" name="spa" value="1">
+					<label for="spa">Spa</label><br>
+					<input type="checkbox" id="desayuno" name="desayuno" value="1">
+					<label for="desayuno">Desayuno</label><br>
+					<input type="checkbox" id="restaurante" name="restaurante" value="1">
+					<label for="restaurante">Restaurante</label><br><br>
+
 
                     <label>Permite mascotas:</label><br>
                     <input type="radio" id="si-mascotas" name="mascotas" value="si">
