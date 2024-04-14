@@ -163,34 +163,37 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 
 	@Override
 	public boolean update(Property property) {
-		boolean done = false;
-		if (conn != null){
-			
-			Statement stmt;
-			try {
-				stmt = conn.createStatement();
-				stmt.executeUpdate("UPDATE properties SET name='"+property.getName()
-				+"', address='"+property.getAddress()
-				+"', telephone='"+property.getTelephone()
-				+"', idu="+property.getIdu()
-				+", gradesAverage="+property.getGradesAverage()
-				+", city='"+property.getCity()
-				+"', centerDistance="+property.getCenterDistance()
-				+", description='"+property.getDescription()				
-				+"', petFriendly="+property.getPetFriendly()
-				+", available="+property.getAvailable()
-				+" WHERE id = "+property.getId());
-				logger.info("updating property: "+property.getId());
-						
-				done= true;
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return done;
-
+	    boolean done = false;
+	    if (conn != null){
+	        Statement stmt;
+	        try {
+	            stmt = conn.createStatement();
+	            stmt.executeUpdate("UPDATE properties SET name='"+property.getName()
+	                +"', address='"+property.getAddress()
+	                +"', telephone='"+property.getTelephone()
+	                +"', idu="+property.getIdu()
+	                +", gradesAverage="+property.getGradesAverage()
+	                +", city='"+property.getCity()
+	                +"', centerDistance="+property.getCenterDistance()
+	                +", description='"+property.getDescription()                
+	                +"', petFriendly="+property.getPetFriendly()
+	                +", available="+property.getAvailable()
+	                +", Restaurtante="+property.getRestaurante()
+	                +", Desayuno="+property.getDesayuno()
+	                +", Wifi="+property.getWifi()
+	                +", Gym="+property.getGym()
+	                +", Piscina="+property.getPiscina()
+	                +", Spa="+property.getSpa()
+	                +" WHERE id = "+property.getId());
+	            logger.info("updating property: "+property.getId());
+	            done = true;
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return done;
 	}
+
 
 	@Override
 	public boolean delete(long id) {
@@ -211,19 +214,26 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 		return done;
 	}
 
-	public void fromRsToPropertyObject(ResultSet rs,Property property) throws SQLException{
-		property.setId(rs.getInt("id"));
-		property.setName(rs.getString("name"));
-		property.setAddress(rs.getString("address"));
-		property.setTelephone(rs.getString("telephone"));
-		property.setIdu(rs.getInt("idu"));
-		property.setCity(rs.getString("city"));
-		property.setGradesAverage(rs.getDouble("gradesAverage"));
-		property.setCenterDistance(rs.getDouble("centerDistance"));
-		property.setDescription(rs.getString("description"));
-		property.setPetFriendly(rs.getInt("petFriendly"));
-		property.setAvailable(rs.getInt("available"));
+	public void fromRsToPropertyObject(ResultSet rs, Property property) throws SQLException {
+	    property.setId(rs.getInt("id"));
+	    property.setName(rs.getString("name"));
+	    property.setAddress(rs.getString("address"));
+	    property.setTelephone(rs.getString("telephone"));
+	    property.setIdu(rs.getInt("idu"));
+	    property.setGradesAverage(rs.getDouble("gradesAverage"));
+	    property.setCity(rs.getString("city"));
+	    property.setCenterDistance(rs.getDouble("centerDistance"));
+	    property.setDescription(rs.getString("description"));
+	    property.setPetFriendly(rs.getInt("petFriendly"));
+	    property.setAvailable(rs.getInt("available"));
+	    property.setRestaurante(rs.getInt("Restaurtante"));
+	    property.setDesayuno(rs.getInt("Desayuno"));
+	    property.setWifi(rs.getInt("Wifi"));
+	    property.setGym(rs.getInt("Gym"));
+	    property.setPiscina(rs.getInt("Piscina"));
+	    property.setSpa(rs.getInt("Spa"));
 	}
+
 	
 	@Override
 	public void setConnection(Connection conn) {

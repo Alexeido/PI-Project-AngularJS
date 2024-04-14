@@ -71,8 +71,6 @@
                     <label for="descripcion">Descripción:</label><br>
                     <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
                     
-                    <label for="available">Disponibles:</label>
-                    <input type="number" id=available name="available" step="0.1"><br><br>
                     
                     <label>Servicios o instalaciones ofrecidos:</label><br>
                     <input type="checkbox" id="wifi" name="wifi">
@@ -80,9 +78,13 @@
                     <input type="checkbox" id="piscina" name="piscina">
                     <label for="piscina">Piscina</label><br>
                     <input type="checkbox" id="gym" name="gym">
-                    <label for="gym">Gimnasio</label><br><br>
-                    <label for="serviciosad">Añada servicios adicionales:</label>
-                    <textarea id="serviciosad" name="serviciosad" rows="4" cols="50"></textarea><br><br>
+                    <label for="gym">Gimnasio</label><br>
+                    <input type="checkbox" id="Spa" name="Spa">
+                    <label for="Spa">Spa</label><br>
+                    <input type="checkbox" id="Desayuno" name="Desayuno">
+                    <label for="Desayuno">Desayuno</label><br>
+                    <input type="checkbox" id="Restaurante" name="Restaurante">
+                    <label for="Restaurante">Restaurante</label><br><br>
 
                     <label>Permite mascotas:</label><br>
                     <input type="radio" id="si-mascotas" name="mascotas" value="si">

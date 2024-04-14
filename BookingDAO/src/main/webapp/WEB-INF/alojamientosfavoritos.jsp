@@ -28,8 +28,7 @@
             <p>¿No encuentra un alojamiento?</p>
         </div>
         <div class="Elemento-contatiner">
-        <c:forEach var="alojamientouser" items="${alojamientosuser}">
-        
+        <c:forEach var="alojamientosuserfav" items="${alojamientosuserfav}">
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
                     <div class="foto-c2">
@@ -37,14 +36,14 @@
                     </div>
  
                     <div class="Texto-c2">
-                    <h1>${alojamientouser.name}</h1>
+                    <h1>${alojamientosuserfav.name}</h1>
                         <div class="location">
-                            <h1>${alojamientouser.city}</h1>
+                            <h1>${alojamientosuserfav.city}</h1>
                             </div>
                     </div>
 						<div class="datos">
 						    <div class="button-row">
-						        <a href="<c:url value='EliminarFavoritoServlet.do?idalojamiento=${alojamientouser.id}'/>">
+						        <a href="<c:url value='EliminarFavoritoServlet.do?idalojamiento=${alojamientosuserfav.id}'/>">
 						            <button class="eliminar">Eliminar Favorito</button>
 						        </a>
 						    </div>

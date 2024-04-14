@@ -39,7 +39,7 @@ public class EliminarFavoritoServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		User user=(User) session.getAttribute("user");
 		long idu=user.getId();
-		favoritosDao.delete(idp,idu);
+		favoritosDao.delete(idu,idp);
 		response.sendRedirect("FavoritosUserServlet.do");
 	}
 

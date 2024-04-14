@@ -21,14 +21,12 @@
                     <c:when test="${not empty user.id}">
                         <button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
                         <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
-                    
                     </c:when>
-                <c:otherwise>
-                    
-                    <button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
-                    <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
-                   </c:otherwise>
-                   </c:choose>
+                    <c:otherwise>
+                        <button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
+                        <button class="white-button"><a href="<c:url value='IniciarSesionLinkServlet.do'/>">Inicia sesión</a></button>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </nav>
 
@@ -65,24 +63,84 @@
                     <label for="descripcion">Descripción:</label><br>
                     <textarea id="description" name="description" rows="4" cols="50">${alojamiento.description}</textarea><br><br>
                     
-                    <label for="available">Disponibles:</label>
-                    <input type="number" id="available" name="available" step="0.1" value="${alojamiento.available}"><br><br>
-                    
                     <label>Servicios o instalaciones ofrecidos:</label><br>
-                    <input type="checkbox" id="wifi" name="wifi">
+                    <c:choose>
+                        <c:when test="${alojamiento.restaurante == 1}">
+                            <input type="checkbox" id="restaurante" name="restaurante" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="restaurante" name="restaurante">
+                        </c:otherwise>
+                    </c:choose>
+                    <label for="restaurante">Restaurante</label><br>
+
+                    <c:choose>
+                        <c:when test="${alojamiento.desayuno == 1}">
+                            <input type="checkbox" id="desayuno" name="desayuno" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="desayuno" name="desayuno">
+                        </c:otherwise>
+                    </c:choose>
+                    <label for="desayuno">Desayuno</label><br>
+
+                    <c:choose>
+                        <c:when test="${alojamiento.wifi == 1}">
+                            <input type="checkbox" id="wifi" name="wifi" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="wifi" name="wifi">
+                        </c:otherwise>
+                    </c:choose>
                     <label for="wifi">Wifi</label><br>
-                    <input type="checkbox" id="piscina" name="piscina">
+
+                    <c:choose>
+                        <c:when test="${alojamiento.gym == 1}">
+                            <input type="checkbox" id="gym" name="gym" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="gym" name="gym">
+                        </c:otherwise>
+                    </c:choose>
+                    <label for="gym">Gimnasio</label><br>
+
+                    <c:choose>
+                        <c:when test="${alojamiento.piscina == 1}">
+                            <input type="checkbox" id="piscina" name="piscina" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="piscina" name="piscina">
+                        </c:otherwise>
+                    </c:choose>
                     <label for="piscina">Piscina</label><br>
-                    <input type="checkbox" id="gym" name="gym">
-                    <label for="gym">Gimnasio</label><br><br>
-                    <label for="serviciosad">Añada servicios adicionales:</label>
-                    <textarea id="serviciosad" name="serviciosad" rows="4" cols="50" placeholder="Servicios adicionales ofrecidos"></textarea><br><br>
+
+                    <c:choose>
+                        <c:when test="${alojamiento.spa == 1}">
+                            <input type="checkbox" id="spa" name="spa" checked>
+                        </c:when>
+                        <c:otherwise>
+                            <input type="checkbox" id="spa" name="spa">
+                        </c:otherwise>
+                    </c:choose>
+                    <label for="spa">Spa</label><br><br>
 
                     <label>Permite mascotas:</label><br>
-                    <input type="radio" id="si-mascotas" name="mascotas" value="si">
-                    <label for="si-mascotas">Sí</label>
-                    <input type="radio" id="no-mascotas" name="mascotas" value="no">
-                    <label for="no-mascotas">No</label><br><br>
+                    <c:choose>
+                        <c:when test="${alojamiento.petFriendly == 1}">
+                            <input type="radio" id="si-mascotas" name="mascotas" value="si" checked>
+                            <label for="si-mascotas">Sí</label>
+                            <input type="radio" id="no-mascotas" name="mascotas" value="no">
+                            <label for="no-mascotas">No</label><br><br>
+                            
+                        </c:when>
+                        <c:otherwise>
+                            <input type="radio" id="si-mascotas" name="mascotas" value="si">
+                            <label for="si-mascotas">Sí</label>
+                            <input type="radio" id="no-mascotas" name="mascotas" value="no" checked>
+                            <label for="no-mascotas">No</label><br><br>
+                            
+                        </c:otherwise>
+                    </c:choose>
 
                     <button type="submit">Continuar</button>
                 </form>

@@ -52,7 +52,7 @@ public class JDBCfavoritosDAOImpl implements favoritosDAO {
 			Statement stmt;
 			try {
 				stmt = conn.createStatement();
-				stmt.executeUpdate("INSERT INTO BookingsAccommodations (idb,idacc,numAccommodations) VALUES("+
+				stmt.executeUpdate("INSERT INTO favoritos (Idu,Idp) VALUES("+
 									fav.getIdu()+","+
 									fav.getIdp()+")");
 						
@@ -75,7 +75,7 @@ public class JDBCfavoritosDAOImpl implements favoritosDAO {
 			Statement stmt;
 			try {
 				stmt = conn.createStatement();
-				stmt.executeUpdate("DELETE FROM BookingsAccommodations WHERE idu ="+idu+" AND idp="+idp);
+				stmt.executeUpdate("DELETE FROM favoritos WHERE idu ="+idu+" AND idp="+idp);
 				done= true;
 			} catch (SQLException e) {
 				e.printStackTrace();

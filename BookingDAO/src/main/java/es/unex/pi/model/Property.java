@@ -13,7 +13,12 @@ public class Property {
 	private int petFriendly;
 	private int available;
 	private int idu;
-
+    private int restaurante;
+    private int desayuno;
+    private int wifi;
+    private int gym;
+    private int piscina;
+    private int spa;
 	
 	public String getName() {
 		return name;
@@ -83,8 +88,53 @@ public class Property {
 	public void setPetFriendly(int petFriendly) {
 		this.petFriendly = petFriendly;
 	}
+	public int getRestaurante() {
+        return restaurante;
+    }
 
+    public void setRestaurante(int restaurante) {
+        this.restaurante = restaurante;
+    }
 
+    public int getDesayuno() {
+        return desayuno;
+    }
+
+    public void setDesayuno(int desayuno) {
+        this.desayuno = desayuno;
+    }
+
+    public int getWifi() {
+        return wifi;
+    }
+
+    public void setWifi(int wifi) {
+        this.wifi = wifi;
+    }
+
+    public int getGym() {
+        return gym;
+    }
+
+    public void setGym(int gym) {
+        this.gym = gym;
+    }
+
+    public int getPiscina() {
+        return piscina;
+    }
+
+    public void setPiscina(int piscina) {
+        this.piscina = piscina;
+    }
+
+    public int getSpa() {
+        return spa;
+    }
+
+    public void setSpa(int spa) {
+        this.spa = spa;
+    }
 	
 	
 }

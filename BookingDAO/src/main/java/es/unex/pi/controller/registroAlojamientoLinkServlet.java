@@ -42,40 +42,47 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
-		PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();		
-		propertyDao.setConnection(conn);
-		HttpSession session = request.getSession();
+	    Connection conn = (Connection) getServletContext().getAttribute("dbConn");
+	    PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();      
+	    propertyDao.setConnection(conn);
+	    HttpSession session = request.getSession();
 
-		String name = request.getParameter("name");
-		String address = request.getParameter("address");
-		String telephone = request.getParameter("telephone");
-		String city = request.getParameter("city");
-		String centerDistanceStr = request.getParameter("centerDistance");
-		double centerDistance = Double.parseDouble(centerDistanceStr);
-		String description = request.getParameter("description");
-		String availableStr = request.getParameter("available");
-		int available = Integer.parseInt(availableStr);
-		int petFriendly = request.getParameter("mascotas").equals("si") ? 1 : 0; // 1 si permite mascotas, 0 si no
-		String[] servicios = request.getParameterValues("servicios"); // Obtener todos los servicios seleccionados
-		
-		User user = new User();
-		user=(User) session.getAttribute("user");
-		
-		
-		Property alojamiento = new Property();
-		alojamiento.setName(name);
-		alojamiento.setAddress(address);
-		alojamiento.setTelephone(telephone);
-		alojamiento.setCity(city);
-		alojamiento.setCenterDistance(centerDistance);
-		alojamiento.setDescription(description);
-		alojamiento.setPetFriendly(petFriendly);
-		alojamiento.setAvailable(available);
-		alojamiento.setIdu((int) user.getId());
-		propertyDao.add(alojamiento);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
-		view.forward(request,response);
+	    String name = request.getParameter("name");
+	    String address = request.getParameter("address");
+	    String telephone = request.getParameter("telephone");
+	    String city = request.getParameter("city");
+	    String centerDistanceStr = request.getParameter("centerDistance");
+	    double centerDistance = Double.parseDouble(centerDistanceStr);
+	    String description = request.getParameter("description");
+	    int petFriendly = request.getParameter("mascotas").equals("si") ? 1 : 0; // 1 si permite mascotas, 0 si no
+	    int restaurante = request.getParameter("Restaurante") != null ? 1 : 0;
+	    int desayuno = request.getParameter("Desayuno") != null ? 1 : 0;
+	    int wifi = request.getParameter("wifi") != null ? 1 : 0;
+	    int gym = request.getParameter("gym") != null ? 1 : 0;
+	    int piscina = request.getParameter("piscina") != null ? 1 : 0;
+	    int spa = request.getParameter("Spa") != null ? 1 : 0;
+
+	    User user = (User) session.getAttribute("user");
+
+	    Property alojamiento = new Property();
+	    alojamiento.setName(name);
+	    alojamiento.setAddress(address);
+	    alojamiento.setTelephone(telephone);
+	    alojamiento.setCity(city);
+	    alojamiento.setCenterDistance(centerDistance);
+	    alojamiento.setDescription(description);
+	    alojamiento.setPetFriendly(petFriendly);
+	    alojamiento.setIdu((int) user.getId());
+	    alojamiento.setRestaurante(restaurante);
+	    alojamiento.setDesayuno(desayuno);
+	    alojamiento.setWifi(wifi);
+	    alojamiento.setGym(gym);
+	    alojamiento.setPiscina(piscina);
+	    alojamiento.setSpa(spa);
+	    propertyDao.add(alojamiento);
+	    RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
+	    view.forward(request,response);
 	}
+
 
 }
