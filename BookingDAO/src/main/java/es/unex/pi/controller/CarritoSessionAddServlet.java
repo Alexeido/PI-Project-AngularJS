@@ -1,7 +1,6 @@
 package es.unex.pi.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,6 +28,7 @@ public class CarritoSessionAddServlet extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
+		@SuppressWarnings("unchecked")
 		ArrayList<BookingsAccommodations> carrito = (ArrayList<BookingsAccommodations>) session.getAttribute("carrito");
 
         // Si el carrito no existe en la sesión, debe iniciar sesión
@@ -58,7 +58,9 @@ public class CarritoSessionAddServlet extends HttpServlet {
         }
 
         session.setAttribute("carrito", carrito);
-        response.sendRedirect(request.getHeader("referer"));
+        String referer = request.getHeader("referer");
+        response.sendRedirect(referer + "#disponibilidad");
+
 	}
 
 }

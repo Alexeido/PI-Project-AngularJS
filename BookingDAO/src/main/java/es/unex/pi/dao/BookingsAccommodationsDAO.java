@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.util.List;
 
 import es.unex.pi.model.BookingsAccommodations;
+import es.unex.pi.model.Accommodation;
 
 
 public interface BookingsAccommodationsDAO {
@@ -43,6 +44,16 @@ public interface BookingsAccommodationsDAO {
 	 * @return List of all the BookingAccommodation that contains an specific booking
 	 */
 	public List<BookingsAccommodations> getAllByBooking(long idb);
+
+	/**
+	 *Gets all the BookingAccommodation that are related to a accommodation.
+	 * 
+	 * @param idacc
+	 *            Accommodation identifier
+	 * 
+	 * @return List of all the BookingAccommodation related to a accommodation.
+	 */
+	public Accommodation getOneByBooking(long idb);
 
 	/**
 	 * Gets a BookingAccommodation from the DB using idb and idacc.

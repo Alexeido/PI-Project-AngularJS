@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+
 /* CSS for button rows */
 .button-row {
     display: flex;
@@ -18,6 +40,17 @@
         flex-basis: 48%;
     }
 }
+
+.button-row a {
+	color: inherit; /* Hereda el color del texto del contenedor principal */
+	text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+  /* Dedicado a los botones para que funcionen con los servlets*/
+.button-row a:visited {
+    color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+
 
 body {
     margin: 0;
@@ -163,7 +196,6 @@ button:hover {
 
 /* Estilos específicos para el botón de inicio */
 .start_button {
-    font-weight: bold; /* Texto en negrita */
     font-size: 25px;
     font-family: 'Domestos';
     color: white; /* Color de texto blanco */

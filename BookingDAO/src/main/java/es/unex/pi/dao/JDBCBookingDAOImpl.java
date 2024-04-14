@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import es.unex.pi.model.Accommodation;
 import es.unex.pi.model.Booking;
+import es.unex.pi.model.BookingsAccommodations;
 
 
 public class JDBCBookingDAOImpl implements BookingDAO {
@@ -76,6 +78,32 @@ public class JDBCBookingDAOImpl implements BookingDAO {
 	}
 	
 
+	public List<Booking> getUserBooks(long idu){
+
+		if (conn == null) return null;
+		
+		ArrayList<Booking> bookings = new ArrayList<Booking>();
+		try {
+			Statement stmt;
+			ResultSet rs;
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery("SELECT * FROM bookings WHERE idu="+idu);
+			while ( rs.next() ) {
+				Booking booking = new Booking();
+				fromRsToBookingObject(rs,booking);
+				if(booking!=null) {
+					bookings.add(booking);
+					logger.info("fetching Bookings: "+booking.getId());
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return bookings;
+		
+	}
+	
+	
 	@Override
 	public long add(Booking booking) {
 		long id=-1;
@@ -134,6 +162,37 @@ public class JDBCBookingDAOImpl implements BookingDAO {
 		return done;
 	}
 
+	public boolean updateTotalPrice(Booking b) {
+	    boolean done = false;
+
+	    if (conn != null && b!=null) {
+	        BookingsAccommodationsDAO accommodationsBookingsDao = new es.unex.pi.dao.JDBCBookingsAccommodationsDAOImpl();
+	        accommodationsBookingsDao.setConnection(conn);
+	        AccommodationDAO accommodationsDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();
+	        accommodationsDao.setConnection(conn);
+	        List<BookingsAccommodations> accom = accommodationsBookingsDao.getAllByBooking(b.getId());
+	        long totalPrice = 0;
+	        for (BookingsAccommodations ac : accom) {
+	            Accommodation j = accommodationsDao.get(ac.getIdacc());
+	            long price = j.getPrice() * ac.getNumAccommodations();
+	            totalPrice += price;
+	        }
+
+
+	        Statement stmt;
+	        try {
+	            stmt = conn.createStatement();
+	            stmt.executeUpdate("UPDATE bookings SET totalPrice = " + totalPrice + " WHERE id = " + b.getId());
+	            logger.info("Updating totalPrice Booking: " + b.getId());
+	            done = true;
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return done;
+	}
+
+	
 	@Override
 	public boolean delete(long id) {
 		boolean done = false;

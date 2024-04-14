@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import es.unex.pi.model.Accommodation;
 import es.unex.pi.model.BookingsAccommodations;
 
 public class JDBCBookingsAccommodationsDAOImpl implements BookingsAccommodationsDAO {
@@ -89,7 +90,32 @@ public class JDBCBookingsAccommodationsDAOImpl implements BookingsAccommodations
 
 		return BookingsAccommodationsList;
 	}
-	
+
+	@Override
+	public Accommodation getOneByBooking(long idb) {
+		if (conn == null) return null;
+		
+		Accommodation accommodation= null;
+		long idacc;
+		
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT idacc FROM BookingsAccommodations WHERE idb="+idb);			 
+			if (rs.next()) {
+	            idacc = rs.getLong("idacc"); 
+				AccommodationDAO accommodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();	
+				accommodationDao.setConnection(conn);
+				accommodation= accommodationDao.get(idacc);
+	    		return accommodation;
+	        }
+			else {
+				return null; 
+				}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return accommodation;
+	}
 	
 	@Override
 	public BookingsAccommodations get(long idb,long idacc) {

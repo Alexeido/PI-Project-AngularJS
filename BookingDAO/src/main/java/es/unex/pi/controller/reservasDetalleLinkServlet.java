@@ -2,30 +2,30 @@ package es.unex.pi.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.List;
 
 import es.unex.pi.dao.AccommodationDAO;
+import es.unex.pi.dao.BookingsAccommodationsDAO;
 import es.unex.pi.model.Accommodation;
 import es.unex.pi.model.BookingsAccommodations;
 
 /**
- * Servlet implementation class CarritoLinkServlet
+ * Servlet implementation class reservasDetalleLinkServlet
  */
-@WebServlet("/CarritoLinkServlet.do")
-public class CarritoLinkServlet extends HttpServlet {
+public class reservasDetalleLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	/**
+       
+    /**
      * @see HttpServlet#HttpServlet()
      */
-    public CarritoLinkServlet() {
+    public reservasDetalleLinkServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,20 +36,12 @@ public class CarritoLinkServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 		AccommodationDAO accommodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();
-		
+		BookingsAccommodationsDAO accommodationsBookingsDao = new es.unex.pi.dao.JDBCBookingsAccommodationsDAOImpl();	
+		long idb = Long.parseLong(request.getParameter("idb"));
+		accommodationsBookingsDao.setConnection(conn);
 	    accommodationDao.setConnection(conn);
 	    
-
-		HttpSession session=request.getSession();
-		@SuppressWarnings("unchecked")
-		ArrayList<BookingsAccommodations> carrito = (ArrayList<BookingsAccommodations>) session.getAttribute("carrito");
-		
-		
-		// Si el carrito no existe en la sesión, debe iniciar sesión
-        if (carrito == null) {
-            response.sendRedirect("IniciarSesionLinkServlet.do");
-            return;
-        }
+		List<BookingsAccommodations> carrito = accommodationsBookingsDao.getAllByBooking(idb);
 		ArrayList<Accommodation> habitaciones =  new ArrayList<>();
         int sumaPrecios = 0;
         
@@ -62,11 +54,9 @@ public class CarritoLinkServlet extends HttpServlet {
         }
 		request.setAttribute("habitaciones", habitaciones);
 		request.setAttribute("sumaPrecios", sumaPrecios);
+		request.setAttribute("idb", idb);
 		
-		
-		
-		
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/carrito.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/reservasDetalle.jsp");
 		view.forward(request,response);
 	}
 
@@ -74,6 +64,7 @@ public class CarritoLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

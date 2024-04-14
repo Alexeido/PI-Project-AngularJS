@@ -47,7 +47,14 @@ public interface BookingDAO {
 	 * @return List of all the bookinges from the database.
 	 */
 	public List<Booking> getAll();
+
 	
+	/**
+	 * Gets all the bookinges from the database.
+	 * 
+	 * @return List of all the bookinges from the database.
+	 */
+	public List<Booking> getUserBooks(long idu);
 
 	/**
 	 * Adds a booking to the database.
@@ -80,6 +87,15 @@ public interface BookingDAO {
 	 * 
 	 * @return True if the operation was made and False if the operation failed.
 	 */
+	
+
+
+	/**
+	 * recalculate the totalPrice value in this DAO.
+	 * 
+	 */
+	public boolean updateTotalPrice(Booking b);
+
 	
 	public boolean delete(long id);
 }

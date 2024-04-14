@@ -204,4 +204,54 @@
     <servlet-name>EliminarFavoritoServlet</servlet-name>
     <url-pattern>/EliminarFavoritoServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddReviewServlet</display-name>
+    <servlet-name>AddReviewServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.AddReviewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddReviewServlet</servlet-name>
+    <url-pattern>/AddReviewServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AnularBookServlet</display-name>
+    <servlet-name>AnularBookServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.AnularBookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AnularBookServlet</servlet-name>
+    <url-pattern>/AnularBookServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CarritoSessionDelServlet</display-name>
+    <servlet-name>CarritoSessionDelServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.CarritoSessionDelServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CarritoSessionDelServlet</servlet-name>
+    <url-pattern>/CarritoSessionDelServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>reservasDetalleLinkServlet</display-name>
+    <servlet-name>reservasDetalleLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.reservasDetalleLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reservasDetalleLinkServlet</servlet-name>
+    <url-pattern>/reservasDetalleLinkServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>reservasUsuarioLinkServlet</display-name>
+    <servlet-name>reservasUsuarioLinkServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.reservasUsuarioLinkServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reservasUsuarioLinkServlet</servlet-name>
+    <url-pattern>/reservasUsuarioLinkServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

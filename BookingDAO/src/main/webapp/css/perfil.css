@@ -1,3 +1,25 @@
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+
 body {
     margin: 0;
     padding: 0;
@@ -92,7 +114,6 @@ button:hover {
 
 
 .start_button {
-	font-weight: bold; /* Texto en negrita */
     font-size: 25px;
     font-family: 'Domestos';
     color: white; /* Color de texto blanco */

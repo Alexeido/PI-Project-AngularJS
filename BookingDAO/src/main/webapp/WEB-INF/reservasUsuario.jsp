@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis alojamientos</title>
+    <title>Reservas realizadas</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamientosuser.css">
 </head>
 <body>
@@ -23,12 +23,12 @@
     </header>
 
     <div class="container">
-        <h1>Alojamientos subidos</h1>
+        <h1>Reservas realizadas</h1>
         <div class="help-message">
-            <p>¿No encuentra un alojamiento?</p>
+            <p>¿Tiene algún problema?</p>
         </div>
         <div class="Elemento-contatiner">
-        <c:forEach var="alojamientouser" items="${alojamientosuser}">
+        <c:forEach var="reserva" items="${userBooks}" varStatus="loop">
         
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
@@ -38,41 +38,25 @@
  
                     <div class="Texto-c2">
                         <div class="location">
-                            <h1>${alojamientouser.city}</h1>
+                            <h1>${userBookedAccommodations[loop.index].prop.name} en ${userBookedAccommodations[loop.index].prop.city}</h1>
                             </div>
-							<p>
-							    <c:choose>
-							        <c:when test="${alojamientouser.available == 1}">
-							            Apartamento Disponible
-							            ${alojamientouser.available}
-							        </c:when>
-							        <c:otherwise>
-							            Apartamento No Disponible
-							            ${alojamientouser.available}
-							        </c:otherwise>
-							    </c:choose>
-							</p>
+							<p>Desglose total: ${reserva.totalPrice}€</p>
 
                     </div>
-						<div class="datos">
-						    <div class="button-row">
-						        <a href="<c:url value='AlojamientoSesionLinkServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Ver Habitaciones</button>
-						        </a>
-						        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Editar Alojamiento</button>
-						        </a>
-						    </div>
-						    <div class="button-row">
-						        <a href="<c:url value='CambiarDisponibilidadServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Cambiar Disponibilidad</button>
-						        </a>
-						        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button class="eliminar">Eliminar Alojamiento</button>
-						        </a>
-						    </div>
+					<div class="datos">
+					    <div class="button-row">
+						    <form action="reservasDetalleLinkServlet.do" method="post">
+						        <input type="hidden" name="idb" value="${reserva.id}">
+						        <button type="submit">Ver en detalle</button>
+						    </form>
 						</div>
-
+						<div class="button-row">
+						    <form action="AnularBookServlet.do" method="post">
+						        <input type="hidden" name="idb" value="${reserva.id}">
+						        <button type="submit" class="eliminar">Anular Reserva</button>
+						    </form>
+						</div>
+					</div>
                 </div>
             </div>
         </c:forEach>

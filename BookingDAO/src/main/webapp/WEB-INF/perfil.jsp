@@ -40,7 +40,7 @@
         </div>	
 		<div class="botonesvarios">
 		    <div>
-		        <button class="view-reservations-btn">Ver Reservas</button>
+		        <a href="<c:url value='reservasUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver Reservas</button></a>
 		        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
 		        <a href="<c:url value='FavoritosUserServlet.do'/>"><button class="view-reservations-btn">Ver mis favoritos</button></a>
 		        

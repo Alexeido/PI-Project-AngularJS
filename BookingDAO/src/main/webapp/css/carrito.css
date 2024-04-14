@@ -275,6 +275,18 @@ form{
     height: 36px;
 }
 
+.del {
+    background-color: #ff0000;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 4px 8px;
+    margin-top: 10px;
+    margin-right: none;
+    height: 36px;
+}
+
 
 .submit:hover{
     background-color: #043170;

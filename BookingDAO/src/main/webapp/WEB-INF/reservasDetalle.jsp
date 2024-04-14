@@ -62,6 +62,7 @@
                     <p class="hotel-name">Habitación ${habitacion.name} en ${habitacion.prop.name}</p>
                     <p class="hotel-name">Precio: ${habitacion.price}€</p>
                     <p class="hotel-address">${habitacion.prop.address}, ${habitacion.prop.city}</p>
+                    <p class="hotel-address">Telefono: ${habitacion.prop.telephone}</p>
                     <p class="hotel-rating">
 						<c:choose>
 						    <c:when test="${habitacion.prop.centerDistance < 0.2}">
@@ -106,9 +107,10 @@
 						</c:if>
                     </div>
                     <div class= "delete">
-                   		<form action="CarritoSessionDelServlet.do" method="post">
+                		<form action="AnularBookServlet.do" method="post">
     						<input type="hidden" name="ida" value="${habitacion.id}">
-                        	<button class="del">Eliminar</button>
+    						<input type="hidden" name="idb" value="${idb}">
+                        	<button class="del">Anular esta habitación</button>
                        </form>
                     </div>
                 </div>
@@ -135,39 +137,26 @@
                 </div>
             </div>
             <div class="datos">
-                <p class="max">Introduce tus datos</p>
-                <form action="ReservarHabitacionesServlet.do" method="post">
-    				<input type="hidden" name="precioTotal" value="${sumaPrecios}">
-                    <div class="nameAp">
-                        <div>
-                            <label for="nombre">Nombre:</label>
-							<input type="text" id="nombre" name="name" value="${user.name}">
-
-                        </div>
-                        <div>
-                            <label for="apellidos">Apellidos:</label>
-                            <input type="text" id="apellidos" name="subname" value="${user.surname}">
-                        </div>
-                    </div>
-                    
-                    <label for="email">Correo eléctronico:</label>
-                    <input type="text" id="email" name="email" value="${user.email}">
-                    <label for="phone">Teléfono (móvil si es posible):</label>
-                    <input type="text" id="phone" name="phone">
-                    
-                    <label for="motivo">Selecciona el motivo del viaje:</label>
-                    <select id="motivo" name="motivo">
-                        <option value="1">Viajo por vacaciones</option>
-                        <option value="2">Viajo por trabajo</option>
-                    </select>
-
-                    <label for="who">Para quien es la reserva?:</label>
-                    <select id="who" name="who">
-                        <option value="1">Para mi</option>
-                        <option value="2">Para otra persona</option>
-                    </select>
-                    <button class="submit" type="submit">Proceder al pago</button>
-                </form>
+                <p class="max">Datos de tu reserva</p>
+                <form action="AnularBookServlet.do" method="post">
+				    <input type="hidden" name="idb" value="${idb}">
+				    <div class="nameAp">
+				        <div>
+				            <label for="nombre">Nombre:</label>
+				            <span id="nombre">${user.name}</span>
+				        </div>
+				        <div>
+				            <label for="apellidos">Apellidos:</label>
+				            <span id="apellidos">${user.surname}</span>
+				        </div>
+				    </div>
+				    
+				    <label for="email">Correo electrónico:</label>
+				    <span id="email">${user.email}</span>
+				    <label for="phone">Teléfono:</label>
+				    <span id="phone">927-456-789</span> 
+				    <button class="del" type="submit">Anular toda la reserva</button>
+				</form>
             </div>
 
         </div>

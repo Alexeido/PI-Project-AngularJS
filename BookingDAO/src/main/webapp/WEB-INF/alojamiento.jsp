@@ -107,8 +107,8 @@
                         <div class="right-section">
                      		<a href="<c:url value='GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
                         	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
-						        </a>
-                            <form action="#disponibilidad" method="get">
+					        </a>
+						    <form action="#disponibilidad" method="get">
 							    <button type="submit" class="reserva">Reserva ahora</button>
 							</form>
 
@@ -305,7 +305,11 @@
 		        <div class="comentario-container">
 		            <c:forEach var="review" items="${listaReviews}" varStatus="loop">
 	                    <div class="comentario">
-	                        <div class="mini-valoracion-texto">${review.grade}  ${nombresUsuarios[loop.index]}</div>
+	                    	<div class="a-pachas">
+	                    		<div class="mini-valoracion-texto">${review.grade}</div> 
+	                    		<div class="useerr"> ${nombresUsuarios[loop.index]}</div>
+	                    	</div>
+	                        
 	                        <div class="nombre-pais"> 
 	                            <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="España"> España
 	                        </div>
@@ -317,7 +321,15 @@
 		        </div>
 		    </div>
 		</c:if>
-
+   <h2>Escribe tu propia Reseña</h2>
+    <form action="AddReviewServlet.do" method="post">
+   		<input type="hidden" name="idp" value="${alojamiento.id}">
+        <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br>
+        <label for="nota">Nota (del 0 al 5):</label>
+        <output id="output" name="output" for="nota">0</output><br>
+        <input type="range" id="nota" name="nota" min="0" max="5" step="1" value="0" oninput="output.value = nota.value"><br>
+        <button class="reserva">Enviar reseña</button>
+    </form>
  
 </div>
 </body>
