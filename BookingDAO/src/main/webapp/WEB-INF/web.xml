@@ -174,4 +174,34 @@
     <servlet-name>CambiarDisponibilidadServlet</servlet-name>
     <url-pattern>/CambiarDisponibilidadServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GuardarFavoritoServlet</display-name>
+    <servlet-name>GuardarFavoritoServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.GuardarFavoritoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GuardarFavoritoServlet</servlet-name>
+    <url-pattern>/GuardarFavoritoServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FavoritosUserServlet</display-name>
+    <servlet-name>FavoritosUserServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.FavoritosUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FavoritosUserServlet</servlet-name>
+    <url-pattern>/FavoritosUserServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EliminarFavoritoServlet</display-name>
+    <servlet-name>EliminarFavoritoServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.EliminarFavoritoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EliminarFavoritoServlet</servlet-name>
+    <url-pattern>/EliminarFavoritoServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

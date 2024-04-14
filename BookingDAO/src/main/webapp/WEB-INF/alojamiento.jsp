@@ -105,7 +105,9 @@
 						    </c:forEach>
 						</div>
                         <div class="right-section">
-                            <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
+                     		<a href="<c:url value='GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
+                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
+						        </a>
                             <form action="#disponibilidad" method="get">
 							    <button type="submit" class="reserva">Reserva ahora</button>
 							</form>

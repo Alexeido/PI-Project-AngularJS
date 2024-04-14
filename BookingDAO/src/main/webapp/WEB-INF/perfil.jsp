@@ -15,8 +15,8 @@
         </div>
         <div class="right-content">
             <div class="right-icons">
-                <img src="recursos/idioma.jpg" alt="Idiomas" width="30" height="30">
-                <img src="recursos/ayuda.jpg" alt="Ayuda" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="Idiomas" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/ayuda.jpg" alt="Ayuda" width="30" height="30">
             </div>
         </div>
     </header>
@@ -42,6 +42,8 @@
 		    <div>
 		        <button class="view-reservations-btn">Ver Reservas</button>
 		        <a href="<c:url value='AlojamientoUsuarioLinkServlet.do'/>"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
+		        <a href="<c:url value='FavoritosUserServlet.do'/>"><button class="view-reservations-btn">Ver mis favoritos</button></a>
+		        
 		    </div>
 		    <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesión</button></a>
 		</div>
