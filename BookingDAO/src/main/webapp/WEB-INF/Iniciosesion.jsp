@@ -20,8 +20,8 @@
         </div>
         <div class="right-content">
             <div class="right-icons">
-                <img src="recursos/idioma.jpg" alt="Idiomas" width="30" height="30">
-                <img src="recursos/ayuda.jpg" alt="Ayuda" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="Idiomas" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/ayuda.jpg" alt="Ayuda" width="30" height="30">
             </div>
         </div>
     </header>
@@ -48,7 +48,7 @@
             </tr>
             <tr>
                 <td>
-                    <button type="submit">Continuar</button>
+                    <button type="submit">Continuar</button>                    
                 </td>
             </tr>
             <tr>
@@ -61,10 +61,10 @@
             <tr>
                 <td>
                     <div class="images-container">
-                        <a href="enlace_pagina_facebook"><img src="recursos/facebook.png" alt="Facebook" width="30"
+                        <a href="<c:url value='RegistrarseLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/facebook.png" alt="Facebook" width="30"
                                 height="30"></a>
-                        <a href="enlace_pagina_google"><img src="recursos/google.png" alt="Google" width="30" height="30"></a>
-                        <a href="enlace_pagina_apple"><img src="recursos/apple.png" alt="Apple" width="30" height="30"></a>
+                        <a href="<c:url value='RegistrarseLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/google.png" alt="Google" width="30" height="30"></a>
+                        <a href="<c:url value='RegistrarseLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/apple.png" alt="Apple" width="30" height="30"></a>
                     </div>
                 </td>
             </tr>
@@ -72,11 +72,8 @@
                 <td  class="center-text">
                         <div class="linetop"></div>
                         <div class="small-text">
-                            <p>Al iniciar sesión o al crear una cuenta, aceptas nuestros</p>
-                        </div>
-                        <div class="small-text">
-                            <a href="url_terminos_y_condiciones">Términos y condiciones</a> y
-                            <a href="url_politica_privacidad">Política de privacidad</a>
+                            <p>No tienes una cuenta? registrate aquí</p>
+                            <button class="white-button"><a href="<c:url value='RegistrarseLinkServlet.do'/>">Hazte una cuenta</a></button>
                         </div>
                         <div class="linebottom"></div>
                 </td>

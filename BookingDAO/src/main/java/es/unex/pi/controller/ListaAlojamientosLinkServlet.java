@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import es.unex.pi.dao.AccommodationDAO;
@@ -46,7 +47,33 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
         HttpSession session=request.getSession();
         
         String Lugar=(String) session.getAttribute("lugar");
+        String mostrar=(String) request.getAttribute("mostrar");
         List<Property> listaAlojamientos = propertyDao.getAllBySearchName(Lugar);
+        
+
+        
+        if (mostrar != null && !mostrar.equals("Todos")) {
+            Iterator<Property> iterator = listaAlojamientos.iterator();
+            while (iterator.hasNext()) {
+                Property alojamiento = iterator.next();
+                switch (mostrar) {
+                    case "Disponibles":
+                        if (alojamiento.getAvailable() < 1) {
+                            iterator.remove();
+                        }
+                        break;
+                    case "No Disponibles":
+                        if (alojamiento.getAvailable() > 0) {
+                            iterator.remove();
+                        }
+                        break;
+                    default:
+                        // Si el valor de mostrar no coincide con ninguno de los casos anteriores
+                        // Puedes manejar este caso según sea necesario
+                        break;
+                }
+            }
+        }
 
         // Lista para almacenar los precios más bajos de las habitaciones
         List<Integer> preciosMasBajos = new ArrayList<>();
@@ -63,9 +90,15 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
                     precioMinimo = accommodation.getPrice();
                 }
             }
+            if(precioMinimo == Integer.MAX_VALUE) {
+            	precioMinimo=0;
+            }
             // Almacenar el precio mínimo encontrado en la lista de precios más bajos
             preciosMasBajos.add(precioMinimo);
         }
+
+
+        
         RequestDispatcher view = request.getRequestDispatcher("WEB-INF/listaalojamientos.jsp");
         request.setAttribute("listaalojamiento", listaAlojamientos);
         request.setAttribute("preciosBajos", preciosMasBajos);
@@ -76,7 +109,8 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+        String mostrar=(String) request.getParameter("Mostrar-por");
+        request.setAttribute("mostrar", mostrar);
 		doGet(request, response);
 	}
 

@@ -164,4 +164,14 @@
     <servlet-name>ReservarHabitacionesServlet</servlet-name>
     <url-pattern>/ReservarHabitacionesServlet.do</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CambiarDisponibilidadServlet</display-name>
+    <servlet-name>CambiarDisponibilidadServlet</servlet-name>
+    <servlet-class>es.unex.pi.controller.CambiarDisponibilidadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CambiarDisponibilidadServlet</servlet-name>
+    <url-pattern>/CambiarDisponibilidadServlet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

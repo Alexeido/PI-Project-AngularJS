@@ -18,8 +18,8 @@
         </div>
         <div class="right-content">
             <div class="right-icons">
-                <img src="recursos/idioma.jpg" alt="Idiomas" width="30" height="30">
-                <img src="recursos/ayuda.jpg" alt="Ayuda" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="Idiomas" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/ayuda.jpg" alt="Ayuda" width="30" height="30">
             </div>
         </div>
     </header>
@@ -71,10 +71,10 @@
             <tr>
                 <td>
                     <div class="images-container">
-                        <a href="enlace_pagina_facebook"><img src="recursos/facebook.png" alt="Facebook" width="30"
+                        <a href="enlace_pagina_facebook"><img src="${pageContext.request.contextPath}/images/facebook.png" alt="Facebook" width="30"
                                 height="30"></a>
-                        <a href="enlace_pagina_google"><img src="recursos/google.png" alt="Google" width="30" height="30"></a>
-                        <a href="enlace_pagina_apple"><img src="recursos/apple.png" alt="Apple" width="30" height="30"></a>
+                        <a href="enlace_pagina_google"><img src="${pageContext.request.contextPath}/images/google.png" alt="Google" width="30" height="30"></a>
+                        <a href="enlace_pagina_apple"><img src="${pageContext.request.contextPath}/images/apple.png" alt="Apple" width="30" height="30"></a>
                     </div>
                 </td>
             </tr>

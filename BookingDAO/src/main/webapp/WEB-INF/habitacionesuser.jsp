@@ -16,8 +16,8 @@
         </div>
         <div class="right-content">
             <div class="right-icons">
-                <img src="recursos/idioma.jpg" alt="Idiomas" width="30" height="30">
-                <img src="recursos/ayuda.jpg" alt="Ayuda" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="Idiomas" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/ayuda.jpg" alt="Ayuda" width="30" height="30">
             </div>
         </div>
     </header>
@@ -36,7 +36,7 @@
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
                     <div class="foto-c2">
-                        <img src="recursos/alojamiento1.png" alt="Google Maps">
+                        <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
                     </div>
  
                     <div class="Texto-c2">

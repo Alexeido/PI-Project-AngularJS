@@ -15,8 +15,8 @@
         </div>
         <div class="right-content">
             <div class="right-icons">
-                <img src="recursos/idioma.jpg" alt="Idiomas" width="30" height="30">
-                <img src="recursos/ayuda.jpg" alt="Ayuda" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/idioma.jpg" alt="Idiomas" width="30" height="30">
+                <img src="${pageContext.request.contextPath}/images/ayuda.jpg" alt="Ayuda" width="30" height="30">
             </div>
         </div>
     </header>

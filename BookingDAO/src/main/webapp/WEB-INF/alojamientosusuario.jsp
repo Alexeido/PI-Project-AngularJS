@@ -40,7 +40,19 @@
                         <div class="location">
                             <h1>${alojamientouser.city}</h1>
                             </div>
-                        <h2>${alojamientouser.name} </h2>
+							<p>
+							    <c:choose>
+							        <c:when test="${alojamientouser.available == 1}">
+							            Apartamento Disponible
+							            ${alojamientouser.available}
+							        </c:when>
+							        <c:otherwise>
+							            Apartamento No Disponible
+							            ${alojamientouser.available}
+							        </c:otherwise>
+							    </c:choose>
+							</p>
+
                     </div>
 						<div class="datos">
 						    <div class="button-row">

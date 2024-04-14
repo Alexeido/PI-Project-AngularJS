@@ -19,7 +19,7 @@
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
-                <button class="image-button"><img src="${pageContext.request.contextPath}/images/questionmarkW.png" alt="Ayuda"></button>
+                <button class="image-button"><a href="<c:url value='CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
                 <c:choose>
             		<c:when test="${not empty user.id}">
             			<button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
@@ -144,18 +144,18 @@
                     </div>
                 </div>
             </div>
-
-            <div class="container2">
+			 <div class="container2">
                 <h1>${lugar} ${listaalojamiento.size()} alojamientos encontrados</h1>
-                <div class="Ordenar_por">
-                    <select id="Ordenar-por" name="Ordenar-por" required>
-                        <option value="">Ordenar por:</option>
-                        <option value="Ordenar por : Casa y apartamentos">Ordenar por : Casa y apartamentos</option>
-                        <option value="Ordenar por : Mejor destacado">Ordenar por : Mejor destacado </option>
-                        <option value="Ordenar por : Mejor valorado">Ordenar por : Mejor valorado </option>
-                        <option value="Ordenar por : Precio">Ordenar por : Precio </option>
-                        <option value="Ordenar por : Distancia del centro">Ordenar por : Distancia del centro </option>
-                    </select>
+                <div class="Mostrar_por">
+                    <form id="formMostrar" action="ListaAlojamientosLinkServlet.do" method="post">
+					    <select id="Mostrar-por" name="Mostrar-por" required>
+					        <option value="Todos">Mostrar por: Todos</option>
+					        <option value="Disponibles">Mostrar por: Disponibles</option>
+					        <option value="No Disponibles">Mostrar por: No Disponibles</option>
+					    </select>
+					    <button type="submit">Mostrar</button>
+					</form>
+
                 </div>
                 <div class="c2_alojamiento">
                 <c:forEach var="alojamiento" items="${listaalojamiento}" varStatus="loop">
@@ -224,6 +224,20 @@
                    </c:forEach>
                 </div>
             </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </div>
     </div>
 
