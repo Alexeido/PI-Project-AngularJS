@@ -182,7 +182,7 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 	        Statement stmt;
 	        try {
 	            stmt = conn.createStatement();
-	            stmt.executeUpdate("UPDATE properties SET gradesAverage = ROUND(" + property.getGradesAverage() + ", 1) WHERE id = " + property.getId());
+	            stmt.executeUpdate("UPDATE properties SET gradesAverage = ROUND(" + average + ", 1) WHERE id = " + property.getId());
 	            logger.info("Updating gradesAverage property: " + property.getId());
 	            done = true;
 	        } catch (SQLException e) {

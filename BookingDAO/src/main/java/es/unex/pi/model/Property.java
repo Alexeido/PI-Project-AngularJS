@@ -1,6 +1,6 @@
 package es.unex.pi.model;
 //alojamiento
-public class Property {
+public class Property implements Comparable<Property>{
 
 	private long id;
 	private String name;
@@ -136,5 +136,11 @@ public class Property {
         this.spa = spa;
     }
 	
+
+    public int compareTo(Property other) {
+        // Ordenar por gradesAverage en orden descendente
+        return Double.compare(other.gradesAverage, this.gradesAverage);
+    }
 	
+
 }

@@ -312,4 +312,11 @@ select{
         margin-right: 23%;
     }
 }
+.form-flex{
+	display: flex;
+}
 
+.form-flex select,
+.form-flex button {
+    margin-right: 10px; /* Espacio entre elementos */
+}

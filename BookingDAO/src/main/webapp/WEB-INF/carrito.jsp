@@ -166,7 +166,9 @@
                         <option value="1">Para mi</option>
                         <option value="2">Para otra persona</option>
                     </select>
-                    <button class="submit" type="submit">Proceder al pago</button>
+                    <c:if test="${!carrito.isEmpty()}">
+					    <button class="submit" type="submit">Proceder al pago</button>
+					</c:if>
                 </form>
             </div>
 

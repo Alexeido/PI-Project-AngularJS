@@ -147,16 +147,20 @@
 			 <div class="container2">
                 <h1>${lugar} ${listaalojamiento.size()} alojamientos encontrados</h1>
                 <div class="Mostrar_por">
-                    <form id="formMostrar" action="ListaAlojamientosLinkServlet.do" method="post">
-					    <select id="Mostrar-por" name="Mostrar-por" required>
-					        <option value="Todos">Mostrar por: Todos</option>
-					        <option value="Disponibles">Mostrar por: Disponibles</option>
-					        <option value="No Disponibles">Mostrar por: No Disponibles</option>
-					    </select>
-					    <button type="submit">Mostrar</button>
-					</form>
-
-                </div>
+				    <form id="formMostrar" action="ListaAlojamientosLinkServlet.do" method="post" class="form-flex">
+				        <select id="Mostrar-por" name="Mostrar-por" required>
+				            <option value="Todos">Mostrar por: Todos</option>
+				            <option value="Disponibles">Mostrar por: Disponibles</option>
+				            <option value="No Disponibles">Mostrar por: No Disponibles</option>
+				        </select>
+				        <select id="Ordenar-por" name="Ordenar-por" required>
+				            <option value="default">Ordenar por: </option>
+				            <option value="valoracionesDesc">Ordenar por: Valoraciones ⬇️</option>
+				            <option value="valoracionesAsc">Ordenar por: Valoraciones ⬆️</option>
+				        </select>
+				        <button type="submit">Aplicar</button>
+				    </form>
+				</div>
                 <div class="c2_alojamiento">
                 <c:forEach var="alojamiento" items="${listaalojamiento}" varStatus="loop">
                     <div class="Elemento-c2">

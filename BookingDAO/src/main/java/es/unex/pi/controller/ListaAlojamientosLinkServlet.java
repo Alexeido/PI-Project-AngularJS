@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -75,6 +76,22 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
             }
         }
 
+        String ordenar=(String) request.getAttribute("ordenar");
+        System.out.println("Valor del parámetro 'ordenar': " + ordenar);
+        if (ordenar != null) {
+
+            switch (ordenar) {
+                case "valoracionesAsc":
+                	Collections.sort(listaAlojamientos, Collections.reverseOrder());
+                    break;
+                case "valoracionesDesc":
+                	Collections.sort(listaAlojamientos);
+                    break;
+                default:
+                    break;
+            }
+            
+        }
         // Lista para almacenar los precios más bajos de las habitaciones
         List<Integer> preciosMasBajos = new ArrayList<>();
 
@@ -112,6 +129,8 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mostrar=(String) request.getParameter("Mostrar-por");
         request.setAttribute("mostrar", mostrar);
+        String ordenar=(String) request.getParameter("Ordenar-por");
+        request.setAttribute("ordenar", ordenar);
 		doGet(request, response);
 	}
 
