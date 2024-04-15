@@ -105,9 +105,17 @@
 						    </c:forEach>
 						</div>
                         <div class="right-section">
-                     		<a href="<c:url value='GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
-                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
-					        </a>
+	                        <c:if test="${!fav}">
+	                     		<a href="<c:url value='GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
+	                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
+						        </a>
+							</c:if>
+	                        <c:if test="${fav}">
+	                     		<a href="<c:url value='EliminarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
+	                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heartFill.svg" alt="like"></button>
+						        </a>
+							</c:if>
+	                        
 						    <form action="#disponibilidad" method="get">
 							    <button type="submit" class="reserva">Reserva ahora</button>
 							</form>
@@ -178,6 +186,30 @@
             	<h3>Descripción</h3>
                 <p>El ${alojamiento.name} es un ${alojamiento.description} que se encuentra a ${alojamiento.centerDistance} km del centro de ${alojamiento.city}.</p>
                 <p id="servicios" class="minitext">Las distancias en la descripción del alojamiento se calculan con OpenStreetMap©</p>
+                <h3>Servicios más populares</h3>
+                <ul>
+	                <c:if test="${alojamiento.restaurante == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/restaurant.svg" alt="Icono de restaurante">Restaurante</li>
+					</c:if>
+	                <c:if test="${alojamiento.desayuno == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/coffee.svg" alt="Icono de desayuno">Desayuno incluido</li>
+					</c:if>
+	                <c:if test="${alojamiento.wifi == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/wifi.svg" alt="Icono de WiFi">WiFi gratis</li>
+					</c:if>
+	                <c:if test="${alojamiento.gym == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/gym.svg" alt="Icono de gimnasio">Gimnasio</li>
+					</c:if>
+	                <c:if test="${alojamiento.piscina == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/swim.svg" alt="Icono de piscina">Piscina</li>
+					</c:if>
+	                <c:if test="${alojamiento.spa == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/spa.svg" alt="Icono de spa">Spa y centro de bienestar</li>
+					</c:if>
+	                <c:if test="${alojamiento.petFriendly == 1}">
+			       		<li><img src="${pageContext.request.contextPath}/images/dog.svg" alt="Icono de perro">Permite mascotas</li>
+					</c:if>
+                </ul>
             </div>
             <div class="d2">
                 <h3>Puntos fuertes del alojamiento</h3>

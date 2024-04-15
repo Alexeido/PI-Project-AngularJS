@@ -19,7 +19,7 @@ import es.unex.pi.model.BookingsAccommodations;
 /**
  * Servlet implementation class CarritoLinkServlet
  */
-@WebServlet("/CarritoLinkServlet.do")
+@WebServlet("/user/CarritoLinkServlet.do")
 public class CarritoLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**

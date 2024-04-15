@@ -18,6 +18,8 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class EliminarAlojamientoServlet
  */
+@WebServlet("/user/EliminarAlojamientoServlet.do")
+
 public class EliminarAlojamientoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

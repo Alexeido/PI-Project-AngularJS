@@ -19,6 +19,7 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class RegistrarseLinkServlet
  */
+@WebServlet("/RegistrarseLinkServlet.do")
 public class RegistrarseLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     /**

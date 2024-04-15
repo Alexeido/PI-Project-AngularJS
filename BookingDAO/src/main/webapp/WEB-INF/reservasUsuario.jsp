@@ -37,11 +37,12 @@
                     </div>
  
                     <div class="Texto-c2">
+                        <a href="<c:url value='AlojamientoLinkServlet.do?idp=${userBookedAccommodations[loop.index].prop.id}'/>" class="no-decoration">
                         <div class="location">
                             <h1>${userBookedAccommodations[loop.index].prop.name} en ${userBookedAccommodations[loop.index].prop.city}</h1>
                             </div>
 							<p>Desglose total: ${reserva.totalPrice}€</p>
-
+					</a>
                     </div>
 					<div class="datos">
 					    <div class="button-row">

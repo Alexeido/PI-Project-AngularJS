@@ -18,7 +18,7 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class registroAlojamientoLinkServlet
  */
-@WebServlet("/registroAlojamientoLinkServlet.do")
+@WebServlet("/user/registroAlojamientoLinkServlet.do")
 public class registroAlojamientoLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -14,6 +14,8 @@ import es.unex.pi.model.Property;
 /**
  * Servlet implementation class CambiarDisponibilidadServlet
  */
+@WebServlet("/user/CambiarDisponibilidadServlet.do")
+
 public class CambiarDisponibilidadServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

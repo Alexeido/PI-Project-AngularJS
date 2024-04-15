@@ -11,6 +11,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class UsuarioLinkServlet
  */
+@WebServlet("/user/UsuarioLinkServlet.do")
 public class UsuarioLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

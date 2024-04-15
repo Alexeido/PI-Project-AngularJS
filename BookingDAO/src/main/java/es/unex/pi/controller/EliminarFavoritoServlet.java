@@ -17,6 +17,8 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class EliminarFavoritoServlet
  */
+@WebServlet("/user/EliminarFavoritoServlet.do")
+
 public class EliminarFavoritoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -40,7 +42,7 @@ public class EliminarFavoritoServlet extends HttpServlet {
 		User user=(User) session.getAttribute("user");
 		long idu=user.getId();
 		favoritosDao.delete(idu,idp);
-		response.sendRedirect("FavoritosUserServlet.do");
+        response.sendRedirect(request.getHeader("referer"));
 	}
 
 	/**

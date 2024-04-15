@@ -41,7 +41,7 @@ button {
 }
 
 /* Estilos para el botón dentro del formulario */
-.form-button input[type="submit"] {
+.disponibilidad {
     background-color: #003b95; /* Cambiamos el color de fondo */
     color: white; /* Cambiamos el color del texto a blanco */
     border: none; /* Quitamos el borde */

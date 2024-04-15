@@ -14,6 +14,8 @@ import es.unex.pi.dao.AccommodationDAO;
 /**
  * Servlet implementation class EliminarHabitacionServlet
  */
+@WebServlet("/user/EliminarHabitacionServlet.do")
+
 public class EliminarHabitacionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

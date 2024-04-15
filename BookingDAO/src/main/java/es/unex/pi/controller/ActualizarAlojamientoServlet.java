@@ -2,6 +2,7 @@ package es.unex.pi.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class ActualizarAlojamientoServlet
  */
+@WebServlet("/user/ActualizarAlojamientoServlet.do")
 public class ActualizarAlojamientoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

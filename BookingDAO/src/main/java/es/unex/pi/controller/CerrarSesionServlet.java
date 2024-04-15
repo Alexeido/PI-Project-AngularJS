@@ -13,6 +13,8 @@ import java.io.IOException;
 /**
  * Servlet implementation class CerrarSesionServlet
  */
+@WebServlet("/user/CerrarSesionServlet.do")
+
 public class CerrarSesionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

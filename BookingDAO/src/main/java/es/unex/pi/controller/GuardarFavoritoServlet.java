@@ -20,6 +20,8 @@ import es.unex.pi.model.favoritos;
 /**
  * Servlet implementation class GuardarFavoritoServlet
  */
+@WebServlet("/user/GuardarFavoritoServlet.do")
+
 public class GuardarFavoritoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(HttpServlet.class.getName());
@@ -57,7 +59,7 @@ public class GuardarFavoritoServlet extends HttpServlet {
 			logger.info("fav idp " + idp + " ,fav idu " + idu);
 
         	favoritosDao.add(fav);
-            response.sendRedirect("AlojamientoLinkServlet.do?idalojamiento=idp");
+            response.sendRedirect(request.getHeader("referer"));
 
         }
 	}

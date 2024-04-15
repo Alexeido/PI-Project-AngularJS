@@ -20,6 +20,7 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class HabitacionesUserServlet
  */
+@WebServlet("/user/HabitacionUserServlet.do")
 public class HabitacionesUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

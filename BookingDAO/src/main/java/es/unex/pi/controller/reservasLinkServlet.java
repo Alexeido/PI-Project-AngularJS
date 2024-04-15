@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class reservasLinkServlet
  */
-@WebServlet("/reservasLinkServlet.do")
+@WebServlet("/user/reservasLinkServlet.do")
 public class reservasLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

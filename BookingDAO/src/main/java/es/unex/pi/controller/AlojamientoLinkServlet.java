@@ -14,14 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import es.unex.pi.dao.PropertyDAO;
-import es.unex.pi.dao.ReviewDAO;
-import es.unex.pi.dao.UserDAO;
-import es.unex.pi.dao.AccommodationDAO;
-import es.unex.pi.model.Property;
-import es.unex.pi.model.Review;
-import es.unex.pi.model.User;
-import es.unex.pi.model.Accommodation;
+import es.unex.pi.dao.*;
+import es.unex.pi.model.*;
 
 /**
  * Servlet implementation class AlojamientoLinkServlet
@@ -48,18 +42,32 @@ public class AlojamientoLinkServlet extends HttpServlet {
 		ReviewDAO reviewDao = new es.unex.pi.dao.JDBCReviewDAOImpl();
 		UserDAO userDao = new es.unex.pi.dao.JDBCUserDAOImpl();
 		AccommodationDAO accommodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();
+		favoritosDAO favsDao = new es.unex.pi.dao.JDBCfavoritosDAOImpl();
+		favsDao.setConnection(conn);
+
 		reviewDao.setConnection(conn);
 		propertyDao.setConnection(conn);
 	    userDao.setConnection(conn);
 	    accommodationDao.setConnection(conn);
 		HttpSession session=request.getSession();
 		
+		
+		String idpStr = request.getParameter("idp");
+        long idp=-1;
+		if (idpStr != null && !idpStr.isEmpty()) {
+		    try {
+		        idp = Long.parseLong(idpStr);
+		    } catch (NumberFormatException e) {
+		        e.printStackTrace();
+		    }
+		}
+		logger.info("Estancia seleccionada");
+		session.setAttribute("idp", idp);
+		
 		boolean commented=false;
-		Long idp=(Long) session.getAttribute("idp");
 		Property alojamiento = propertyDao.get(idp);
 		List<Accommodation> listaAccommodations = accommodationDao.getAllByProperties(idp);
 		List<Review> listaReviews = reviewDao.getAllByProperty(idp);
-		
 		// Para cada reseña, obtener el nombre del usuario y almacenarlo en una lista de nombres
 	    List<String> nombresUsuarios = new ArrayList<>();
         User user= (User)session.getAttribute("user");
@@ -71,7 +79,7 @@ public class AlojamientoLinkServlet extends HttpServlet {
 	        }
 	    }
 	    
-
+	    if(user!=null) {request.setAttribute("fav",favsDao.isFavourite(user.getId(),idp));}
 		request.setAttribute("alojamiento", alojamiento);
 		request.setAttribute("commented", commented);
 		request.setAttribute("listaReviews", listaReviews);
@@ -85,19 +93,7 @@ public class AlojamientoLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String idpStr = request.getParameter("idp");
-        long idp=-1;
-		if (idpStr != null && !idpStr.isEmpty()) {
-		    try {
-		        idp = Long.parseLong(idpStr);
-		    } catch (NumberFormatException e) {
-		        e.printStackTrace();
-		    }
-		}
-		logger.info("Estancia seleccionada");
-		HttpSession session=request.getSession();
-		session.setAttribute("idp", idp);
-		doGet(request, response);
+
 	}
 
 }

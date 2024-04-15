@@ -23,6 +23,8 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class ReservarHabitacionesServlet
  */
+@WebServlet("/user/ReservarHabitacionesServlet.do")
+
 public class ReservarHabitacionesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

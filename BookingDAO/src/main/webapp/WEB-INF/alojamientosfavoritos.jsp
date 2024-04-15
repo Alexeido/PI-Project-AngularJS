@@ -36,10 +36,13 @@
                     </div>
  
                     <div class="Texto-c2">
+                    <a href="<c:url value='AlojamientoLinkServlet.do?idp=${alojamientosuserfav.id}'/>" class="no-decoration">
+                    
                     <h1>${alojamientosuserfav.name}</h1>
                         <div class="location">
                             <h1>${alojamientosuserfav.city}</h1>
                             </div>
+                    </a>
                     </div>
 						<div class="datos">
 						    <div class="button-row">

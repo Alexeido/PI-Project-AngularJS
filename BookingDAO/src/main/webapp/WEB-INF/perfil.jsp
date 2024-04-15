@@ -45,7 +45,7 @@
 		        <a href="<c:url value='FavoritosUserServlet.do'/>"><button class="view-reservations-btn">Ver mis favoritos</button></a>
 		        
 		    </div>
-		    <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="view-reservations-btn">Cerrar Sesión</button></a>
+		    <a href="<c:url value='CerrarSesionServlet.do'/>"><button class="eliminar">Cerrar Sesión</button></a>
 		</div>
     </div>
 </body>

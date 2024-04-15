@@ -23,6 +23,11 @@ todos los favoritos de un usuario
 
 	public List<favoritos> getAllByIdu(long idu);
 	
+	/**
+	Devuelve si un usuario tiene como favorito esa propiedad
+	 */
+	public boolean isFavourite(long idu, long idp);
+	
 
 //añadadir favorito
 	

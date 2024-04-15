@@ -31,28 +31,29 @@
         <c:forEach var="alojamientouser" items="${alojamientosuser}">
         
             <div class="c2_alojamiento">
-                <div class="Elemento-c2">
+                <div class="Elemento-c2" >
                     <div class="foto-c2">
                         <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Google Maps">
                     </div>
- 
                     <div class="Texto-c2">
+                    
+                     	<a href="<c:url value='AlojamientoLinkServlet.do?idp=${alojamientouser.id}'/>" class="no-decoration">
                         <div class="location">
-                            <h1>${alojamientouser.city}</h1>
+                            <h1>${alojamientouser.name}</h1>
+                            <h2>${alojamientouser.city}</h2>
+                            
                             </div>
 							<p>
 							    <c:choose>
 							        <c:when test="${alojamientouser.available == 1}">
 							            Apartamento Disponible
-							            ${alojamientouser.available}
 							        </c:when>
 							        <c:otherwise>
 							            Apartamento No Disponible
-							            ${alojamientouser.available}
 							        </c:otherwise>
 							    </c:choose>
 							</p>
-
+                    </a>
                     </div>
 						<div class="datos">
 						    <div class="button-row">

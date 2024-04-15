@@ -1,6 +1,7 @@
 package es.unex.pi.controller;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -15,6 +16,8 @@ import es.unex.pi.model.BookingsAccommodations;
 /**
  * Servlet implementation class CarritoSessionDelServlet
  */
+@WebServlet("/user/CarritoSesionDelServlet.do")
+
 public class CarritoSessionDelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

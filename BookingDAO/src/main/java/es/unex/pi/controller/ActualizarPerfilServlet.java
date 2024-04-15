@@ -17,6 +17,8 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class ActualizarPerfilServlet
  */
+@WebServlet("/user/ActualizarPerfilServlet.do")
+
 public class ActualizarPerfilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -22,6 +22,8 @@ import es.unex.pi.model.favoritos;
 /**
  * Servlet implementation class FavoritosUserServlet
  */
+@WebServlet("/user/FavoritosUserServlet.do")
+
 public class FavoritosUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

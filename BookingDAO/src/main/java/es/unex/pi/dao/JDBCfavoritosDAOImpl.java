@@ -39,7 +39,25 @@ public class JDBCfavoritosDAOImpl implements favoritosDAO {
 		return favoritoslist;
 	}
 	
-	
+
+	public boolean isFavourite(long idu, long idp) {
+		boolean favourite=false;
+		if (conn != null){
+			
+			Statement stmt;
+			try {
+				stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery("SELECT * FROM favoritos WHERE idu = " + idu + " AND idp = " + idp);
+				if(rs.next()) {
+					favourite= true;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return favourite;
+	}
 
 	
 	

@@ -2,6 +2,7 @@ package es.unex.pi.controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,6 +20,8 @@ import es.unex.pi.model.BookingsAccommodations;
 /**
  * Servlet implementation class reservasDetalleLinkServlet
  */
+@WebServlet("/user/reservasDetalleLinkServlet.do")
+
 public class reservasDetalleLinkServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

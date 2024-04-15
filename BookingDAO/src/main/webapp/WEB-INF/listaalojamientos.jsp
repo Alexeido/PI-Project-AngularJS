@@ -215,10 +215,9 @@
                                 <p>${alojamiento.address}, ${alojamiento.city}</p>
                                 <h1>Desde ${preciosBajos[loop.index]}€</h1>
                                 <p>incluye impuestos y cargos</p>
-                                <form class="form-button" action="<c:url value='AlojamientoLinkServlet.do'/>" method="POST">
-								    <input type="hidden" name="idp" value="${alojamiento.id}">
-								    <input type="submit" value="Ver disponibilidad">
-								</form>
+								<a href="<c:url value='AlojamientoLinkServlet.do?idp=${alojamiento.id}'/>">
+						            <button class="disponibilidad">Ver Disponibilidad</button>
+								</a>
                             </div>
                         </div>
                     </div>
