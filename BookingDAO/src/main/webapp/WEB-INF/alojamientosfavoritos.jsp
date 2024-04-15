@@ -23,13 +23,12 @@
     </header>
 
     <div class="container">
-        <h1>Alojamientos subidos</h1>
+        <h1>Alojamientos Favoritos</h1>
         <div class="help-message">
             <p>¿No encuentra un alojamiento?</p>
         </div>
         <div class="Elemento-contatiner">
-        <c:forEach var="alojamientouser" items="${alojamientosuser}">
-        
+        <c:forEach var="alojamientosuserfav" items="${alojamientosuserfav}">
             <div class="c2_alojamiento">
                 <div class="Elemento-c2">
                     <div class="foto-c2">
@@ -37,38 +36,15 @@
                     </div>
  
                     <div class="Texto-c2">
+                    <h1>${alojamientosuserfav.name}</h1>
                         <div class="location">
-                            <h1>${alojamientouser.city}</h1>
+                            <h1>${alojamientosuserfav.city}</h1>
                             </div>
-							<p>
-							    <c:choose>
-							        <c:when test="${alojamientouser.available == 1}">
-							            Apartamento Disponible
-							            ${alojamientouser.available}
-							        </c:when>
-							        <c:otherwise>
-							            Apartamento No Disponible
-							            ${alojamientouser.available}
-							        </c:otherwise>
-							    </c:choose>
-							</p>
-
                     </div>
 						<div class="datos">
 						    <div class="button-row">
-						        <a href="<c:url value='AlojamientoSesionLinkServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Ver Habitaciones</button>
-						        </a>
-						        <a href="<c:url value='ActualizarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Editar Alojamiento</button>
-						        </a>
-						    </div>
-						    <div class="button-row">
-						        <a href="<c:url value='CambiarDisponibilidadServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button>Cambiar Disponibilidad</button>
-						        </a>
-						        <a href="<c:url value='EliminarAlojamientoServlet.do?idalojamiento=${alojamientouser.id}'/>">
-						            <button class="eliminar">Eliminar Alojamiento</button>
+						        <a href="<c:url value='EliminarFavoritoServlet.do?idalojamiento=${alojamientosuserfav.id}'/>">
+						            <button class="eliminar">Eliminar Favorito</button>
 						        </a>
 						    </div>
 						</div>

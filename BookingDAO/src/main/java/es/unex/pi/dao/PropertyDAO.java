@@ -53,6 +53,16 @@ public interface PropertyDAO {
 	 * @return List of all the properties from the database that belong to a user
 	 */	
 	public List<Property> getAllByUser(long idu);
+
+	/**
+	 * Calculates the updateGradesAverage from a property
+	 * 
+	 * @param property
+	 *            Property object with the new details of the existing property.
+	 * 
+	 * @return True if the operation was made and False if the operation failed.
+	 */
+	public boolean updateGradesAverage(Property property);
 	
 	
 

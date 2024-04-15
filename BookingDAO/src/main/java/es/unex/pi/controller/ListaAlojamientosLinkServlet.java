@@ -80,6 +80,7 @@ public class ListaAlojamientosLinkServlet extends HttpServlet {
 
         // Iterar sobre la lista de alojamientos
         for (Property alojamiento : listaAlojamientos) {
+        	//propertyDao.updateGradesAverage(alojamiento); //Descomentar si quieres actualizar la nota media de todos los alojamientos
             long idp = alojamiento.getId();
             List<Accommodation> listaAccommodations = accommodationDao.getAllByProperties(idp);
 

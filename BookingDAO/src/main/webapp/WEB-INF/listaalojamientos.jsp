@@ -182,6 +182,7 @@
                         </div>
 
                         <div>
+                        <div class="derechon">
                             <div class="valoraciones">
                                 <div class="valoCol1">
                                     <h1>
@@ -209,7 +210,7 @@
                                     ${alojamiento.gradesAverage}
                                 </div>
                             </div>
-
+					</div>
                             <div class="datos">
                                 <p>${alojamiento.address}, ${alojamiento.city}</p>
                                 <h1>Desde ${preciosBajos[loop.index]}€</h1>

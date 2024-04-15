@@ -54,6 +54,7 @@ public class AlojamientoLinkServlet extends HttpServlet {
 	    accommodationDao.setConnection(conn);
 		HttpSession session=request.getSession();
 		
+		boolean commented=false;
 		Long idp=(Long) session.getAttribute("idp");
 		Property alojamiento = propertyDao.get(idp);
 		List<Accommodation> listaAccommodations = accommodationDao.getAllByProperties(idp);
@@ -61,13 +62,18 @@ public class AlojamientoLinkServlet extends HttpServlet {
 		
 		// Para cada reseña, obtener el nombre del usuario y almacenarlo en una lista de nombres
 	    List<String> nombresUsuarios = new ArrayList<>();
+        User user= (User)session.getAttribute("user");
 	    for (Review review : listaReviews) {
 	        User usuario = userDao.get(review.getIdu());
 	        nombresUsuarios.add(usuario.getName());
+	        if(user==null||usuario.getId()==user.getId()) {
+	        	commented=true;
+	        }
 	    }
 	    
-		
+
 		request.setAttribute("alojamiento", alojamiento);
+		request.setAttribute("commented", commented);
 		request.setAttribute("listaReviews", listaReviews);
 		request.setAttribute("listaAccommodations", listaAccommodations);
 		request.setAttribute("nombresUsuarios", nombresUsuarios); // Pasar la lista de nombres de usuario a la vista

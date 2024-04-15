@@ -321,16 +321,18 @@
 		        </div>
 		    </div>
 		</c:if>
-   <h2>Escribe tu propia Reseña</h2>
-    <form action="AddReviewServlet.do" method="post">
-   		<input type="hidden" name="idp" value="${alojamiento.id}">
-        <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br>
-        <label for="nota">Nota (del 0 al 5):</label>
-        <output id="output" name="output" for="nota">0</output><br>
-        <input type="range" id="nota" name="nota" min="0" max="5" step="1" value="0" oninput="output.value = nota.value"><br>
-        <button class="reserva">Enviar reseña</button>
-    </form>
- 
+		
+		<c:if test="${alojamiento.idu!=user.id&& !commented}">
+		   <h2>Escribe tu propia Reseña</h2>
+		    <form action="AddReviewServlet.do" method="post">
+		   		<input type="hidden" name="idp" value="${alojamiento.id}">
+		        <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br>
+		        <label for="nota">Nota (del 0 al 5):</label>
+		        <output id="output" name="output" for="nota">0</output><br>
+		        <input type="range" id="nota" name="nota" min="0" max="5" step="1" value="0" oninput="output.value = nota.value"><br>
+		        <button class="reserva">Enviar reseña</button>
+		    </form>
+		</c:if>
 </div>
 </body>
 </html>

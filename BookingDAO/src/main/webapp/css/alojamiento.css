@@ -615,6 +615,7 @@ button a:visited {
     padding: 8px;
     border-radius: 6px;
     height: 20px;
+    width: 15px;
     border-bottom-left-radius: 0px;
 }
 .comentario-container {

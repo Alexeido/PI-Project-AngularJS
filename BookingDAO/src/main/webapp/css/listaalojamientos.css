@@ -257,6 +257,11 @@ select{
     display: flex;
     flex-direction: row;    
 }
+.derechon {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 .valoCol1 p{
     margin: 0;

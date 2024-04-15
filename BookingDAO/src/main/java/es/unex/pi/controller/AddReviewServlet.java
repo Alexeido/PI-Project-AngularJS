@@ -35,6 +35,8 @@ public class AddReviewServlet extends HttpServlet {
 	        Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 			ReviewDAO reviewDao = new es.unex.pi.dao.JDBCReviewDAOImpl();
 			reviewDao.setConnection(conn);
+			PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();	
+			propertyDao.setConnection(conn);
 			
 	        HttpSession session = request.getSession();
 	        User user= (User)session.getAttribute("user");
@@ -50,6 +52,8 @@ public class AddReviewServlet extends HttpServlet {
 	        rev.setIdp(idp);
 	        rev.setReview(text);
 	        reviewDao.add(rev);
+	        propertyDao.updateGradesAverage(propertyDao.get(idp));
+	        
 		}
         response.sendRedirect(request.getHeader("referer"));
 

@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+import es.unex.pi.model.Accommodation;
+import es.unex.pi.model.BookingsAccommodations;
+import es.unex.pi.model.Review;
 import es.unex.pi.model.Property;
 
 public class JDBCPropertyDAOImpl implements PropertyDAO {
@@ -136,10 +139,11 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 			
 			try {
 				stmt = conn.createStatement();
-				stmt.executeUpdate("INSERT INTO properties (name, address, telephone, idu, gradesAverage, city, centerDistance, description, petFriendly, available, Restaurtante, Desayuno, Wifi, Gym, Piscina, Spa) VALUES('"
+				stmt.executeUpdate("INSERT INTO properties (name, address, telephone, idu, gradesAverage, city, centerDistance, description, petFriendly, available, Restaurante, Desayuno, Wifi, Gym, Piscina, Spa) VALUES('"
 	                    + property.getName() + "','" + property.getAddress() + "','" + property.getTelephone() + "',"
-	                    + property.getIdu() + "," + property.getGradesAverage() + ",'" + property.getCity() + "'," + property.getCenterDistance() + ",'" + property.getDescription() + "',"
+	                    + property.getIdu() + "," + "ROUND(" + property.getGradesAverage() + ", 1)" + ",'" + property.getCity() + "'," + property.getCenterDistance() + ",'" + property.getDescription() + "',"
 	                    + property.getPetFriendly() + "," + property.getAvailable() + "," + property.getRestaurante() + "," + property.getDesayuno() + "," + property.getWifi() + "," + property.getGym() + "," + property.getPiscina() + "," + property.getSpa() + ")");
+
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -160,6 +164,34 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 		}
 		return id;
 	}
+	public boolean updateGradesAverage(Property property) {
+	    boolean done = false;
+
+	    if (conn != null && property!=null) {
+	        ReviewDAO reviewDao = new es.unex.pi.dao.JDBCReviewDAOImpl();
+	        reviewDao.setConnection(conn);
+	        List<Review> reviews = reviewDao.getAllByProperty(property.getId());
+	        float totalVal = 0;
+	        for (Review rev : reviews) {
+	        	totalVal+=rev.getGrade();
+	        }
+	        float average=totalVal/reviews.size();
+	        System.out.println(average);
+
+
+	        Statement stmt;
+	        try {
+	            stmt = conn.createStatement();
+	            stmt.executeUpdate("UPDATE properties SET gradesAverage = ROUND(" + property.getGradesAverage() + ", 1) WHERE id = " + property.getId());
+	            logger.info("Updating gradesAverage property: " + property.getId());
+	            done = true;
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return done;
+	}
+	
 
 	@Override
 	public boolean update(Property property) {
@@ -178,7 +210,7 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 	                +", description='"+property.getDescription()                
 	                +"', petFriendly="+property.getPetFriendly()
 	                +", available="+property.getAvailable()
-	                +", Restaurtante="+property.getRestaurante()
+	                +", Restaurante="+property.getRestaurante()
 	                +", Desayuno="+property.getDesayuno()
 	                +", Wifi="+property.getWifi()
 	                +", Gym="+property.getGym()
@@ -226,7 +258,7 @@ public class JDBCPropertyDAOImpl implements PropertyDAO {
 	    property.setDescription(rs.getString("description"));
 	    property.setPetFriendly(rs.getInt("petFriendly"));
 	    property.setAvailable(rs.getInt("available"));
-	    property.setRestaurante(rs.getInt("Restaurtante"));
+	    property.setRestaurante(rs.getInt("Restaurante"));
 	    property.setDesayuno(rs.getInt("Desayuno"));
 	    property.setWifi(rs.getInt("Wifi"));
 	    property.setGym(rs.getInt("Gym"));
