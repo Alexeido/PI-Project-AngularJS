@@ -66,7 +66,7 @@ public class reservasUsuarioLinkServlet extends HttpServlet {
 		
         request.setAttribute("userBooks", userBooks);
         request.setAttribute("userBookedAccommodations", userBookedAccommodations);
-        RequestDispatcher view = request.getRequestDispatcher("WEB-INF/reservasUsuario.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/reservasUsuario.jsp");
         view.forward(request,response);
 	}
 

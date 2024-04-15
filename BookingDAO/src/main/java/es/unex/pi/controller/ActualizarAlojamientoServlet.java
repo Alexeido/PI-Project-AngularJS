@@ -45,7 +45,7 @@ public class ActualizarAlojamientoServlet extends HttpServlet {
 		
 		Property alojamiento=propertyDao.get(id);
 		request.setAttribute("alojamiento", alojamiento);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/editaralojamiento.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/editaralojamiento.jsp");
 		view.forward(request,response);
 	}
 

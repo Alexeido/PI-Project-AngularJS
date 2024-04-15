@@ -19,11 +19,11 @@
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
-                <button class="image-button"><a href="<c:url value='CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
+                <button class="image-button"><a href="<c:url value='user/CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
                 <c:choose>
             		<c:when test="${not empty user.id}">
-            			<button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
-            		    <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
+            			<button class="white-button"><a href="<c:url value='user/UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
+            		    <button><a href="<c:url value='user/registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
             		
             		</c:when>
             	<c:otherwise>

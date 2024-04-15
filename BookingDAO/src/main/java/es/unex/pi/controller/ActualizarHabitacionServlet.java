@@ -42,7 +42,7 @@ public class ActualizarHabitacionServlet extends HttpServlet {
 		
 		Accommodation habitacion=accomodationDao.get(id);
 		request.setAttribute("habitacion", habitacion);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/editarhabitacion.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/editarhabitacion.jsp");
 		view.forward(request,response);
 
 	}

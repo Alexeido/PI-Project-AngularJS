@@ -27,7 +27,7 @@ public class UsuarioLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/perfil.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/perfil.jsp");
 		view.forward(request,response);
 	}
 

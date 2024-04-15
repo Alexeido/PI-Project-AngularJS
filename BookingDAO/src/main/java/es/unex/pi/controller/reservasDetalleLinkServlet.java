@@ -59,7 +59,7 @@ public class reservasDetalleLinkServlet extends HttpServlet {
 		request.setAttribute("sumaPrecios", sumaPrecios);
 		request.setAttribute("idb", idb);
 		
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/reservasDetalle.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/reservasDetalle.jsp");
 		view.forward(request,response);
 	}
 

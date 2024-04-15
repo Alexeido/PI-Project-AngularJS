@@ -54,7 +54,7 @@ public class FavoritosUserServlet extends HttpServlet {
 			listaAlojamientos.add(propertyDao.get(favorito.getIdp()));
 		}
 		request.setAttribute("alojamientosuserfav", listaAlojamientos);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/alojamientosfavoritos.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/alojamientosfavoritos.jsp");
 		view.forward(request,response);
 		    
 		    

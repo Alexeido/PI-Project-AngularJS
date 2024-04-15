@@ -16,11 +16,11 @@
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
-                <button class="image-button"><a href="<c:url value='CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
+                <button class="image-button"><a href="<c:url value='user/CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
                 <c:choose>
             		<c:when test="${not empty user.id}">
-            			<button class="white-button"><a href="<c:url value='UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
-            		    <button><a href="<c:url value='registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
+            			<button class="white-button"><a href="<c:url value='user/UsuarioLinkServlet.do'/>">Ver Perfil</a></button>
+            		    <button><a href="<c:url value='user/registroAlojamientoLinkServlet.do'/>">Registra tu alojamiento</a></button>
             		
             		</c:when>
             	<c:otherwise>
@@ -106,12 +106,12 @@
 						</div>
                         <div class="right-section">
 	                        <c:if test="${!fav}">
-	                     		<a href="<c:url value='GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
+	                     		<a href="<c:url value='user/GuardarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
 	                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heart.svg" alt="like"></button>
 						        </a>
 							</c:if>
 	                        <c:if test="${fav}">
-	                     		<a href="<c:url value='EliminarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
+	                     		<a href="<c:url value='user/EliminarFavoritoServlet.do?idalojamiento=${alojamiento.id}'/>">
 	                        	   <button class="me-gusta"><img src="${pageContext.request.contextPath}/images/heartFill.svg" alt="like"></button>
 						        </a>
 							</c:if>
@@ -292,7 +292,7 @@
 			                <td>
 			                    <c:choose>
 			                        <c:when test="${accommodation.numAccommodations > 0}">
-			                            <form action="CarritoSessionAddServlet.do" method="post">
+			                            <form action="user/CarritoSessionAddServlet.do" method="post">
 								    		<input type="hidden" name="ida" value="${accommodation.id}">
 			                                <button class="reserva">Añade al carrito por ${accommodation.price}€</button>
 			                            </form>
@@ -356,7 +356,7 @@
 		
 		<c:if test="${alojamiento.idu!=user.id&& !commented}">
 		   <h2>Escribe tu propia Reseña</h2>
-		    <form action="AddReviewServlet.do" method="post">
+		    <form action="user/AddReviewServlet.do" method="post">
 		   		<input type="hidden" name="idp" value="${alojamiento.id}">
 		        <textarea id="texto" name="texto" rows="4" cols="50"></textarea><br>
 		        <label for="nota">Nota (del 0 al 5):</label>

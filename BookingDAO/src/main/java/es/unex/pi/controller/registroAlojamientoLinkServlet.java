@@ -34,7 +34,7 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/registroAlojamiento.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/registroAlojamiento.jsp");
 		view.forward(request,response);
 	}
 
@@ -81,7 +81,7 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 	    alojamiento.setPiscina(piscina);
 	    alojamiento.setSpa(spa);
 	    propertyDao.add(alojamiento);
-	    RequestDispatcher view = request.getRequestDispatcher("WEB-INF/index.jsp");
+	    RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/index.jsp");
 	    view.forward(request,response);
 	}
 

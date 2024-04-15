@@ -66,7 +66,7 @@ public class CarritoLinkServlet extends HttpServlet {
 		
 		
 		
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/carrito.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/carrito.jsp");
 		view.forward(request,response);
 	}
 

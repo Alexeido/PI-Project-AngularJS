@@ -12,7 +12,7 @@
 <body>
    <header>
         <nav class="principal">
-            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
+            <button class="start_button"><a href="<c:url value='/IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
@@ -42,27 +42,28 @@
         </nav>
     </header>
     <div class="container">
-        <section class="edit-alojamiento">
             <div class="edit-form">
                 <h2>Editar Alojamiento ${idAlojamiento} adios</h2>
                 <form action="ActualizarHabitacionServlet.do" method="post">
-                    <label for="name">Nombre Habitacion:</label>
-                    <input type="text" id="name" name="name" value="${habitacion.name}"><br><br>
+				    <label for="name">Nombre Habitación:</label>
+				    <input type="text" id="name" name="name" value="${habitacion.name}" required><br><br>
+				
+				    <label for="price">Precio:</label>
+				    <input type="number" id="price" name="price" value="${habitacion.price}" required><br><br>
+				
+				    <label for="description">Descripción:</label><br>
+				    <textarea id="description" name="description" rows="4" cols="50" required>${habitacion.description}</textarea><br><br>
+				
+				    <label for="available">Número:</label>
+				    <input type="number" id="available" name="available" step="0.1" value="${habitacion.numAccommodations}" required><br><br>
+				
+				    <input type="hidden" id="idhabitacion" name="idhabitacion" value="${habitacion.id}"><br><br>
+				    <div class="button-container">
+				        <button type="submit">Continuar</button>
+				    </div>
+				</form>
 
-                    <label for="address">Precio:</label>
-                    <input type="number" id="price" name="price" value="${habitacion.price}"><br><br>
-
-                    <label for="descripcion">Descripción:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="50">${habitacion.description}</textarea><br><br>
-                                        
-                    <label for="available">Numero:</label>
-                    <input type="number" id=available name="available" step="0.1" value="${habitacion.numAccommodations}"><br><br>
-                    
-                    <input type="hidden" id="idhabitacion" name="idhabitacion" value="${habitacion.id}"><br><br>
-                    <button type="submit">Continuar</button>
-                </form>
             </div>
-        </section>
     </div>
 </body>
 </html>

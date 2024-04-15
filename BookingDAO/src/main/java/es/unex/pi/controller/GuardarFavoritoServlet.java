@@ -21,7 +21,6 @@ import es.unex.pi.model.favoritos;
  * Servlet implementation class GuardarFavoritoServlet
  */
 @WebServlet("/user/GuardarFavoritoServlet.do")
-
 public class GuardarFavoritoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger logger = Logger.getLogger(HttpServlet.class.getName());
@@ -47,11 +46,7 @@ public class GuardarFavoritoServlet extends HttpServlet {
 		long idp=Long.parseLong(request.getParameter("idalojamiento"));
 
 		// Si el usuario no existe en la sesión, debe iniciar sesión
-        if (user == null) {
-            response.sendRedirect("IniciarSesionLinkServlet.do");
-            return;
-        }
-        else {
+
     		long idu=user.getId();
         	favoritos fav=new favoritos();
         	fav.setIdp(idp);
@@ -61,7 +56,6 @@ public class GuardarFavoritoServlet extends HttpServlet {
         	favoritosDao.add(fav);
             response.sendRedirect(request.getHeader("referer"));
 
-        }
 	}
 
 	/**

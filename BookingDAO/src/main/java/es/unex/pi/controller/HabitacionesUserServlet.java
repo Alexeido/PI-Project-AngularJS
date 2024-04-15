@@ -20,7 +20,7 @@ import es.unex.pi.model.User;
 /**
  * Servlet implementation class HabitacionesUserServlet
  */
-@WebServlet("/user/HabitacionUserServlet.do")
+@WebServlet("/user/HabitacionesUserServlet.do")
 public class HabitacionesUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -46,7 +46,7 @@ public class HabitacionesUserServlet extends HttpServlet {
 
 		request.setAttribute("habitacionesuser", listahabitaciones);
 		request.setAttribute("Habitacionidalojamiento", id);
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/habitacionesuser.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/habitacionesuser.jsp");
 		view.forward(request,response);
 	}
 

@@ -37,7 +37,7 @@ public class registroHabitacionLinkServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/registroHabitacion.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/registroHabitacion.jsp");
 		view.forward(request,response);
 	}
 

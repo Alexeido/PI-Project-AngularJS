@@ -12,7 +12,7 @@
 <body>
    <header>
         <nav class="principal">
-            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
+            <button class="start_button"><a href="<c:url value='/IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
@@ -44,23 +44,24 @@
             <div class="edit-form">
                 <h2>Editar Alojamiento</h2>
                 <form action="ActualizarAlojamientoServlet.do" method="post">
-                    <label for="name">Nombre Alojamiento:</label>
-                    <input type="text" id="name" name="name" value="${alojamiento.name}"><br><br>
+				<label for="name">Nombre Alojamiento:</label>
+				<input type="text" id="name" name="name" value="${alojamiento.name}" required><br><br>
+				
+				<label for="address">Dirección:</label>
+				<input type="text" id="address" name="address" value="${alojamiento.address}" required><br><br>
+				
+				<label for="telephone">Teléfono:</label>
+				<input type="tel" id="telephone" name="telephone" value="${alojamiento.telephone}" required><br><br>
+				
+				<label for="city">Ciudad:</label>
+				<input type="text" id="city" name="city" value="${alojamiento.city}" required><br><br>
+				
+				<label for="centerDistance">Distancia al centro:</label>
+				<input type="number" id="centerDistance" name="centerDistance" value="${alojamiento.centerDistance}" required><br><br>
+				
+				<label for="descripcion">Descripción:</label><br>
+				<textarea id="description" name="description" rows="4" cols="50" required>${alojamiento.description}</textarea><br><br>
 
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address" name="address" value="${alojamiento.address}"><br><br>
-
-                    <label for="telephone">Teléfono:</label>
-                    <input type="tel" id="telephone" name="telephone" value="${alojamiento.telephone}"><br><br>
-
-                    <label for="city">Ciudad:</label>
-                    <input type="text" id="city" name="city" value="${alojamiento.city}"><br><br>
-
-                    <label for="centerDistance">Distancia al centro:</label>
-                    <input type="number" id="centerDistance" name="centerDistance" value="${alojamiento.centerDistance}"><br><br>
-
-                    <label for="descripcion">Descripción:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="50">${alojamiento.description}</textarea><br><br>
                     
                     <label>Servicios o instalaciones ofrecidos:</label><br>
                     <c:choose>

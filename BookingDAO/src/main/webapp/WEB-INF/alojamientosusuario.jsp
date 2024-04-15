@@ -12,7 +12,7 @@
 
     <header>
         <div class="left-content">
-            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
+            <button class="start_button"><a href="<c:url value='/IndexLinkServlet.do'/>">Booking.com</a></button>
         </div>
         <div class="right-content">
             <div class="right-icons">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="Texto-c2">
                     
-                     	<a href="<c:url value='AlojamientoLinkServlet.do?idp=${alojamientouser.id}'/>" class="no-decoration">
+                     	<a href="<c:url value='/AlojamientoLinkServlet.do?idp=${alojamientouser.id}'/>" class="no-decoration">
                         <div class="location">
                             <h1>${alojamientouser.name}</h1>
                             <h2>${alojamientouser.city}</h2>

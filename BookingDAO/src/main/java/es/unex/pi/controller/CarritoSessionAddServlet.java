@@ -15,7 +15,7 @@ import es.unex.pi.model.BookingsAccommodations;
 /**
  * Servlet implementation class CarritoSessionAddServlet
  */
-@WebServlet("/user/CarritoSesionAddServlet.do")
+@WebServlet("/user/CarritoSessionAddServlet.do")
 
 public class CarritoSessionAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

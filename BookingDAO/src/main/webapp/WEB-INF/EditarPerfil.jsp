@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="left-content">
-            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
+            <button class="start_button"><a href="<c:url value='/IndexLinkServlet.do'/>">Booking.com</a></button>
         </div>
         <div class="right-content">
             <div class="right-icons">
@@ -22,23 +22,27 @@
     </header>
 
     <div class="profile-container">
-    <form action="ActualizarPerfilServlet.do" method="post">
-        <h2>Perfil de Usuario</h2>
-        <div class="profile-info">
-            <label for="email">Correo:</label>
-            <input type="text" id="email"  name="email" value=${user.email} >
-        </div>
-        <div class="profile-info">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" value=${user.name} >
-        </div>
-        <div class="profile-info">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido"  name="apellido" value=${user.surname} >
-        </div>
-        <button type="submit" class="view-reservations-btn">Actualizar Perfil</button>
-        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="view-reservations-btn">Eliminar Cuenta</button></a>                
-        </form>
+    <div class="profile-header">
+            <h2>Perfil de Usuario</h2>
+        <a href="<c:url value='EliminarUsuarioServlet.do'/>"><button class="eliminar">Eliminar Cuenta</button></a>                
+       </div>
+	   <form action="ActualizarPerfilServlet.do" method="post">
+	    <div class="profile-info">
+	        <label for="email">Correo:</label>
+	        <input type="text" id="email" name="email" value=${user.email} required>
+	    </div>
+	    <div class="profile-info">
+	        <label for="nombre">Nombre:</label>
+	        <input type="text" id="nombre" name="nombre" value=${user.name} required>
+	    </div>
+	    <div class="profile-info">
+	        <label for="apellido">Apellido:</label>
+	        <input type="text" id="apellido" name="apellido" value=${user.surname} required>
+	    </div>
+	    <button type="submit" class="view-reservations-btn">Actualizar Perfil</button>
+	</form>
+
+        
     </div>
 </body>
 </html>

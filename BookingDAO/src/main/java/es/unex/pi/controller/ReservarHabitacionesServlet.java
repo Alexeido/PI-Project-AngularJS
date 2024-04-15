@@ -66,7 +66,7 @@ public class ReservarHabitacionesServlet extends HttpServlet {
 
 		carrito = new ArrayList<>();
         session.setAttribute("carrito", carrito);
-		response.sendRedirect("IndexLinkServlet.do");
+		response.sendRedirect("../IndexLinkServlet.do");
 	}
 
 }

@@ -12,7 +12,7 @@
 <body>
    <header>
         <nav class="principal">
-            <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
+            <button class="start_button"><a href="<c:url value='/IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
                 <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
@@ -45,23 +45,24 @@
             <div class="edit-form">
                 <h2>Registrar Alojamiento</h2>
                 <form action="registroAlojamientoLinkServlet.do" method="post">
-                    <label for="name">Nombre Alojamiento:</label>
-                    <input type="text" id="name" name="name"><br><br>
+				<label for="name">Nombre Alojamiento:</label>
+				<input type="text" id="name" name="name" required><br><br>
+				
+				<label for="address">Dirección:</label>
+				<input type="text" id="address" name="address" required><br><br>
+				
+				<label for="telephone">Teléfono:</label>
+				<input type="tel" id="telephone" name="telephone" required><br><br>
+				
+				<label for="city">Ciudad:</label>
+				<input type="text" id="city" name="city" required><br><br>
+				
+				<label for="centerDistance">Distancia al centro:</label>
+				<input type="number" id="centerDistance" name="centerDistance" required><br><br>
+				
+				<label for="descripcion">Descripción:</label><br>
+				<textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
 
-                    <label for="address">Dirección:</label>
-                    <input type="text" id="address" name="address"><br><br>
-
-                    <label for="telephone">Teléfono:</label>
-                    <input type="tel" id="telephone" name="telephone"><br><br>
-
-                    <label for="city">Ciudad:</label>
-                    <input type="text" id="city" name="city"><br><br>
-
-                    <label for="centerDistance">Distancia al centro:</label>
-                    <input type="number" id="centerDistance" name="centerDistance"><br><br>
-
-                    <label for="descripcion">Descripción:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
                     
                     
                     <label>Servicios o instalaciones ofrecidos:</label><br>

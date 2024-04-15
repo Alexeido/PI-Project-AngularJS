@@ -140,4 +140,6 @@ button:hover {
     justify-content: space-between; /* Distribuir los elementos equitativamente */
 }
 
-
+button.eliminar {
+    background-color: red; /* Cambiamos el color de fondo a rojo */
+}
