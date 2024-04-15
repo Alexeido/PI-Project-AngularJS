@@ -51,9 +51,12 @@ public class AlojamientoLinkServlet extends HttpServlet {
 	    accommodationDao.setConnection(conn);
 		HttpSession session=request.getSession();
 		
-		
-		String idpStr = request.getParameter("idp");
+
         long idp=-1;
+		String idpStr = request.getParameter("idp");
+		if(idpStr==null) {
+			idp=(long) session.getAttribute("idp");
+		}
 		if (idpStr != null && !idpStr.isEmpty()) {
 		    try {
 		        idp = Long.parseLong(idpStr);

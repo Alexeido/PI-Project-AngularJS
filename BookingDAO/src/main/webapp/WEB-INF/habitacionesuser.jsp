@@ -43,7 +43,7 @@
                         <div class="location">
                             <h1>${habitacion.name}</h1>
                             </div>
-                        <h2>${habitacion.price} </h2>
+                        <h2>${habitacion.price} €</h2>
                         <h2>${habitacion.description} </h2>
                     </div>
                     <div class="datos">

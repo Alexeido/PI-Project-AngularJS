@@ -43,7 +43,7 @@
     </header>
     <div class="container">
         <div class="location-section">
-            <span><a href="<c:url value='IndexLinkServlet.do'/>">Inicio</a> > <a href="<c:url value='trendingLinkServlet.do'/>">Hoteles</a> > <a href="<c:url value='trendingLinkServlet.do'/>">España</a> > <a href="<c:url value='ListaAlojamientosLinkServlet.do'/>">${alojamiento.city}</a> > ${alojamiento.name}</span>
+            <span><a href="<c:url value='IndexLinkServlet.do'/>">Inicio</a> > <a href="<c:url value='trendingLinkServlet.do'/>">Hoteles</a> > <a href="<c:url value='trendingLinkServlet.do'/>">España</a> > <a href="<c:url value='BusquedaLugarServlet.do?Lugar=${alojamiento.city}'/>">${alojamiento.city}</a> > ${alojamiento.name}</span>
         </div>
         <div id="vista-general" class= "gridAlojamiento">
             <div class="g1">

@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="nombre">Usuario</label>
+                    <label for="nombre">Email</label>
                     <input type="text" id="nombre" name="nombre" class="email-input" required placeholder="Introduce tu correo electrónico">     
                 </td>
             </tr>

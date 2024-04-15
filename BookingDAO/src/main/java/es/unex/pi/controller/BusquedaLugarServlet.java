@@ -23,6 +23,14 @@ public class BusquedaLugarServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String lugar=request.getParameter("Lugar");
+		logger.info("Busqueda de estancia");
+		HttpSession session=request.getSession();
+		session.setAttribute("lugar", lugar);
+		response.sendRedirect("ListaAlojamientosLinkServlet.do");
+	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

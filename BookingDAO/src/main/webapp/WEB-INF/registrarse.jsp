@@ -25,6 +25,10 @@
     </header>
 
     <main>
+    
+    <c:if test="${not empty error}">
+        <p style="color: red;">${error}</p>
+    </c:if>
     <form action="RegistrarseLinkServlet.do" method="post">
         <table>
             <tr>

@@ -122,27 +122,19 @@
         </div>
         <div class="alojamientos">
             <div class="tipos">
-                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/playa.jpg" alt="Hotel 1">
-                </a>
                 <p>Hotel en la playa</p>
             </div>
             <div class="tipos">
-                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/casarural.jpg" alt="Casa 1">
-                </a>
                 <p>Casa rural con encanto</p>
             </div>
             <div class="tipos">
-                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/ciudad.jpg" alt="Apartamento 1">
-                </a>
                 <p>Apartamento en la ciudad</p>
             </div>
             <div class="tipos">
-                <a href="<c:url value='AlojamientoLinkServlet.do'/>">
                     <img src="${pageContext.request.contextPath}/images/villa.jpg" alt="Apartamento 1">
-                </a>
                 <p>Apartamento en la ciudad</p>
             </div>
         </div>
