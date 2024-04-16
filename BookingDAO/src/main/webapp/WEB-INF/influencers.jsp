@@ -19,7 +19,7 @@
         <nav class="principal">
             <button class="start_button"><a href="<c:url value='IndexLinkServlet.do'/>">Booking.com</a></button>
             <div class="right-section">
-                <button><a href="<c:url value='Influencer.do'/>">Influencer</a></button>
+                <button>EUR</button>
                 <button class="image-button"><img src="${pageContext.request.contextPath}/images/es.png" alt="Language"></button>
                 <button class="image-button"><a href="<c:url value='user/CarritoLinkServlet.do'/>"><img src="${pageContext.request.contextPath}/images/cart.svg" alt="Carrito"></a></button>
                 <c:choose>
@@ -89,58 +89,16 @@
             <label for="busco_vuelos">Busco vuelos</label>
         </div>
         <div id="ofertas">
-            <div class="oferta-header">
-                <h1>Ofertas</h1>
-                <h2>Promociones, descuentos y ofertas para ti</h2>
-            </div>
-            <div class="oferta-container">
-                <div class="oferta1">
-                    <div class="oferta-texto">
-                        <h2>Vuela al destino de tus sueños</h2>
-                        <p>Inspírate, compara y reserva vuelos con más flexibilidad</p>
-                        <button type="submit"><a href="<c:url value='trendingLinkServlet.do'/>">Elige tu estancia</a></button>
-                        
-                    </div>
-                </div>
-                <div class="oferta2">
-                    <div class="oferta-texto">
-                        <h2>Año nuevo, aventuras nuevas</h2>
-                        <p>Ahorra un 15% o más al reservar y alojarte hasta el 1 de abril de 2024</p>
-                        <form action="<c:url value='trendingLinkServlet.do'/>">
-                            <button type="submit">Encuentra una oferta</button>
-                        </form>
-                        
-                    </div>
-                    <div class="oferta-imagen">
-                        <img src="${pageContext.request.contextPath}/images/avion.png" alt="Año nuevo, aventuras nuevas">
-                    </div>
-                </div>
-            </div>
+          
+                <h1>Usuario influencer: ${influencer.name} idu: ${influencer.id}</h1>
+                
+                <c:if test="${numReviews<2}">
+                	<h2>Número de reviews:${numReviews}</h2>
+                </c:if>
+                <c:if test="${numReviews>=2}">
+                	<h2>Número de reviews: <span style="color: yellow;">${numReviews}</span></h2>
+                </c:if>
         </div>
-        <div class="alojamiento-header">
-            <h1>Busca por alojamientos</h1>
-        </div>
-        <div class="alojamientos">
-            <div class="tipos">
-                    <img src="${pageContext.request.contextPath}/images/playa.jpg" alt="Hotel 1">
-                <p>Hotel en la playa</p>
-            </div>
-            <div class="tipos">
-                    <img src="${pageContext.request.contextPath}/images/casarural.jpg" alt="Casa 1">
-                <p>Casa rural con encanto</p>
-            </div>
-            <div class="tipos">
-                    <img src="${pageContext.request.contextPath}/images/ciudad.jpg" alt="Apartamento 1">
-                <p>Apartamento en la ciudad</p>
-            </div>
-            <div class="tipos">
-                    <img src="${pageContext.request.contextPath}/images/villa.jpg" alt="Apartamento 1">
-                <p>Apartamento en la ciudad</p>
-            </div>
-        </div>
-        
-
     </div>
 </body>
-
 </html>

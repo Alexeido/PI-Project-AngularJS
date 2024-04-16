@@ -110,7 +110,24 @@ public class JDBCReviewDAOImpl implements ReviewDAO {
 		return review;
 	}
 	
+
 	
+	public long getInfluencerIDU() {	
+		long influencer=-1;
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT idu FROM reviews GROUP BY idu ORDER BY COUNT(*) DESC LIMIT 1");			 
+			if (rs.next()) {
+	            influencer = rs.getInt("idu");
+	            logger.info("fetching Influencer: " + influencer);
+	        }
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return influencer;
+	}
 
 	@Override
 	public boolean add(Review review) {

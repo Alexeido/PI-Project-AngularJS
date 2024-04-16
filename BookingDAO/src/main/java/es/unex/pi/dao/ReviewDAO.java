@@ -59,6 +59,13 @@ public interface ReviewDAO {
 	public Review get(long idr,long idu);
 
 	/**
+	 * Gets the idu of the user with more reviews.
+	 * 
+	 * @return  idu of the user with more reviews.
+	 */
+	
+	public long getInfluencerIDU();
+	/**
 	 * Adds an Review to the database.
 	 * 
 	 * @param Review
