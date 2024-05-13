@@ -1,0 +1,104 @@
+
+<div class="container">
+
+    <div class="carrito">
+        <div class="reserva">
+            
+            <div class="precio">
+                <p class="precio-title">Desglose del precio</p>
+                <div class="total">
+                    <p class="precio-max">Total</p>
+                    <div class="right">
+                        <p class="precio-max">{{reservaDetailVM.totalprice}}€</p>
+                        <p class="subtext">Incluye impuestos y cargos</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="hotel"  data-ng-repeat="habitacion in reservaDetailVM.habitaciones">
+                <p class="hotel-name">Habitación {{habitacion.name}} en {{habitacion.prop.name}}</p>
+                <p class="hotel-name">Precio: {{habitacion.price}}€</p>
+                <p class="hotel-address">{{habitacion.prop.address}}, {{habitacion.prop.city}}</p>
+                <div class="rating-box">
+                    <p class="rating-note">{{habitacion.prop.gradesAverage}}</p>
+                    <p class="rating-text">
+                        <span ng-if="habitacion.prop.gradesAverage == 5">Excepcional</span>
+                        <span ng-if="habitacion.prop.gradesAverage > 4.5">Fantástico</span>
+                        <span ng-if="habitacion.prop.gradesAverage > 4">Fabuloso</span>
+                        <span ng-if="habitacion.prop.gradesAverage > 3.5">Muy bien</span>
+                        <span ng-if="!(habitacion.prop.gradesAverage == 5 || habitacion.prop.gradesAverage > 4.5 || habitacion.prop.gradesAverage > 4 || habitacion.prop.gradesAverage > 3.5)">No esta mal</span>
+                    </p>
+                    
+                </div>
+                <div class="amenities">
+                    <c:if test="{{habitacion.prop.petFriendly == 1}}">
+                        <p><img src="../images/alquilercoche.svg" alt="Icono de perro">Permite mascotas</p>
+                    </c:if>
+                </div>
+                <a data-ng-click="reservaDetailVM.functions.deleteinreserva(habitacion.id)">
+                    <button class="del">Eliminar</button>
+                </a>
+            </div>
+            
+        
+            <div class="fecha">
+                <p class="reserva-title">Los datos de tu reserva</p>
+                <div class="inout">
+                    <div class="entrada">
+                        <p class="entrada-title">Entrada</p>
+                        <p class="entrada-date">mar, 12 mar 2024</p>
+                        <p class="entrada-time">15:00 - 23:00</p>
+                    </div>
+                    <div class="salida">
+                        <p class="salida-title">Salida</p>
+                        <p class="salida-date">mié, 13 mar 2024</p>
+                        <p class="salida-time">A 11:00</p>
+                    </div>
+                </div>
+                <p class="duracion">Duración total de la estancia: 1 noche</p>
+                <hr class="separator">
+                <p class="seleccionado">Has seleccionado: <span class="bold">{{accommodation.name}}</span></p>
+                <p class="cambiar">Cambia tu selección</p>
+            </div>
+        </div>
+        <div class="datos">
+            <p class="max">Tus datos</p>
+            <div class="nameAp">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="name" value="{{reservaDetailVM.user.name}}" readonly>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="subname" value="{{reservaDetailVM.user.surname}}" readonly>
+                </div>
+            </div>
+            
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" name="email" value="{{reservaDetailVM.user.email}}" readonly>
+            
+            <label for="phone">Teléfono (móvil si es posible):</label>
+            <input type="text" id="phone" name="phone" readonly>
+            
+            <label for="motivo">Selecciona el motivo del viaje:</label>
+            <select id="motivo" name="motivo" disabled>
+                <option value="1">Viajo por vacaciones</option>
+                <option value="2">Viajo por trabajo</option>
+            </select>
+        
+            <label for="who">Para quién es la reserva?:</label>
+            <select id="who" name="who" disabled>
+                <option value="1">Para mí</option>
+                <option value="2">Para otra persona</option>
+            </select>
+        
+            <a data-ng-click="reservaDetailVM.functions.deletereseva()" ng-if="reservaDetailVM.habitaciones.length>0">
+                <button class="del" id="procederPagoBtn">Eliminar reserva</button>
+            </a>
+        </div>
+        
+        
+
+    </div>
+</div>
+

@@ -1,0 +1,193 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    margin-top: 250px;
+}
+
+.container {
+    display:block;
+    justify-content: left;
+    height: 100vh; /* Opcional: ajusta el tamaño del contenedor al alto de la ventana */
+    width: 1450px;
+    margin: 0 auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.colorheader {
+    background-color: #003b95;
+    padding: 65px;
+    position: absolute; /* Establece posición absoluta */
+    top: 30; /* Coloca el colorheader en la parte superior */
+    left: 0 ;
+    width:91.2%;
+    z-index: 1; /* Asegura que el colorheader esté detrás del encabezado */
+}
+
+.header2 {
+    padding: 0px;
+    color: white;
+    position: absolute; /* Establece posición absoluta */
+    top: 140px; /* Ajusta la ubicación vertical según sea necesario */
+    left: 4.7%; /* Asegura que esté en la posición correcta horizontalmente */
+    right: 60px;
+    z-index: 2; /* Asegura que el encabezado esté sobre el colorheader */
+}
+.header2 h1{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.header2 p{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+button {
+    background-color: #306cdc; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+    border: none; /* Quitamos el borde */
+    padding: 10px 20px; /* Ajustamos el espaciado interno */
+    border-radius: 5px; /* Redondeamos los bordes */
+    cursor: pointer; /* Cambiamos el cursor */
+}
+
+/* Estilos para cuando se pase el cursor sobre los botones */
+button:hover {
+    background-color: #204b8c; /* Cambiamos el color de fondo al pasar el cursor */
+}
+
+/*Checkbox*/
+
+.checkbox{
+    margin-top: 150px;
+    margin-left: 13%;
+    padding: 10px; /* Agrega espacio interno al contenedor */
+}
+/*ofertas*/
+#ofertas {
+    margin-top: 10px;
+    margin-left: 14%;
+    margin-right: 12%;
+
+}
+.oferta-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.oferta-container {
+    display: flex;
+    justify-content: space-between;
+}
+.oferta1 {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px; /* Reducir el relleno */
+    margin-right: 15px; /* Reducir el margen derecho */
+    box-sizing: border-box;
+    color: white;
+    background-image: url('../images/canoing.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.oferta2 {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px; /* Reducir el relleno */
+    box-sizing: border-box;
+}
+
+.oferta-texto {
+    width: 60%;
+    float: left;
+}
+.oferta-imagen {
+    width: 40%;
+    float: right;
+}
+.oferta-imagen img {
+    width: 100%;
+    height: 200px;
+    margin-top: -20px;
+    margin-bottom: -25px;
+
+}
+
+
+.buscador-container {
+    margin-top: -20px;  
+    margin-left: 160px;
+    
+}
+/*Alojamientos*/
+    .alojamiento-header {
+        margin-top: 10px;
+        margin-left: 14%;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    .alojamientos {
+        margin-left: 14%;
+        margin-right: 10%;
+
+        display: flex;
+        flex-wrap: wrap; /* Permitir que los elementos se envuelvan si no hay suficiente espacio */
+        justify-content: left; /* Centrar los elementos en el eje X */
+    }
+    .tipos {
+        flex: 1; /* Hace que los elementos ocupen un espacio igual */
+        text-align: left;
+
+    }
+    .tipos img {
+        width: 250px; /* ajusta el tamaño según sea necesario */
+        height: 200px;
+        border-radius: 10px; /* Agrega bordes redondeados */
+        margin: 0; /* Elimina el margen predeterminado */
+    }
+
+/* Ajustes generales para tamaños de pantalla pequeños */
+@media screen and (max-width: 1368px) {
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor principal */
+    margin-top: 50px; /* Reducir el espacio superior */
+  }
+  .buscador-container {
+    margin-left: 0; /* Alinear el contenedor del buscador al centro */
+  }
+  .oferta-container {
+    flex-direction: column; /* Colocar las ofertas una encima de otra */
+  }
+  .oferta1, .oferta2 {
+    width: 100%; /* Hacer que las ofertas ocupen todo el ancho */
+    margin-right: 0; /* Eliminar el margen derecho */
+    margin-bottom: 20px; /* Agregar espacio entre las ofertas */
+  }
+  .oferta-imagen {
+    width: 100%; /* Ajustar el tamaño de la imagen de la oferta */
+    margin-top: 10px; /* Añadir un poco de espacio entre el texto y la imagen */
+    float: none; /* Eliminar el flotado */
+    text-align: center; /* Centrar la imagen */
+  }
+  .alojamiento-header, .alojamientos {
+    margin-left: 5%; /* Alinear los elementos al centro */
+    margin-right: 5%;
+  }
+  .tipos {
+    width: 100%; /* Hacer que los tipos de alojamiento ocupen todo el ancho */
+    margin-bottom: 20px; /* Agregar espacio entre los tipos de alojamiento */
+  }
+}
+
+/* Ajustes adicionales para tamaños de pantalla muy pequeños */
+@media screen and (max-width: 480px) {
+  .alojamiento-header, .alojamientos {
+    margin-left: 2%; /* Alinear los elementos al centro */
+    margin-right: 2%;
+  }
+}
+
+
+ 

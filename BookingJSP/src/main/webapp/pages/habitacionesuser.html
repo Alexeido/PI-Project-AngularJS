@@ -1,0 +1,32 @@
+
+    <div class="container">
+		<div class="title-button-container">
+		    <h1>Habitaciones subidos</h1>
+		    <a href="#!/add-habitacion"><button>Añadir Habitacion</button></a>
+		</div>
+        <div class="help-message">
+            <p>¿No encuentra una habitacion?</p>            
+        </div>
+        <div class="Elemento-contatiner">        
+            <div class="c2_alojamiento" data-ng-repeat="habitacionuser in habitacionesUserVM.listahabitacion">
+                <div class="Elemento-c2">
+                    <div class="foto-c2">
+                        <img src="../images/alojamiento1.png" alt="Google Maps">
+                    </div>
+ 
+                    <div class="Texto-c2">
+                        <div class="location">
+                            <h1>{{habitacionuser.name}}</h1>
+                            </div>
+                        <h2>{{habitacionuser.price}} €</h2>
+                        <h2>{{habitacionuser.description}} </h2>
+                    </div>
+                    <div class="datos">
+                        <a data-ng-href="#!/editar-habitacion/{{habitacionuser.id}}"><button >Editar Habitacion</button></a>
+                        <a data-ng-click="habitacionesUserVM.functions.deletehabitacion(habitacionuser.id)"><button class="eliminar">Eliminar Habitacion</button></a>
+                        
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </div>

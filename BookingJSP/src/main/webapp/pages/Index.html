@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html id="list" data-ng-app="bookingApp" data-ng-controller="headerCtrl as headerVM">
+	<head>
+		<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	    <link rel="stylesheet" href="{{cssVar2}}">
+	    <link rel="stylesheet" href="{{cssVar1}}">
+		
+	    <link rel="stylesheet" href="../css/header.css">
+	    
+	<title>{{titleVar}}</title>
+	 <!-- Include the AngularJS library -->
+		<script src="../js/angular/angular.js"></script>
+		<script src="../js/angular/angular-route.js"></script>
+	<!-- Modules -->
+		<script src="../js/app.js"></script>
+	    <script src="../js/factories/usersFactory.js"></script>
+	    <script src="../js/factories/favoritosFactory.js"></script>
+	    <script src="../js/factories/alojamientosFactory.js"></script>
+	    <script src="../js/factories/habitacionesFactory.js"></script>
+		<script src="../js/factories/reviewFactory.js"></script>
+		<script src="../js/factories/carritoFactory.js"></script>
+		<script src="../js/factories/reservaFactory.js"></script>
+	    <script src="../js/controllers/headerCtrl.js"></script>
+	    <script src="../js/controllers/indexCtrl.js"></script>
+	    <script src="../js/controllers/perfilCtrl.js"></script>
+	    <script src="../js/controllers/registerCtrl.js"></script>
+	    <script src="../js/controllers/busquedaCtrl.js"></script>
+	    <script src="../js/controllers/alojamientosDetailedCtrl.js"></script>
+	    <script src="../js/controllers/alojamientosUserCtrl.js"></script>
+		<script src="../js/controllers/habitacionesUserCtrl.js"></script>
+		<script src="../js/controllers/trendingCtrl.js"></script>
+		<script src="../js/controllers/habitacionesDetailedCtrl.js"></script>
+		<script src="../js/controllers/hotelDetailCtrl.js"></script>
+		<script src="../js/controllers/carritoCtrl.js"></script>
+		<script src="../js/controllers/reservaDetailCtrl.js"></script>
+		<script src="../js/controllers/reservaCtrl.js"></script>
+
+
+	    
+    <!-- Scripts personales -->
+	    <script>
+		    // Función para validar la contraseña y mostrar mensajes de advertencia en tiempo real
+		    function validatePasswordRealTime() {
+		        var contraseña = document.getElementById("password").value;
+		
+		        var mensaje = "";
+		
+		        // Comprueba la longitud de la contraseña
+		        if (contraseña.length < 8) {
+		            mensaje = "La contraseña debe tener al menos 8 caracteres. ";
+		        }
+		
+		        // Comprueba si la contraseña contiene al menos una letra mayúscula
+		        else if (!/[A-Z]/.test(contraseña)) {
+		            mensaje = "Debe contener al menos una letra mayúscula. ";
+		        }
+		
+		        // Comprueba si la contraseña contiene al menos una letra minúscula
+		        else if (!/[a-z]/.test(contraseña)) {
+		            mensaje = "Debe contener al menos una letra minúscula. ";
+		        }
+		
+		        // Comprueba si la contraseña contiene al menos un dígito
+		        else if (!/\d/.test(contraseña)) {
+		            mensaje = "Debe contener al menos un dígito. ";
+		        }
+		
+		        // Comprueba si la contraseña contiene al menos un carácter especial
+		        else if (!/[^A-Za-z0-9]/.test(contraseña)) {
+		            mensaje = "Debe contener al menos un carácter especial. ";
+		        }
+		
+		        // Muestra el mensaje de advertencia
+		        document.getElementById("passwordError").textContent = mensaje;
+		    }
+
+			</script>
+	    
+	</head>
+	<body>
+<header>
+        <nav class="principal">
+            <button class="start_button"><a href="#!/">Booking.com</a></button>
+            <div class="right-section">
+                <button>EUR</button>
+                <button class="image-button"><img src="../images/es.png" alt="Language"></button>
+                <button class="image-button"><a href="#!/carrito"><img src="../images/cart.svg" alt="Carrito"></a></button>
+          
+     			<button class="white-button" data-ng-show="user !== undefined"><a href="#!/perfil">Ver Perfil</a></button>
+        	    <button 					 data-ng-show="user !== undefined"><a href="#!/add-alojamiento">Registra tu alojamiento</a></button>            		
+          		     		
+               	<button class="white-button" data-ng-show="user === undefined"><a href="#!/registrarse">Hazte una cuenta</a></button>
+               	<button class="white-button" data-ng-show="user === undefined"><a href="../IniciarSesionLinkServlet.do">Inicia sesión</a></button>
+
+           
+        </nav>
+
+        <nav class="secondary">
+            <button><img src="../images/Bed.svg" alt="Alojamiento"><span>Alojamiento</span></button>
+            <button><img src="../images/avion.svg" alt="Vuelos"><span>Vuelos</span></button>
+            <button><img src="../images/vuelo+hotel.svg" alt="Vuelo + Hotel"><span>Vuelo + Hotel</span></button>
+            <button><img src="../images/alquilercoche.svg" alt="Alquiler de coches"><span>Alquiler de coches</span></button>
+            <button><img src="../images/ferris-wheel-svgrepo-com.svg" alt="Atracciones turísticas"><span>Atracciones turísticas</span></button>
+            <button><img src="../images/taxi.png" alt="Taxis aeropuerto"><span>Taxis aeropuerto</span></button>
+        </nav>
+    </header>
+	  	<div data-ng-view></div>
+	 </body>
+</html>

@@ -1,0 +1,37 @@
+
+    <div class="container">
+        <h1>Reservas realizadas</h1>
+        <div class="help-message">
+            <p>¿Tiene algún problema?</p>
+        </div>
+        <div class="Elemento-contatiner">
+        
+            <div class="c2_alojamiento" data-ng-repeat="booking in reservaVM.Booking">
+                <div class="Elemento-c2">
+                    <div class="foto-c2">
+                        <img src="../images/alojamiento1.png" alt="Google Maps">
+                    </div>
+ 
+                    <div class="Texto-c2">
+                        <a ng-href="#!/hotel/{{ reservaVM.BookingProperty[$index].id }}" class="no-decoration">
+                        <div class="location">
+                            <h1>{{reservaVM.BookingProperty[$index].name}} en {{reservaVM.BookingProperty[$index].city}}</h1>
+                            </div>
+							<p>Desglose total: {{booking.totalPrice}}</p>
+					</a>
+                    </div>
+					<div class="datos">
+					    <div class="button-row">
+                            <a ng-href="#!/reserva/{{ booking.id }}"><button >Ver en detalle</button></a>
+                            
+						</div>
+						<div class="button-row">
+                            <a data-ng-click="reservaVM.functions.deletereseva(booking.id)">
+                                <button class="eliminar">Anular Reserva</button>
+                            </a>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>

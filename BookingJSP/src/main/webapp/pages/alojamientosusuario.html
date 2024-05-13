@@ -1,0 +1,53 @@
+
+
+    <div class="container">
+        <h1>Alojamientos subidos</h1>
+        <div class="help-message">
+            <p>¿No encuentra un alojamiento?</p>
+        </div>
+        <div class="Elemento-contatiner">
+        
+            <div class="c2_alojamiento" data-ng-repeat="alojamientouser in alojamientosUserVM.listaPropiedades">
+                <div class="Elemento-c2" >
+                    <div class="foto-c2">
+                        <img src="../images/alojamiento1.png" alt="Google Maps">
+                    </div>
+                    <div class="Texto-c2">
+                    
+                     	<a ng-href="#!/hotel/{{ alojamientouser.id }}" class="no-decoration">
+                        <div class="location">
+                            <h1>{{alojamientouser.name}}</h1>
+                            <h2>{{alojamientouser.city}}</h2>
+                            
+                            </div>
+							<p ng-if="alojamientouser.available === 1">
+					            Apartamento Disponible
+							</p>
+							<p ng-if="alojamientouser.available !== 1">
+					            Apartamento No Disponible
+							</p>
+                    </a>
+                    </div>
+						<div class="datos">
+						    <div class="button-row">
+						        <a data-ng-href="#!/habitacionesUsuario/{{alojamientouser.id}}">
+						            <button>Ver Habitaciones</button>
+						        </a>
+						        <a data-ng-href="#!/editar-alojamiento/{{alojamientouser.id}}">
+						            <button>Editar Alojamiento</button>
+						        </a>
+						    </div>
+						    <div class="button-row">
+						        <a data-ng-click="alojamientosUserVM.functions.cambiarDisponibilidadAlojamiento(alojamientouser.id)">
+						            <button>Cambiar Disponibilidad</button>
+						        </a>
+						        <a data-ng-click="alojamientosUserVM.functions.deleteAlojamiento(alojamientouser.id)">
+						            <button class="eliminar">Eliminar Alojamiento</button>
+						        </a>
+						    </div>
+						</div>
+
+                </div>
+            </div>
+        </div>
+    </div>

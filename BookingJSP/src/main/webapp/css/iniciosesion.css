@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #003b95;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1 {
+    font-size: 19px;
+    margin-right: 20px; /* Ajusta el margen derecho si es necesario */
+    margin-left: 180px; /* Agrega margen izquierdo */
+}
+
+.right-icons {
+    margin-right: 180px; /* Ajusta el margen derecho si es necesario */
+    margin-left: 20px; /* Agrega margen izquierdo */
+}
+
+.right-icons img {
+    border-radius: 50%;
+    margin-left: 10px; /* Añade un margen entre las imágenes */
+}
+
+button a {
+	color: inherit; /* Hereda el color del texto del contenedor principal */
+	text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+  /* Dedicado a los botones para que funcionen con los servlets*/
+button a:visited {
+    color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 0;
+    width: 27%;
+}
+
+table td {
+    padding: 5px;
+    border: none;
+    text-align: left;
+}
+
+
+
+.iSsubmit ,
+input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.images-container img {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    transition: border-color 0.3s;
+    margin: 0 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.images-container img:hover {
+    border-color: #183c94;
+}
+h2 {
+    text-align: center;
+}
+
+.linetop,
+.linebottom,
+.lineizq,
+.lineder {
+    position: absolute;
+    background-color: #ccc;
+}
+
+.linetop,
+.linebottom {
+    width: 100%;
+    height: 0.5px;
+}
+
+.lineizq,
+.lineder {
+    width: 23%;
+    height: 1px;
+    top: 50%;
+}
+
+.lineizq {
+    left: 0;
+}
+
+.lineder {
+    right: 0;
+}
+
+.small-text {
+    font-size: 12px;
+    margin: 10px;
+
+}
+.center-text {
+    position: relative;
+    text-align: center;
+}
+.textochico{
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 10px;
+}
+label[for="password"] {
+    display: block; /* Hace que la etiqueta ocupe todo el ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 5px; /* Añade un pequeño espacio debajo de la etiqueta */
+}
+
+/* Ajusta el estilo de los campos de contraseña para que ocupen el 100% del ancho */
+input[type="password"] {
+    width: calc(100% - 40px); /* Calcula el ancho con margen */
+}
+
+/* Estilo para el contenedor de botones y campos de entrada */
+td {
+    position: relative; /* Establece la posición relativa */
+}
+input[type="text"],
+input[type="fullname"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Calcula el ancho con margen */
+    padding: 10px; /* Añade relleno */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 5px; /* Borde redondeado */
+    border: 1px solid #ccc; /* Borde */
+    box-sizing: border-box; /* Tamaño de caja */
+}
+
+/* Estilo para las etiquetas */
+label {
+    display: block; /* Hace que la etiqueta ocupe todo el ancho */
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-bottom: 5px; /* Añade un pequeño espacio debajo de la etiqueta */
+}
+
+
+button {
+    background-color: #003b95;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e2653;
+}
+
+.start_button {
+    font-size: 25px;
+    font-family: 'Domestos';
+    color: white; /* Color de texto blanco */
+}
+
+.start_button a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.start_button a:visited {
+    color: white; /* Color de los enlaces visitados blanco */
+}

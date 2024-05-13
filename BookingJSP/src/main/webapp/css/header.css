@@ -1,0 +1,190 @@
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+
+
+@media (max-width: 1100px) {
+    header{
+        width: 1110px;
+        margin: 0 auto;
+        justify-content: flex-start; /* Cambiado de align-items a justify-content */
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003b95;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 30px;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	
+}
+
+.principal {
+    width: 1108px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: 191px;
+    margin-right: 191px;
+    font-size: 16px;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+button a {
+	color: inherit; /* Hereda el color del texto del contenedor principal */
+	text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+  /* Dedicado a los botones para que funcionen con los servlets*/
+button a:visited {
+    color: inherit; /* Hereda el color del texto del elemento padre */
+}
+
+
+
+nav button {
+    height: 48px;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-top: 8px;
+    margin-right: 8px;
+    transition: background-color 0.3s;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+nav button:hover:not(.white-button) {
+    background-color: #0071c2;
+}
+
+.image-button {
+    padding: 8px 12px;
+    width: 48px;
+    margin-top: 8px;
+    margin-right: 8px;
+}
+
+.image-button img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.white-button {
+    background-color: #ffffff;
+    border: 2px #006ce4;
+    padding: 4px 12px;
+    height: 36px;
+    font-size: 14px;
+    color: #006ce4;
+    transition: none; /* Evitar transición de color */
+}
+
+.start_button {
+    font-size: 25px;
+    font-family: 'Domestos';
+    font-weight: 250;
+}
+
+.secondary {
+    width: 1108px;
+    height: 45px;
+    display: flex;
+    align-items:start;
+    padding-top: 0px;
+    padding-bottom: 1px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 16px;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+}
+
+.secondary button {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    margin: 0px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 11px 16px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.secondary button:hover {
+    background-color: #006ce4;
+    border: 2px solid #fff;
+}
+
+.secondary button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.secondary button span {
+    color: #ffffff;
+}
+
+/* Ajustes para tamaños de pantalla pequeños */
+@media screen and (max-width: 1100px) {
+    header {
+      width: 100%; /* Ajustar el ancho del encabezado al 100% */
+      padding: 8px 16px 30px; /* Redefinir el espaciado interior */
+      margin-left: 0; /* Eliminar el margen izquierdo */
+      margin-right: 0; /* Eliminar el margen derecho */
+    }
+    .principal {
+      width: 100%; /* Ajustar el ancho de la barra de navegación principal al 100% */
+      margin: 0; /* Eliminar los márgenes */
+      padding: 8px 16px; /* Redefinir el espaciado interior */
+    }
+    .secondary {
+      width: 100%; /* Ajustar el ancho de la barra de navegación secundaria al 100% */
+      margin: 0; /* Eliminar los márgenes */
+      padding: 0 16px 1px; /* Redefinir el espaciado interior */
+    }
+  }
+  

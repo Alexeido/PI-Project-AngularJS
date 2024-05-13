@@ -1,0 +1,26 @@
+
+
+    <div class="profile-container">
+    <div class="profile-header">
+            <h2>Perfil de Usuario</h2>
+        <a data-ng-click="perfilVM.functions.eliminarUser()"><button class="eliminar">Eliminar Cuenta</button></a>                
+       </div>
+	   <form data-ng-submit="perfilVM.functions.editUser()" method="post">
+	    <div class="profile-info">
+	        <label for="email">Correo:</label>
+	        <input data-ng-model="perfilVM.user.email" type="text" id="email" name="email" value={{user.email}} required>
+	        <span style="color: red;">{{perfilVM.errorMessage}}</span>
+	    </div>
+	    <div class="profile-info">
+	        <label for="nombre">Nombre:</label>
+	        <input data-ng-model="perfilVM.user.name" type="text" type="text" id="nombre" name="nombre" value={{user.name}} required>
+	    </div>
+	    <div class="profile-info">
+	        <label for="apellido">Apellido:</label>
+	        <input data-ng-model="perfilVM.user.surname" type="text" type="text" id="apellido" name="apellido" value={{user.surname}} required>
+	    </div>
+	    <button type="submit" class="view-reservations-btn">Actualizar Perfil</button>
+	</form>
+
+        
+    </div>

@@ -1,0 +1,327 @@
+
+    <div class="container">
+        <div class="location-section">
+            <span><a href="#!/">Inicio</a> > <a href="#!/trending">Hoteles</a> > <a ng-href="#!/busqueda/all/0/0">España</a> > <a ng-href="#!/busqueda/{{hotelDetailVM.alojamiento.city}}/0/0">{{hotelDetailVM.alojamiento.city}}</a> > {{hotelDetailVM.alojamiento.name}}</span>
+        </div>
+        <div id="vista-general" class= "gridAlojamiento">
+            <div class="g1">
+                <div class="g1-1">
+                    <button><img src="../images/ticket.svg" alt="ticket"><span> Igualamos el precio</span></button>
+                </div>
+                <div class="buscador">
+                    <form data-ng-submit="hotelDetailVM.functions.buscar()">
+                        <h2>Buscar</h2>
+                        <label for="destino">Destino/Nombre del alojamiento</label>
+                        <div class="input-container">
+                            <img src="../images/lupa.svg" alt="lupa" class="lupa-icon">
+                            <input ng-model="hotelDetailVM.nameLugar" type="text" id="destino" name="Lugar" placeholder="{{hotelDetailVM.alojamiento.city}}">
+                        </div>
+                        <label for="fecha_entrada">Fecha de entrada</label><br>
+                        <input type="date" id="fecha_entrada" name="fecha_entrada"><br>
+                        <label for="fecha_salida">Fecha de salida</label><br>
+                        <input type="date" id="fecha_salida" name="fecha_salida">
+                        <label for="cantidad_personas">Cantidad de personas</label><br>
+                        <select id="cantidad_personas" name="cantidad_personas">
+                            <option value="1">1 adulto · 0 niños · 1 habitación</option>
+                            <option value="2">2 adultos · 0 niños · 1 habitación</option>
+                            <!-- Otras opciones aquí -->
+                        </select><br>
+                        <input type="checkbox" id="casas_apartamentos" name="casas_apartamentos">
+                        <label for="casas_apartamentos">Casas y apartamentos enteros</label><br>
+                        <input type="checkbox" id="viajo_trabajo" name="viajo_trabajo">
+                        <label for="viajo_trabajo">Viajo por trabajo</label><br>
+                        <button type="submit">Buscar</button>
+                    </form>
+                </div>
+                <div class="mapa">
+                    <img src="../images/mapa.png" alt="Google Maps">
+                </div>
+                
+            </div>
+            <div class="g2">
+                <div class="g2-1">
+                    <button>Vista general</button>
+                    <button  ng-click="scrollToDescripcion()">Descripción</button>
+                    <button  ng-click="scrollToDescripcion()">Servicios</button>
+                    <button  ng-click="scrollToDisponibilidad()">Info y precios</button>
+                    <button  ng-click="scrollToComentarios()">Comentarios de clientes</button>
+                    
+                </div>
+                <div class="g2-2">
+                    <div class="g2-2F1">
+                       <div class="estrellas">
+						    <span ng-repeat="i in [1, 2, 3, 4, 5]">
+						        <img ng-src="{{ i <= hotelDetailVM.numEstrellas ? '../images/star.svg' : '../images/star-empty.svg' }}" alt="Estrella">
+						    </span>
+						</div>
+
+
+
+                        
+                        <div class="right-section">
+                            <div ng-if="!hotelDetailVM.fav">
+                                <button class="me-gusta" ng-click="hotelDetailVM.functions.addFav()">
+                                    <img src="../images/heart.svg" alt="like">
+                                </button>
+                            </div>
+                            <div ng-if="hotelDetailVM.fav">
+                                <button class="me-gusta" ng-click="hotelDetailVM.functions.deleteFav()">
+                                    <img src="../images/heartFill.svg" alt="like">
+                                </button>
+                            </div>
+                            
+                            <button type="button" class="reserva" ng-click="scrollToDisponibilidad()">Reserva ahora</button>
+
+                        </div>
+                        
+                    </div>
+                    <div class="g2-2F2">
+                        {{hotelDetailVM.alojamiento.name}}
+                    </div>
+                    <div class="g2-2F3">
+                        <img src="../images/gps.svg" alt="GPS" class="gps-icon">
+                        <p>
+                            <a href="#">{{ hotelDetailVM.alojamiento.city }}, {{ hotelDetailVM.alojamiento.address }}</a> – 
+                            <a href="#" ng-if="hotelDetailVM.alojamiento.centerDistance < 0.2">Ubicación excelente</a>
+                            <a href="#" ng-if="hotelDetailVM.alojamiento.centerDistance >= 0.2 && hotelDetailVM.alojamiento.centerDistance < 1">Ubicación buena</a>
+                            <a href="#" ng-if="hotelDetailVM.alojamiento.centerDistance >= 1 && hotelDetailVM.alojamiento.centerDistance < 5.0">Ubicación promedio</a>
+                            <a href="#" ng-if="hotelDetailVM.alojamiento.centerDistance > 5">Ubicación normal</a>
+                            <a href="#">Ver mapa</a>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="g2-3">
+                    <div class="grid-imagenes">
+                        <div class="img1f">
+                            <div class="imgssecundarias">
+                                <div class="imagen-secundaria">
+                                    <img src="../images/hotel/2.jpg" alt="Imagen secundaria 1">
+                                </div>
+                                <div class="imagen-secundaria">
+                                    <img src="../images/hotel/3.jpg" alt="Imagen secundaria 2">
+                                </div>
+                            </div>
+                            <div class="imagen-principal">
+                                <img src="../images/hotel/1.jpg" alt="Imagen principal">
+                            </div>
+                        </div>
+                        <div class="img2f">
+                            <div class="imagen-pequena">
+                                <img src="../images/hotel/4.jpg" alt="Imagen pequeña 1">
+                            </div>
+                            <div class="imagen-pequena">
+                                <img src="../images/hotel/5.jpg" alt="Imagen pequeña 2">
+                            </div>
+                            <div class="imagen-pequena">
+                                <img src="../images/hotel/6.jpg" alt="Imagen pequeña 3">
+                            </div>
+                            <div class="imagen-pequena">
+                                <img src="../images/hotel/7.jpg" alt="Imagen pequeña 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="descripcion" class="descripcion">
+            <div class="d1">
+            	<h3>Descripción</h3>
+                <p>El {{hotelDetailVM.alojamiento.name}} es un {{hotelDetailVM.alojamiento.description}} que se encuentra a {{hotelDetailVM.alojamiento.centerDistance}} km del centro de {{hotelDetailVM.alojamiento.city}}.</p>
+                <p id="servicios" class="minitext">Las distancias en la descripción del alojamiento se calculan con OpenStreetMap©</p>
+                <h3>Servicios más populares</h3>
+                <ul>
+                    <li ng-if="hotelDetailVM.alojamiento.restaurante == 1"><img src="../images/restaurant.svg" alt="Icono de restaurante">Restaurante</li>
+                    <li ng-if="hotelDetailVM.alojamiento.desayuno == 1"><img src="../images/coffee.svg" alt="Icono de desayuno">Desayuno incluido</li>
+                    <li ng-if="hotelDetailVM.alojamiento.wifi == 1"><img src="../images/wifi.svg" alt="Icono de WiFi">WiFi gratis</li>
+                    <li ng-if="hotelDetailVM.alojamiento.gym == 1"><img src="../images/gym.svg" alt="Icono de gimnasio">Gimnasio</li>
+                    <li ng-if="hotelDetailVM.alojamiento.piscina == 1"><img src="../images/swim.svg" alt="Icono de piscina">Piscina</li>
+                    <li ng-if="hotelDetailVM.alojamiento.spa == 1"><img src="../images/spa.svg" alt="Icono de spa">Spa y centro de bienestar</li>
+                    <li ng-if="hotelDetailVM.alojamiento.petFriendly == 1"><img src="../images/dog.svg" alt="Icono de perro">Permite mascotas</li>
+                </ul>
+                
+            </div>
+            <div class="d2">
+                <h3>Puntos fuertes del alojamiento</h3>
+               
+		       		<p ng-if="hotelDetailVM.alojamiento.petFriendly == 1"><img src="../images/dog.svg" alt="Icono de perro">Permite mascotas</p>
+				    <p ng-if="hotelDetailVM.alojamiento.centerDistance < 1"> <img src="../images/gps_B.svg" alt="Icono">Situado a menos de 1km del centro de {{hotelDetailVM.alojamiento.city}}.</p>
+					<h3 ng-if="hotelDetailVM.alojamiento.gradesAverage > 4">Clientes fieles</h3>
+	                <p ng-if="hotelDetailVM.alojamiento.gradesAverage > 4"><img src="../images/check.svg" alt="Icono">Los clientes repiten más aquí que en otros alojamientos.</p>
+            
+                
+                <button type="button" class="reserva" ng-click="scrollToDisponibilidad()">Reserva ahora</button>
+
+                <button class="reserva"><img src="../images/tlf.svg" alt="icono de telefono"> {{hotelDetailVM.alojamiento.telephone}}</button>
+            </div>
+            
+        </div>
+        <div id="disponibilidad" class="disponibilidad">
+            <p class="titulo">Disponibilidad</p>
+            <p class="mensaje"> Indica las fechas para ver la disponibilidad y los precios del alojamiento</p>
+            <div class="disp-form">
+                <form>
+                    <label for="fecha_entrada">Fecha de entrada:</label>
+                    <input type="date" id="fecha_entradaDisp" name="fecha_entrada">
+                    
+                    <label for="fecha_salida">Fecha de salida:</label>
+                    <input type="date" id="fecha_salidaDisp" name="fecha_salida">
+                    
+                    <label for="adultos">Adultos:</label>
+                    <select id="adultos" name="adultos">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    
+                    <label for="ninos">Niños:</label>
+                    <select id="ninos" name="ninos">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    
+                    <label for="habitaciones">Habitaciones:</label>
+                    <select id="habitaciones" name="habitaciones">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+
+            <div class="disp-types">
+            
+                <div class="notification" ng-show="showNotification">
+                    <span class="notification-icon">🛒</span>
+                    <span class="notification-message">¡Elemento añadido al carrito por X precio!</span>
+                    <button class="notification-close" ng-click="closeNotification()">Cerrar</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de habitación</th>
+                            <th>Disponibles</th>
+                            <th>Reservas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+			            <tr data-ng-repeat="accommodation in hotelDetailVM.listaAccommodations">
+			                <td>
+			                    {{accommodation.name}}
+			                    <br>
+			                    <p>{{accommodation.description}}</p>
+			                </td>
+			                <td>
+			                    <p>{{accommodation.numAccommodations}} Unidades</p>
+			                </td>
+			                <td>
+                          
+                                <a data-ng-click="hotelDetailVM.functions.registerincarrito(accommodation.id)" data-ng-click="addToCart(accommodation.price)" ng-if="accommodation.numAccommodations > 0 && hotelDetailVM.alojamiento.available == 1&& $scope.$parent.user!=undefined">
+                                    <button class="reserva" >Añade al carrito por {{accommodation.price}}€</button>
+                                </a>
+                              
+                                <button class="reservaSoldOut" ng-if="(accommodation.numAccommodations <= 0 ||  hotelDetailVM.alojamiento.available==0 )&& $scope.$parent.user!=undefined">Agotado</button>
+
+                                <a href="../IniciarSesionLinkServlet.do"ng-if="$scope.$parent.user==undefined">
+                                    <button class="reserva" >Inicia sesión</button>
+                                </a>
+			                </td>
+			            </tr>
+              
+                    </tbody>
+                </table>
+            </div>
+        </div>
+		    <div id="comentarios" class="comentarios" ng-if="hotelDetailVM.listaReviews.length>0">
+		        <h2 style="font-weight: bold; font-size: 24px;">Comentarios de los clientes</h2>
+		        <div class="media-valoracion">
+		            <div class="media-valoracion-texto">{{hotelDetailVM.alojamiento.gradesAverage}}</div>
+                    <div class="media-valoracion-texto-derecha">
+                        <span ng-if="hotelDetailVM.alojamiento.gradesAverage == 5">Excepcional</span>
+                        <span ng-if="hotelDetailVM.alojamiento.gradesAverage > 4.5 && hotelDetailVM.alojamiento.gradesAverage < 5">Fantástico</span>
+                        <span ng-if="hotelDetailVM.alojamiento.gradesAverage > 4 && hotelDetailVM.alojamiento.gradesAverage <= 4.5">Fabuloso</span>
+                        <span ng-if="hotelDetailVM.alojamiento.gradesAverage > 3.5 && hotelDetailVM.alojamiento.gradesAverage <= 4">Muy bien</span>
+                        <span ng-if="hotelDetailVM.alojamiento.gradesAverage <= 3.5">Puntuación</span>
+                    </div>
+                    
+                    
+		        </div>
+		        <div class="comentario-container">
+                    <div class="comentario" data-ng-repeat="review in hotelDetailVM.listaReviews">
+                        <div class="a-pachas">
+                            <div class="mini-valoracion-texto">{{review.grade}}</div> 
+                            <div class="useerr"> {{review.username}}</div>
+                        </div>
+                        
+                        <div class="nombre-pais"> 
+                            <img src="../images/idioma.jpg" alt="España"> España
+                        </div>
+                        <div class="comentario-texto">
+                            "{{review.review}}"
+                        </div>
+                    </div>
+		        </div>
+		    </div>
+		
+		   <h2 ng-if="hotelDetailVM.canComment">Escribe tu propia Reseña</h2>
+		    <form ng-if="hotelDetailVM.canComment" data-ng-submit="hotelDetailVM.functions.addReview()">
+		        <textarea data-ng-model="hotelDetailVM.myReview.review" id="texto" name="texto" rows="4" cols="50"></textarea><br>
+		        <label for="nota">Nota (del 0 al 5):</label>
+		        <output id="output" name="output" for="nota">0</output><br>
+		        <input data-ng-model="hotelDetailVM.myReview.grade" type="range" id="nota" name="nota" min="0" max="5" step="1" value="0" oninput="output.value = nota.value"><br>
+		        <button class="reserva">Enviar reseña</button>
+		    </form>
+            <div ng-if="hotelDetailVM.listaSimilares.length>0">
+                <h1>Alojamientos similares</h1>
+                <div class="c2_alojamiento">
+				    <div class="Elemento-c2" data-ng-repeat="similar in hotelDetailVM.listaSimilares">
+				        <div class="foto-c2">
+				            <img src="../images/alojamiento1.png" alt="Google Maps">
+				        </div>
+				        <div class="Texto-c2">
+				            <h2>{{ similar.name }}</h2>
+				            <div class="estrellas">
+				                <ng-init ng-init="numEstrellas = similar.gradesAverage / 1"></ng-init>
+				                <span ng-repeat="i in [1,2,3,4,5]">
+				                    <img ng-src="../images/{{ i <= numEstrellas ? 'star.svg' : 'star-empty.svg' }}" alt="{{ i <= numEstrellas ? 'Estrella' : 'Estrella vacía' }}">
+				                </span>
+				            </div>
+				            <p>El {{ similar.name }} es un {{ similar.description }} que se encuentra a {{ similar.centerDistance }} km del centro de {{ similar.city }}.</p>
+				        </div>
+				
+				        <div>
+				            <div class="derechon">
+				                <div class="valoraciones">
+				                    <div class="valoCol1">
+				                        <h1>
+				                            <span ng-if="similar.gradesAverage == 5">Excepcional</span>
+				                            <span ng-if="similar.gradesAverage > 4.5">Fantástico</span>
+				                            <span ng-if="similar.gradesAverage > 4">Fabuloso</span>
+				                            <span ng-if="similar.gradesAverage > 3.5">Muy bien</span>
+				                            <span ng-if="similar.gradesAverage <= 3.5">Puntuación</span>
+				                        </h1>
+				                    </div>
+				                    
+				                    <div class="Puntuacion">
+				                        {{ similar.gradesAverage }}
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="datos">
+				                <p>{{ similar.address }}, {{ similar.city }}</p>
+				                <h1>Desde {{ similar.lowestPrice }}€</h1>
+				                <p>incluye impuestos y cargos</p>
+				                <a ng-href="#!/hotel/{{ similar.id }}">
+				                    <button class="disponibilidad">Ver Disponibilidad</button>
+				                </a>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+            </div>    
+</div>

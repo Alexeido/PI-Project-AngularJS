@@ -1,0 +1,386 @@
+
+
+@font-face {
+    font-family: 'Domestos';
+    src: url('../fonts/domestos.woff') format('woff');
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('../fonts/segoe.woff2') format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url('../fonts/segoeBold.woff2') format('woff2');
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+button {
+    background-color: #003b95; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+    border: none; /* Quitamos el borde */
+    padding: 10px 20px; /* Ajustamos el espaciado interno */
+    border-radius: 5px; /* Redondeamos los bordes */
+    cursor: pointer; /* Cambiamos el cursor */
+}
+
+/* Estilos para el formulario */
+.form-button {
+    display: inline-block; /* Para que el formulario se comporte como un elemento en línea */
+    margin-bottom: 0; /* Eliminamos el margen inferior */
+}
+
+/* Estilos para el botón dentro del formulario */
+.disponibilidad {
+    background-color: #003b95; /* Cambiamos el color de fondo */
+    color: white; /* Cambiamos el color del texto a blanco */
+    border: none; /* Quitamos el borde */
+    padding: 10px 20px; /* Ajustamos el espaciado interno */
+    border-radius: 5px; /* Redondeamos los bordes */
+    cursor: pointer; /* Cambiamos el cursor */
+}
+
+.buscador-container {
+    margin-top: -20px;
+}
+/* Contenedor para centrar */
+.container {
+    display:block;
+    justify-content: left;
+    height: 100vh; /* Opcional: ajusta el tamaño del contenedor al alto de la ventana */
+    width: 1110px;
+    margin: 0 auto;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+     font-size: 14px;
+}
+
+.location-section {
+    white-space: nowrap; /* Evita que el contenido se divida en varias líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el contenido sea demasiado largo para mostrarse completamente */
+    padding: 10px;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    margin-top: 5px;
+}
+
+.location-section a {
+    color: #003b95;
+    text-decoration: none;
+}
+
+.location-section a:hover {
+    text-decoration: underline;
+}
+
+
+/* alojamiento.css */
+
+/* Resto de tu CSS aquí */
+
+.gridAlojamiento {
+    display: grid;
+    grid-template-columns: 280px 837px; /* Definición de columnas */
+    grid-template-rows: 643px; /* Definición de filas */
+    gap: 8px; /* Espacio entre celdas */
+    margin-top: 0px; /* Espacio superior */
+
+}
+
+/* Estilos de las secciones del grid (puedes añadir más estilos según necesites) */
+.g1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    height: 1090px;
+}
+.container1 img{
+    width: 250px;
+    height: 100px;
+}
+
+.mapa img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.grafico img{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.filtro {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.titulofiltro h1{
+    margin: 10px;
+}
+
+.elemnos-filtro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Cambiado de 'center' a 'flex-start' */
+    margin-left: 10px;
+
+}
+
+.elemnos-filtro h1 {
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-right:11px;
+
+    font-size: 20px; /* Modificado el tamaño de la fuente */
+
+}
+
+
+.filtros-pupulares {
+    /* No se requiere ningún cambio en este bloque */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.filtros-pupulares label {
+    margin-right: 10px; /* Ajusta el espacio entre el texto y el radio button */
+    margin-bottom: 5px;
+}
+
+.filtros-pupulares input[type="radio"] {
+    margin-bottom: 0px; /* Ajusta el espacio entre las opciones */
+}
+input[type="range"] {
+    width: 92%; /* Hacer que el input ocupe todo el ancho disponible */
+}
+.mapa img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
+
+
+/*Elementos del container dos*/
+.container2 {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+select{
+    border-radius: 10px;
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+}
+.Ordenar_por {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.c2_alojamiento {
+    display: flex;
+    flex-direction: column;
+}
+
+.Elemento-c2 {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 770px;
+    height: 200px;
+}
+
+.foto-c2 {
+    flex: 1;
+}
+
+.foto-c2 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.Texto-c2 {
+    flex: 2; /* Ajusta el factor de flexibilidad para el texto */
+    padding: 0 20px; /* Ajusta el espacio alrededor del texto */
+}
+.titulo-valoracion {
+    display: flex;
+    align-items: center; /* Para alinear verticalmente el contenido */
+}
+.Texto-c2 h2{
+    color: #003b95;
+}
+
+.Puntuacion {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003b95;
+    color: white;
+    border-radius: 5px;
+}
+
+.estrellas img{
+    height: 18px;
+    margin: 0px;
+    align-items: left;
+}
+.estrellas{
+    width: 200px;
+}
+
+.valoraciones{
+    display: flex;
+    flex-direction: row;    
+}
+.derechon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.valoCol1 p{
+    margin: 0;
+}
+.valoCol1 h1{
+    margin: 0;
+    font-size: 20px;
+}
+
+.Puntuacion{
+    margin: 8px;
+    width: 50px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px 10px 10px 0px;
+}
+
+.datos{
+    text-align: end;
+}
+.datos h1{
+    margin: 2px;
+}
+.datos p{
+    margin:5px;
+    font-size: small;
+}
+.datos button{
+    margin-top: 10px;
+}
+
+    
+/*Buscador*/
+
+.buscador-container {
+    margin-right:5px;
+    margin-left: 0px;
+}
+
+@media (max-width: 1200px) {
+    header{
+        padding-bottom: 120px;
+    }
+    .buscador-container{
+        align-items: center;
+        margin-top: -70px;
+        margin-right: 23%;
+    }
+}
+.form-flex{
+	display: flex;
+}
+
+.form-flex select,
+.form-flex button {
+    margin-right: 10px; /* Espacio entre elementos */
+}
+
+
+/* Ajustes para tamaños de pantalla pequeños */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 100%; /* Ajustar el ancho del contenedor al 100% */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 0 10px; /* Añadir un poco de espacio a los lados */
+  }
+  .container1,
+.container2 {
+    width: 100%;
+    margin: 0;
+    flex: 1; /* Hacer que ambos contenedores se expandan para llenar el espacio disponible */
+}
+
+.gridAlojamiento {
+    display: flex;
+    flex-direction: column; /* Cambiar a disposición de columna para que los contenedores se apilen verticalmente */
+}
+
+  .location-section {
+    overflow: hidden; /* Ocultar el desbordamiento */
+    text-overflow: ellipsis; /* Agregar puntos suspensivos (...) si el texto es demasiado largo */
+    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+  .container1,
+  .container2 {
+    width: 100%; /* Ajustar el ancho al 100% */
+    margin: 0; /* Eliminar los márgenes */
+  }
+  
+  select,
+  .form-button button,
+  .disponibilidad {
+    width: 100%; /* Ajustar el ancho al 100% */
+  }
+     .buscador-container {
+    margin-left: 0; /* Alinear el contenedor del buscador al centro */
+  }
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor principal */
+    margin-top: 50px; /* Reducir el espacio superior */
+  }
+    
+.Elemento-c2 {
+    width: 100%; /* Ajustar el ancho al 100% */
+}
+
+.container1 {
+    flex-direction:row;
+    align-items: center;
+}
+
+.elemnos-filtro {
+    flex-direction:row;
+    align-items: right;
+}
+}
+
+
+

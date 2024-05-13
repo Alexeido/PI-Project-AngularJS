@@ -1,0 +1,29 @@
+
+    <div class="profile-container">
+		<div class="profile-header">
+		    <h2>Perfil de Usuario</h2>
+		    <a href="#!/perfilAjustes"><button class="view-reservations-btn">Ajustes del perfil</button></a>
+		</div>
+        <div class="profile-info">
+            <label for="email">Correo:</label>
+            <input type="text" id="email"  name="email" value={{user.email}} readonly >
+        </div>
+        <div class="profile-info">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" value={{user.name}} readonly>
+        </div>
+        <div class="profile-info">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido"  name="apellido" value={{user.surname}} readonly>
+        </div>	
+		<div class="botonesvarios">
+		    <div>
+		        <a href="#!/reservasUsuario"><button class="view-reservations-btn">Ver Reservas</button></a>
+		        <a href="#!/alojamientosUsuario"><button class="view-reservations-btn">Ver mis alojamientos</button></a>
+		        <a href="#!/favoritosUsuario"><button class="view-reservations-btn">Ver mis favoritos</button></a>
+		        
+		    </div>
+		    <a data-ng-click="perfilVM.functions.cerrarSesion()"><button class="eliminar">Cerrar Sesión</button></a>
+		</div>
+    </div>
+    

@@ -1,0 +1,24 @@
+
+   <div class="container">
+            <div class="edit-form">
+                <h2>Añadir Habitacion </h2>
+                <form data-ng-submit="habitacionesDetailedVM.functions.registrarhabitacion()">
+                    <label for="name">Nombre Habitacion:</label>
+                    <input data-ng-model="habitacionesDetailedVM.Accommodation.name" type="text" id="name" name="name" required><br><br>
+
+                    <label for="address">Precio:</label>
+                    <input data-ng-model="habitacionesDetailedVM.Accommodation.price" type="number" id="price" name="price" required><br><br>
+
+                    <label for="descripcion">Descripción:</label><br>
+                    <textarea data-ng-model="habitacionesDetailedVM.Accommodation.description" id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+                    
+                    <label for="available">Numero:</label>
+                    <input data-ng-model="habitacionesDetailedVM.Accommodation.numAccommodations" type="number" id="available" name="available" step="0.1" required><br><br>
+                    
+
+					<div class="button-container">
+					   <button type="submit">Continuar</button>
+					</div>
+                </form>
+            </div>
+    </div>
