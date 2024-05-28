@@ -81,8 +81,8 @@ public class registroAlojamientoLinkServlet extends HttpServlet {
 	    alojamiento.setPiscina(piscina);
 	    alojamiento.setSpa(spa);
 	    propertyDao.add(alojamiento);
-	    RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/index.jsp");
-	    view.forward(request,response);
+		response.sendRedirect("AlojamientoUsuarioLinkServlet.do");
+
 	}
 
 

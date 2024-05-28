@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -82,12 +83,28 @@ public class AlojamientoLinkServlet extends HttpServlet {
 	        }
 	    }
 	    
+
+		
+        
+        List<Property> listaAlojamientos = propertyDao.getAllBySearchName(alojamiento.getCity());
+		
+        Iterator<Property> iterator = listaAlojamientos.iterator();
+        while (iterator.hasNext()) {
+            Property property = iterator.next();
+            if (property.getId() == idp) {
+                iterator.remove();
+            }
+        }
+		
 	    if(user!=null) {request.setAttribute("fav",favsDao.isFavourite(user.getId(),idp));}
 		request.setAttribute("alojamiento", alojamiento);
 		request.setAttribute("commented", commented);
 		request.setAttribute("listaReviews", listaReviews);
 		request.setAttribute("listaAccommodations", listaAccommodations);
 		request.setAttribute("nombresUsuarios", nombresUsuarios); // Pasar la lista de nombres de usuario a la vista
+		request.setAttribute("listaAlojamientos", listaAlojamientos);
+
+        
 		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/alojamiento.jsp");
 		view.forward(request,response);
 	}

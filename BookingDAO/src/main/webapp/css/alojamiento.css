@@ -329,6 +329,25 @@ button a:visited {
 .reserva:hover{
     background-color: #043170;
 }
+
+.reservaSoldOut {
+    background-color: #e40000; /* Rojo */
+    cursor: not-allowed; /* Cursor indicando que está deshabilitado */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 4px 8px;
+    margin-top: none;
+    margin-right: none;
+    height: 36px;
+        width: 95%; /* Ancho del 95% */
+    
+}
+
+.reservaSoldOut:hover {
+    background-color: #a30000; /* Rojo más oscuro */
+}
+
 .g2-2F1 .reserva {
     width: auto;
 }
@@ -716,4 +735,52 @@ output {
 .useerr{
     margin-left: 10px; 
 	font-weight: bold;
+}
+
+
+.alojamiento-item {
+    margin-bottom: 20px;
+}
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+}
+
+.foto-c2 {
+    flex: 1;
+    margin-right: 20px; /* Espacio entre la foto y el texto */
+}
+
+.foto-c2 img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.Texto-c2 {
+    flex: 2;
+}
+
+.Puntuacion {
+    width: 50px;
+    height: 50px;
+    background-color: #003b95;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px; /* Espacio entre el texto y la valoración */
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.disponibilidad {
+    margin-top: 10px;
 }

@@ -12,8 +12,10 @@ import java.io.IOException;
 import java.sql.Connection;
 
 import es.unex.pi.dao.AccommodationDAO;
+import es.unex.pi.dao.PropertyDAO;
 import es.unex.pi.model.Accommodation;
 import es.unex.pi.model.Property;
+import es.unex.pi.model.User;
 
 /**
  * Servlet implementation class ActualizarHabitacionServlet
@@ -38,12 +40,22 @@ public class ActualizarHabitacionServlet extends HttpServlet {
 		Connection conn = (Connection) getServletContext().getAttribute("dbConn");
 		AccommodationDAO accomodationDao = new es.unex.pi.dao.JDBCAccommodationDAOImpl();		
 		accomodationDao.setConnection(conn);
+		PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();		
+		propertyDao.setConnection(conn);
 		long id=Long.parseLong(request.getParameter("idhabitacion"));
 		
 		Accommodation habitacion=accomodationDao.get(id);
+		Property alojamiento=propertyDao.get(habitacion.getIdp());
+		HttpSession session = request.getSession();
+	    User user = (User) session.getAttribute("user");
+	    if(alojamiento.getIdu()!= user.getId()) {
+			response.sendRedirect("HabitacionesUserServlet.do");
+	    }
+	    else {
 		request.setAttribute("habitacion", habitacion);
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/editarhabitacion.jsp");
 		view.forward(request,response);
+	    }
 
 	}
 

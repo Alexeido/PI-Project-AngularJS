@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${alojamiento.name} | Booking.com</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/header.css">    
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/alojamiento.css">
 </head>
 <body>
@@ -291,7 +293,7 @@
 			                </td>
 			                <td>
 			                    <c:choose>
-			                        <c:when test="${accommodation.numAccommodations > 0}">
+   								 <c:when test="${accommodation.numAccommodations > 0 && alojamiento.available == 1}">
 			                            <form action="user/CarritoSessionAddServlet.do" method="post">
 								    		<input type="hidden" name="ida" value="${accommodation.id}">
 			                                <button class="reserva">Añade al carrito por ${accommodation.price}€</button>
@@ -304,7 +306,6 @@
 			                </td>
 			            </tr>
 			        </c:forEach>
-              
                     </tbody>
                 </table>
             </div>
@@ -365,6 +366,75 @@
 		        <button class="reserva">Enviar reseña</button>
 		    </form>
 		</c:if>
+	<c:if test="${fn:length(listaAlojamientos) > 1}">
+    <div class="Elemento-c2">
+        <h1>Alojamientos similares</h1>
+        <br>
+        <c:forEach var="relatedAlojamiento" items="${listaAlojamientos}">
+            <div class="alojamiento-item">
+                <div class="contenido">
+                    <div class="foto-c2">
+                        <img src="${pageContext.request.contextPath}/images/alojamiento1.png" alt="Imagen de alojamiento">
+                    </div>
+                    <div class="Texto-c2">
+                        <h2>${relatedAlojamiento.name}</h2>
+                        <p>Descripción: ${relatedAlojamiento.description}</p>
+                        <p>Ciudad: ${relatedAlojamiento.city}</p>
+                        <p>Distancia al centro: ${relatedAlojamiento.centerDistance} km</p>
+                    </div>
+                    <div class="detalles">
+                              <div class="valoCol1">
+                                    <h1>
+	                                    <c:choose>
+						                    <c:when test="${relatedAlojamiento.gradesAverage == 5}">
+						                        Excepcional
+						                    </c:when>
+						                    <c:when test="${relatedAlojamiento.gradesAverage > 4.5}">
+						                        Fantástico
+						                    </c:when>
+						                    <c:when test="${relatedAlojamiento.gradesAverage > 4}">
+						                        Fabuloso
+						                    </c:when>
+						                    <c:when test="${relatedAlojamiento.gradesAverage > 3.5}">
+						                        Muy bien
+						                    </c:when>
+						                    <c:when test="${relatedAlojamiento.gradesAverage < 3.5}">
+						                        Regular
+						                    </c:when>
+						                    <c:otherwise>
+						                        Puntuación
+						                    </c:otherwise>
+						                </c:choose>
+		               			 	</h1>
+                                </div>
+                        <div class="Puntuacion">
+                            <p>${relatedAlojamiento.gradesAverage}</p>
+                        </div>
+                        <div class="estrellas">
+							    <c:set var="numEstrellas" value="${alojamiento.gradesAverage / 1}" />
+							    <c:forEach begin="1" end="5" var="i">
+							        <c:choose>
+							            <c:when test="${i <= numEstrellas}">
+							                <img src="${pageContext.request.contextPath}/images/star.svg" alt="Estrella">
+							            </c:when>
+							            <c:otherwise>
+							                <img src="${pageContext.request.contextPath}/images/star-empty.svg" alt="Estrella vacía">
+							            </c:otherwise>
+							        </c:choose>
+							    </c:forEach>
+							</div>
+                        <a href="<c:url value='AlojamientoLinkServlet.do?idp=${relatedAlojamiento.id}'/>">
+                            <button class="reserva">Ver detalles</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</c:if>
+
+
+
 </div>
 </body>
 </html>

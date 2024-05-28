@@ -92,12 +92,12 @@ public class RegistrarseLinkServlet extends HttpServlet {
 		user.setName(username);
 		user.setPassword(password);
 		user.setSurname(apellido);
-
-		if(userDao.add(user)==-1){
+		long idu=userDao.add(user);
+		if(idu==-1){
 			request.setAttribute("error", "Este email ya tiene cuenta en Booking");
 			doGet(request, response);
 		}
-		
+		user.setId(idu);
 		HttpSession session = request.getSession();
 		ArrayList<BookingsAccommodations> carrito = new ArrayList<>();
         session.setAttribute("carrito", carrito);

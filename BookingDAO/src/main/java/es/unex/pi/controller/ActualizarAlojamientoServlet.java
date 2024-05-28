@@ -39,14 +39,20 @@ public class ActualizarAlojamientoServlet extends HttpServlet {
 		PropertyDAO propertyDao = new es.unex.pi.dao.JDBCPropertyDAOImpl();		
 		propertyDao.setConnection(conn);
 		long id=Long.parseLong(request.getParameter("idalojamiento"));
-		
 		HttpSession session = request.getSession();
+	    User user = (User) session.getAttribute("user");
+		Property alojamiento=propertyDao.get(id);
+
+	    if(alojamiento.getIdu()!= user.getId()) {
+			response.sendRedirect("AlojamientoUsuarioLinkServlet.do");
+	    }
+	    else {
 		session.setAttribute("IdAlojamiento", id);
 		
-		Property alojamiento=propertyDao.get(id);
 		request.setAttribute("alojamiento", alojamiento);
 		RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/editaralojamiento.jsp");
 		view.forward(request,response);
+	    }
 	}
 
 	/**
