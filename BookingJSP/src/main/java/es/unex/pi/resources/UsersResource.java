@@ -125,7 +125,6 @@ public class UsersResource {
 		  ArrayList<BookingsAccommodations> carrito = new ArrayList<>();
 	      session.setAttribute("carrito", carrito);
 	      session.setAttribute("user", newUser);
-	      newUser = (User) session.getAttribute("user");
 	      
 		  Response res = Response //return 201 and Location: /orders/newid
 				   .created( 

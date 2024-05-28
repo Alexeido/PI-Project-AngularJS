@@ -197,7 +197,7 @@
             
                 <div class="notification" ng-show="showNotification">
                     <span class="notification-icon">🛒</span>
-                    <span class="notification-message">¡Elemento añadido al carrito por X precio!</span>
+                    <span class="notification-message">¡Elemento añadido al carrito!</span>
                     <button class="notification-close" ng-click="closeNotification()">Cerrar</button>
                 </div>
                 <table>
@@ -221,13 +221,13 @@
 			                </td>
 			                <td>
                           
-                                <a data-ng-click="hotelDetailVM.functions.registerincarrito(accommodation.id)" data-ng-click="addToCart(accommodation.price)" ng-if="accommodation.numAccommodations > 0 && hotelDetailVM.alojamiento.available == 1&& $scope.$parent.user!=undefined">
+                                <a data-ng-click="hotelDetailVM.functions.registerincarrito(accommodation.id)" data-ng-click="addToCart(accommodation.price)" ng-if="accommodation.numAccommodations > 0 && hotelDetailVM.alojamiento.available == 1&& hotelDetailVM.user!=undefined">
                                     <button class="reserva" >Añade al carrito por {{accommodation.price}}€</button>
                                 </a>
                               
-                                <button class="reservaSoldOut" ng-if="(accommodation.numAccommodations <= 0 ||  hotelDetailVM.alojamiento.available==0 )&& $scope.$parent.user!=undefined">Agotado</button>
+                                <button class="reservaSoldOut" ng-if="(accommodation.numAccommodations <= 0 ||  hotelDetailVM.alojamiento.available==0 )&& hotelDetailVM.user!=undefined">Agotado</button>
 
-                                <a href="../IniciarSesionLinkServlet.do"ng-if="$scope.$parent.user==undefined">
+                                <a href="../IniciarSesionLinkServlet.do"ng-if="hotelDetailVM.user==undefined">
                                     <button class="reserva" >Inicia sesión</button>
                                 </a>
 			                </td>

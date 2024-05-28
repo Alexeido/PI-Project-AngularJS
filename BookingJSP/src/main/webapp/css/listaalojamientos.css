@@ -310,7 +310,7 @@ select{
     .buscador-container{
         align-items: center;
         margin-top: -70px;
-        margin-right: 23%;
+        margin-right: 0;
     }
 }
 .form-flex{
@@ -329,6 +329,9 @@ select{
     width: 100%; /* Ajustar el ancho del contenedor al 100% */
     margin: 0 auto; /* Centrar el contenedor */
     padding: 0 10px; /* Añadir un poco de espacio a los lados */
+  }
+  .container1{
+  display:none;
   }
   .container1,
 .container2 {

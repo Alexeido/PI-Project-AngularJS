@@ -58,6 +58,7 @@ angular.module('bookingApp')
     	});
     },
     editaralojamiento: function() {
+		console.log(alojamientosDetailedViewModel.Property);
         alojamientosFactory.editaralojamiento(alojamientosDetailedViewModel.Property)
             .then(function(response){
                 console.log("Alojamiento update" )

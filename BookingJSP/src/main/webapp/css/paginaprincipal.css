@@ -121,6 +121,16 @@ button:hover {
     margin-left: 160px;
     
 }
+
+
+@media (max-width: 1200px) {
+    .buscador-container{
+        align-items: center;
+        margin-top: -60px;
+        margin-right: 0;
+    }
+}
+
 /*Alojamientos*/
     .alojamiento-header {
         margin-top: 10px;

@@ -11,7 +11,7 @@ angular.module('bookingApp')
 		registerUser : function() {
         	usersFactory.register(registerViewModel.user)
         		.then(function(response){
-					$scope.$parent.user=registerViewModel.user;
+					registerViewModel.functions.readUser();
 					console.log("Registrando al user con el email ", registerViewModel.user.email, " Response: ", response )
 					
 					$location.path('/');
@@ -24,7 +24,7 @@ angular.module('bookingApp')
 		readUser : function() {
         	usersFactory.getUser()
         		.then(function(response){
-					registerViewModel.user = response;
+					$scope.$parent.user = response;
 					console.log("Getting user by id ", registerViewModel.user.id, " Response: ", response )
 				}, function(response){
 					console.log("Error reading user data");

@@ -58,6 +58,8 @@ button:hover {
     @media (max-width: 1200px) {
         .buscador-container {
             flex-direction: column;
+    		margin-right:0;
+       		margin-top: -70px;
         }
     
         .elemento-buscador-container {

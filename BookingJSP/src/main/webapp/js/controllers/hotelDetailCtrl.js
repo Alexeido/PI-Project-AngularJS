@@ -12,7 +12,7 @@ angular.module('bookingApp')
     hotelDetailViewModel.listaSimilares=[];
     hotelDetailViewModel.canComment=true;
     hotelDetailViewModel.myReview={};
-
+	hotelDetailViewModel.user=$scope.$parent.user;
     // Obtener el ID del alojamiento de los parámetros de la ruta
     var idAlojamiento = $routeParams.ID;
 	

@@ -23,31 +23,37 @@
 
                     
                   
-				<label>Servicios o instalaciones ofrecidos:</label><br>
-				<input type="checkbox" id="wifi" name="wifi" value="1" data-ng-model="alojamientosDetailedVM.wifi">
-				<label for="wifi">Wifi</label><br>
-				<input type="checkbox" id="piscina" name="piscina" value="1" data-ng-model="alojamientosDetailedVM.piscina">
-				<label for="piscina">Piscina</label><br>
-				<input type="checkbox" id="gym" name="gym" value="1" data-ng-model="alojamientosDetailedVM.gym">
-				<label for="gym">Gimnasio</label><br>
-				<input type="checkbox" id="spa" name="spa" value="1" data-ng-model="alojamientosDetailedVM.spa">
-				<label for="spa">Spa</label><br>
-				<input type="checkbox" id="desayuno" name="desayuno" value="1" data-ng-model="alojamientosDetailedVM.desayuno">
-				<label for="desayuno">Desayuno</label><br>
-				<input type="checkbox" id="restaurante" name="restaurante" value="1" data-ng-model="alojamientosDetailedVM.restaurante">
-				<label for="restaurante">Restaurante</label><br><br>
+  			 		<label>Servicios o instalaciones ofrecidos:</label><br>
+
+					<input type="checkbox" id="restaurante" name="restaurante" data-ng-model="alojamientosDetailedVM.Property.restaurante" ng-true-value="1" ng-false-value="0">
+					<label for="restaurante">Restaurante</label><br>
+					
+					<input type="checkbox" id="desayuno" name="desayuno" data-ng-model="alojamientosDetailedVM.Property.desayuno" ng-true-value="1" ng-false-value="0">
+					<label for="desayuno">Desayuno</label><br>
+					
+					<input type="checkbox" id="wifi" name="wifi" data-ng-model="alojamientosDetailedVM.Property.wifi" ng-true-value="1" ng-false-value="0">
+					<label for="wifi">Wifi</label><br>
+					
+					<input type="checkbox" id="gym" name="gym" data-ng-model="alojamientosDetailedVM.Property.gym" ng-true-value="1" ng-false-value="0">
+					<label for="gym">Gimnasio</label><br>
+					
+					<input type="checkbox" id="piscina" name="piscina" data-ng-model="alojamientosDetailedVM.Property.piscina" ng-true-value="1" ng-false-value="0">
+					<label for="piscina">Piscina</label><br>
+					
+					<input type="checkbox" id="spa" name="spa" data-ng-model="alojamientosDetailedVM.Property.spa" ng-true-value="1" ng-false-value="0">
+					<label for="spa">Spa</label><br><br>
+
+
 
 
 
 				<label>Permite mascotas:</label><br>
-				<input type="radio" id="si-mascotas" name="mascotas" value="1" data-ng-model="alojamientosDetailedVM.petFriendly">
+				<input type="radio" id="si-mascotas" name="mascotas" value="1" data-ng-model="alojamientosDetailedVM.Property.petFriendly">
 				<label for="si-mascotas">Sí</label>
-				<input type="radio" id="no-mascotas" name="mascotas" value="0" data-ng-model="alojamientosDetailedVM.petFriendly">
+				<input type="radio" id="no-mascotas" name="mascotas" value="0" data-ng-model="alojamientosDetailedVM.Property.petFriendly">
 				<label for="no-mascotas">No</label><br><br>
 
 					   <button  class="view-reservations-btn"  type="submit">Continuar</button>
 					</div>
                 </form>
             </div>
-    </div>
-
