@@ -81,6 +81,3 @@ Este proyecto no cuenta con una licencia pública y fue desarrollado únicamente
 ---
 
 ¡Gracias por visitar nuestro proyecto!
-```
-
-Si necesitas algún ajuste adicional, ¡dímelo! 😊
